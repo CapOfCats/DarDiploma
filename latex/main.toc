@@ -1,0 +1,61 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Анализ предметной области}{7}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Характеристика СКУД и её назначение}{7}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Ключевые элементы системы контроля доступа и принцип их работы}{8}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Учётные данные}{8}{subsubsection.1.2.1}%
+\contentsline {paragraph}{\numberline {1.2.1.1}Приложения для смартфонов}{8}{paragraph.1.2.1.1}%
+\contentsline {paragraph}{\numberline {1.2.1.2}Пароль или ПИН-код}{9}{paragraph.1.2.1.2}%
+\contentsline {paragraph}{\numberline {1.2.1.3}Биометрия}{9}{paragraph.1.2.1.3}%
+\contentsline {paragraph}{\numberline {1.2.1.4}Брелок или карта доступа}{10}{paragraph.1.2.1.4}%
+\contentsline {subsubsection}{\numberline {1.2.2}Считыватель}{10}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Контроллер}{10}{subsubsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.4}Замок}{11}{subsubsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.3}Анализ аудитории пользователей}{11}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Перспективы развития}{12}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Сценарий проекта. Неформальное представление предметной области}{13}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Бизнес-правила}{14}{subsection.1.6}%
+\contentsline {section}{\numberline {2}Техническое задание}{16}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Основание для разработки}{16}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Цель и назначение разработки}{16}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Требования к интерфейсу}{16}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Требования к программной системе приложения <<СКУД на круизном лайнере>>}{17}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Требования к данным программной системы}{17}{subsubsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.5}Построение ER-модели данных}{17}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Определение объектов}{17}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Определение связей}{19}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Определение кардинальности связей}{20}{subsubsection.2.5.3}%
+\contentsline {subsubsection}{\numberline {2.5.4}Разрешение связи <<Многие ко многим>>}{21}{subsubsection.2.5.4}%
+\contentsline {subsubsection}{\numberline {2.5.5}Извлечение вторичных ключей из простых объектов с помощью внешних ключей}{21}{subsubsection.2.5.5}%
+\contentsline {subsubsection}{\numberline {2.5.6}Архитектура системы}{23}{subsubsection.2.5.6}%
+\contentsline {subsubsection}{\numberline {2.5.7}Функциональные требования к программной системе}{23}{subsubsection.2.5.7}%
+\contentsline {subsubsection}{\numberline {2.5.8}Моделирование вариантов использования}{24}{subsubsection.2.5.8}%
+\contentsline {subsubsection}{\numberline {2.5.9}Вариант использования <<Открыть/закрыть таблицу>>}{24}{subsubsection.2.5.9}%
+\contentsline {subsubsection}{\numberline {2.5.10}Вариант использования <<Редактировать таблицу>>}{24}{subsubsection.2.5.10}%
+\contentsline {subsubsection}{\numberline {2.5.11}Вариант использования <<Перейти к следующему/предыдущему элементу>>}{25}{subsubsection.2.5.11}%
+\contentsline {subsubsection}{\numberline {2.5.12}Вариант использования <<Найти элемент по идентификатору>>}{25}{subsubsection.2.5.12}%
+\contentsline {subsubsection}{\numberline {2.5.13}Вариант использования <<Добавить новый элемент>>}{25}{subsubsection.2.5.13}%
+\contentsline {subsubsection}{\numberline {2.5.14}Вариант использования <<Редактировать выбранный элемент>>}{26}{subsubsection.2.5.14}%
+\contentsline {subsubsection}{\numberline {2.5.15}Вариант использования <<Удалить элемент>>}{26}{subsubsection.2.5.15}%
+\contentsline {subsection}{\numberline {2.6}Нефункциональные требования к программной системе}{26}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Требования к надежности}{26}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Требования к безопасности}{27}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Требования к программному обеспечению}{28}{subsubsection.2.6.3}%
+\contentsline {subsubsection}{\numberline {2.6.4}Требования к аппаратному обеспечению}{28}{subsubsection.2.6.4}%
+\contentsline {subsection}{\numberline {2.7}Требования к оформлению документации}{28}{subsection.2.7}%
+\contentsline {section}{\numberline {3}Технический проект}{29}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Общая характеристика организации решения задачи}{29}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Общие сведения о программно-информационной системе}{29}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Обоснование выбора технологии проектирования}{30}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Описание используемых технологий и языков программирования}{30}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}tkinter}{30}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}SQLite}{30}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}asyncio и time}{31}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}Язык структурированных запросов к базе данных SQL}{31}{subsubsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.3.6}Язык программирования Python}{31}{subsubsection.3.3.6}%
+\contentsline {paragraph}{\numberline {3.3.6.1}Достоинства языка Python}{31}{paragraph.3.3.6.1}%
+\contentsline {paragraph}{\numberline {3.3.6.2}Недостатки языка Python}{32}{paragraph.3.3.6.2}%
+\contentsline {subsection}{\numberline {3.4}Проектирование пользовательского интерфейса}{32}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Диаграмма компонентов и схема обмена данными между файлами компонента}{33}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Диаграмма размещения}{35}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Содержание информационных блоков. Основные сущности}{37}{subsection.3.7}%
+\contentsline {section}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}{39}{table.6}%

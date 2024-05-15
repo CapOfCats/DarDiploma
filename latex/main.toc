@@ -55,7 +55,6 @@
 \contentsline {paragraph}{\numberline {3.3.6.1}Достоинства языка Python}{31}{paragraph.3.3.6.1}%
 \contentsline {paragraph}{\numberline {3.3.6.2}Недостатки языка Python}{32}{paragraph.3.3.6.2}%
 \contentsline {subsection}{\numberline {3.4}Проектирование пользовательского интерфейса}{32}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Диаграмма компонентов и схема обмена данными между файлами компонента}{33}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Диаграмма размещения}{35}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Содержание информационных блоков. Основные сущности}{37}{subsection.3.7}%
-\contentsline {section}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}{39}{table.6}%
+\contentsline {subsection}{\numberline {3.5}Диаграмма размещения}{33}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Описание архитектуры приложения}{35}{subsection.3.6}%
+\contentsline {section}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}{35}{subsection.3.6}%

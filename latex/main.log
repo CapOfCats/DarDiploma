@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  9 MAY 2024 00:35
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  15 MAY 2024 23:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -974,100 +974,96 @@ Underfull \hbox (badness 2393) in paragraph at lines 83--84
 ся за счёт методов
  []
 
-
-Underfull \hbox (badness 1975) in paragraph at lines 91--91
-[]\TU/TimesNewRoman(0)/b/n/14.4 3.5 Диаграмма компонентов и схема обмена данным
-и между
- []
-
 [33]
-File: images/comp.eps Graphic file (type eps)
-<images/comp.eps>
-File: images/data.eps Graphic file (type eps)
-<images/data.eps>
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
-[]\TU/TimesNewRoman(0)/m/n/14.4 В сценарии файла component.php посредством мето
-да
+File: images/CommonScheme4.jpg Graphic file (type bmp)
+<images/CommonScheme4.jpg>
+ [34]) (./СписокИсточников.tex [35]
+Underfull \hbox (badness 3536) in paragraph at lines 5--6
+[]\TU/TimesNewRoman(0)/m/n/14.4 Словарь данных и система управления базами данн
+ых / Data
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
-\TU/TimesNewRoman(0)/m/n/14.4 IncludeComponentTemplate класса CBitrixComponent 
-происходит вызов
+Underfull \hbox (badness 4120) in paragraph at lines 8--9
+[]\TU/TimesNewRoman(0)/m/n/14.4 Гринченко, Н.Н. Проектирование баз данных. СУБД
+ Microsoft
  []
 
 
-Underfull \hbox (badness 1005) in paragraph at lines 113--114
-\TU/TimesNewRoman(0)/m/n/14.4 из шаблонов, в который передается, возможно, изме
-ненный в сценарии
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+[]\TU/TimesNewRoman(0)/m/n/14.4 scDataCom [Электронный ресурс] From Keys to Cre
+dentials:
  []
 
 
-Underfull \hbox (badness 1292) in paragraph at lines 113--114
-\TU/TimesNewRoman(0)/m/n/14.4 component.php массив $arParams и, также, сформиро
-ванный в сценарии
+Underfull \hbox (badness 6825) in paragraph at lines 10--11
+\TU/TimesNewRoman(0)/m/n/14.4 The History of Access Control, 2024. – Текст : эл
+ектронный. URL:
  []
 
 
-Underfull \hbox (badness 5985) in paragraph at lines 113--114
-\TU/TimesNewRoman(0)/m/n/14.4 result_modifier.php, который подключается перед п
-одключением файла
- []
-
-[34]
-File: images/place.eps Graphic file (type eps)
-<images/place.eps>
- [35]
-Underfull \hbox (badness 10000) in paragraph at lines 145--145
-[]|\TU/TimesNewRoman(0)/m/n/14.4 Однонаправленный, по-
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+\TU/TimesNewRoman(0)/m/n/14.4 https://www.scdatacom.net/blog/from-keys-to-crede
+ntials-the-history-of-access-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--145
-\TU/TimesNewRoman(0)/m/n/14.4 лудуплексный: данные
+Underfull \hbox (badness 7308) in paragraph at lines 12--13
+[]\TU/TimesNewRoman(0)/m/n/14.4 Medium.com. / «SQLite – Как организовывать табл
+ицы» Ав-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--145
-[]|\TU/TimesNewRoman(0)/m/n/14.4 Бинарные и текстовые
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--145
-[]|\TU/TimesNewRoman(0)/m/n/14.4 Встроенный механизм
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--145
-\TU/TimesNewRoman(0)/m/n/14.4 идентификаторов собы-
- []
-
-
-Underfull \hbox (badness 2065) in paragraph at lines 145--145
-\TU/TimesNewRoman(0)/m/n/14.4 тификация события реа-
+Underfull \hbox (badness 4556) in paragraph at lines 14--15
+[]\TU/TimesNewRoman(0)/m/n/14.4 kisi [Электронный ресурс] Mobile access control
+ guide: 2024.
  []
 
 [36]
-Underfull \hbox (badness 2753) in paragraph at lines 173--173
-[]|\TU/TimesNewRoman(0)/m/n/14.4 Количество просмотров новости зареги-
+Underfull \hbox (badness 1661) in paragraph at lines 17--18
+[]\TU/TimesNewRoman(0)/m/n/14.4 Richmond Security / Locked. Secured. Protected/
+ Learning About
  []
 
-[37] [38]) (./СписокИсточников.tex [39] [40]) [41] (./main.aux)
+
+Underfull \hbox (badness 4569) in paragraph at lines 17--18
+\TU/TimesNewRoman(0)/m/n/14.4 Access Control Systems: Control Cards, 2024. – Те
+кст : электронный.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+[]\TU/TimesNewRoman(0)/m/n/14.4 hidglobal [Электронный ресурс] Chronicling the 
+Evolution of
+ []
+
+
+Underfull \hbox (badness 3078) in paragraph at lines 21--22
+\TU/TimesNewRoman(0)/m/n/14.4 Access Control Credentials: Jim Dearing, 2021. – 
+Текст : электронный.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+\TU/TimesNewRoman(0)/m/n/14.4 URL: https://blog.hidglobal.com/2021/03/chronicli
+ng-evolution-access-control-
+ []
+
+[37]) [38] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-04-11>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 719DEF167AEC97D4826CD9438FBA46E2;19804.
+(rerunfilecheck)             Checksum: 47F937546BE40452AF854B63377BA5EE;19044.
  ) 
 Here is how much of TeX's memory you used:
- 15775 strings out of 474705
- 311855 string characters out of 5750043
+ 15659 strings out of 474705
+ 310456 string characters out of 5750043
  1946406 words of memory out of 5000000
- 37760 multiletter control sequences out of 15000+600000
+ 37644 multiletter control sequences out of 15000+600000
  559574 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,14n,110p,856b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,11n,110p,856b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (41 pages).
+Output written on main.pdf (38 pages).

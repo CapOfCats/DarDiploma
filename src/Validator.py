@@ -45,104 +45,114 @@ class Validator:
             element = Validator.utils.execute_read_query(Validator.connection, command)
         else:
             element = Validator.utils.read_single_row(number, Validator.connection, tableName)
-        if (element is not None):
-            return True
+        if element is not None:
+            if (len(element)!=0):
+                return True
         else:
             return False
 
     @staticmethod
-    def overvalidation(table, tfS):
+    def overvalidation(table, combinedControls):
         flag = True
         FKs = [6, 2, 5, 9]
         match table:
             case "Passengers":
-                warnlist = ["Имени", "Фамилии", "Возраста", "Тарифа", "Пола", "Комнаты"]
-                for i in range(0, 6):
-                    if (tfS[i].get() == ""):
-                        messagebox.showinfo("ОШИБКА", f"Поле {warnlist[i]} не должно быть пустым")
+                warnlistT = ["Имени", "Фамилии", "Возраста",  "Комнаты"]
+                warnlistC = ["Тарифа", "Пола"]
+                for i in range(0, len(warnlistT)):
+                    if (combinedControls[0][i].get() == ""):
+                        messagebox.showinfo("ОШИБКА", f"Поле {warnlistT[i]} не должно быть пустым")
+                        flag = False
+                for i in range(0, len(warnlistC)):
+                    if (combinedControls[1][i].get() == ""):
+                        messagebox.showinfo("ОШИБКА", f"Поле {warnlistC[i]} не должно быть пустым")
                         flag = False
                 if(flag):
-                    if (Validator.FKValid(tfS[5].get(),"Doors")==False):
+                    #print(bool(Validator.FKValid(combinedControls[0][3].get(),"Doors")))
+                    #print(combinedControls[0][3].get())
+                    if (Validator.FKValid(combinedControls[0][3].get(),"Doors")==False):
                         messagebox.showerror("Ошибка", "Введите корректную ссылку на дверь в комнату")
                         flag=False
-                    elif (int(tfS[2].get()) < 18):
+                    elif (int(combinedControls[0][2].get()) < 18):
                         messagebox.showerror("Ошибка", "Введите корректный возраст(больше 17)")
                         flag = False
             case "Doors":
-                indexes = [0, 3, 4]
-                warnlist = ["Имени", "Статуса", "Скорости открытия"]
-                for i in range(0, 3):
-                    if (tfS[indexes[i]].get() == ""):
-                        messagebox.showinfo("ОШИБКА", f"Поле {warnlist[i]} не должно быть пустым")
+                #indexes = [3, 4]
+                warnlistT = ["Имени"]
+                warnlistC = ["Статуса", "Скорости открытия"]
+                for i in range(0, len(warnlistT)):
+                    if (combinedControls[0][i].get() == ""):
+                        messagebox.showinfo("ОШИБКА", f"Поле {warnlistT[i]} не должно быть пустым")
+                        flag = False
+                for i in range(0, len(warnlistC)):
+                    if (combinedControls[1][i].get() == ""):
+                        messagebox.showinfo("ОШИБКА", f"Поле {warnlistC[i]} не должно быть пустым")
                         flag = False
                 if(flag):
-                    if (Validator.FKValid(tfS[1].get(),"Rooms")==False):
+                    if (Validator.FKValid(combinedControls[0][1].get(),"Rooms")==False):
                         messagebox.showerror("Ошибка", "Введите корректную ссылку на комнату")
                         flag=False
-
-                # if (tfS[3].get()[0] != 0 & tfS[3].get()[0] != 1 & tfS[3].get()[0] != 2):
-                #  messagebox.showwarning("Ошибка", "Введите корректное значение времени ЧЧММСС")
-                #  return
-                # elif (tfS[3].get()[1] != 0 & tfS[3].get()[1] != 1 & tfS[3].get()[1] != 2 & tfS[3].get()[1] != 3):
-                #     messagebox.showwarning("Ошибка", "Введите корректное значение времени ЧЧММСС")
-                #     return
-                # elif (tfS[3].get()[2] != 0 & tfS[3].get()[2] != 1 & tfS[3].get()[2] != 2 & tfS[3].get()[2] != 3 &
-                #       tfS[3].get()[2] != 4 & tfS[3].get()[2] != 5):
-                #     messagebox.showwarning("Ошибка", "Введите корректное значение времени ЧЧММСС")
-                #     return
-                # elif (tfS[3].get()[4] != 0 & tfS[3].get()[4] != 1 & tfS[3].get()[4] != 2 & tfS[3].get()[4] != 3 &
-                #       tfS[3].get()[4] != 4 & tfS[3].get()[4] != 5):
-                #     messagebox.showwarning("Ошибка", "Введите корректное значение времени ЧЧММСС")
-                #     return
-                # else:
-                #     resultcolls += colnames[len(colnames) - 1]
-                #    tfValues += timeAppend(tfS[3].get())
             case "Rooms":
-                warnlist = ["Имени", "Количества дверей", "Типа"]
-                for i in range(0, 3):
-                    if (tfS[i].get() == ""):
-                        messagebox.showinfo("ОШИБКА", f"Поле {warnlist[i]} не должно быть пустым")
+                warnlistT = ["Имени"]
+                warnlistC = ["Количества дверей", "Типа"]
+                for i in range(0, len(warnlistT)):
+                    if (combinedControls[0][i].get() == ""):
+                        messagebox.showinfo("ОШИБКА", f"Поле {warnlistT[i]} не должно быть пустым")
                         flag = False
-                    if (flag & (tfS[3].get() != "")):
-                        if (len(tfS[3].get()) < 6):
-                            messagebox.showwarning("Ошибка", "Введите корректное значение времени ЧЧММСС")
-                            flag = False
-                        elif (int(tfS[3].get()[0] + tfS[3].get()[1]) > 23):
-                            messagebox.showwarning("Ошибка", "Некорректно введены часы")
-                            flag = False
-                        elif (int(tfS[3].get()[2] + tfS[3].get()[3]) > 59):
-                            messagebox.showwarning("Ошибка", "Некорректно введены минуты")
-                            flag = False
-                        elif (int(tfS[3].get()[4] + tfS[3].get()[5]) > 59):
-                            messagebox.showwarning("Ошибка", "Некорректно введены секунды")
-                            flag = False
+                for i in range(0, len(warnlistC)):
+                    if (combinedControls[1][i].get() == ""):
+                        messagebox.showinfo("ОШИБКА", f"Поле {warnlistC[i]} не должно быть пустым")
+                        flag = False
+                if (flag & (combinedControls[0][1].get() != "")):
+                    if (len(combinedControls[0][1].get()) < 6):
+                        messagebox.showwarning("Ошибка", "Введите корректное значение времени ЧЧММСС")
+                        flag = False
+                    elif (int(combinedControls[0][1].get()[0] + combinedControls[0][1].get()[1]) > 23):
+                        messagebox.showwarning("Ошибка", "Некорректно введены часы")
+                        flag = False
+                    elif (int(combinedControls[0][1].get()[2] + combinedControls[0][1].get()[3]) > 59):
+                        messagebox.showwarning("Ошибка", "Некорректно введены минуты")
+                        flag = False
+                    elif (int(combinedControls[0][1].get()[4] + combinedControls[0][1].get()[5]) > 59):
+                        messagebox.showwarning("Ошибка", "Некорректно введены секунды")
+                        flag = False
             case "Penalties":
                 indexes = [0, 1, 3, 4]
-                warnlist = ["Активности", "Возможности снятия", "Типа", "Принадлежности"]
-                for i in range(0, 4):
-                    if (tfS[indexes[i]].get() == ""):
-                        messagebox.showinfo("ОШИБКА", f"Поле {warnlist[i]} не должно быть пустым")
+                warnlistC = ["Активности", "Возможности снятия", "Типа"]
+                #warnlistT = ["Принадлежности"] #Вот тут внимание, не подряд индекс идёт
+                if (combinedControls[0][1].get() == ""):
+                    messagebox.showinfo("ОШИБКА", f"Поле Принадлежности не должно быть пустым")
+                    flag = False
+                for i in range(0, len(warnlistC)):
+                    if (combinedControls[1][i].get() == ""):
+                        messagebox.showinfo("ОШИБКА", f"Поле {warnlistC[i]} не должно быть пустым")
                         flag = False
                 if(flag):
-                    if (Validator.FKValid(tfS[4].get(), "Passengers") == False):
+                    if (Validator.FKValid(combinedControls[0][1].get(), "Passengers") == False):
                         messagebox.showerror("Ошибка", "Введите корректную ссылку на нарушителя")
                         flag = False
             case "Passengers_Underage":
-                warnlist = ["Имени", "Фамилии", "Возраста", "Тарифа", "Пола", "Комнаты", "Сопровождающего"]
-                if (tfS[8].get() == ""):
+                warnlistT = ["Имени", "Фамилии", "Возраста", "Комнаты", "Сопровождающего"]
+                warnlistC = ["Тарифа", "Пола"]
+                if (combinedControls[0][4].get() == ""):
                     messagebox.showinfo("ОШИБКА", "Поле Сопровождающего не должно быть пустым")
                     flag = False
-                elif((int(tfS[2].get())>17) | (tfS[2].get() =="")):
+                elif((int(combinedControls[0][2].get())>17) | (combinedControls[0][2].get() =="")):
                     messagebox.showerror("Ошибка", "Введите корректный возраст(от 0 до 17)")
                     flag = False
-                elif (Validator.FKValid(tfS[5].get(), "Doors") == False):
+                elif (Validator.FKValid(combinedControls[0][3].get(), "Doors") == False):
                     messagebox.showerror("Ошибка", "Введите корректную ссылку на дверь в комнату")
                     flag = False
-                elif (Validator.FKValid(tfS[8].get(), "Passengers") == False):
+                elif (Validator.FKValid(combinedControls[0][4].get(), "Passengers") == False):
                     messagebox.showerror("Ошибка", "Введите корректную ссылку на Сопровождающего")
                     flag = False
-                for i in range(0, 6):
-                    if (tfS[i].get() == ""):
-                        messagebox.showinfo("ОШИБКА", f"Поле {warnlist[i]} не должно быть пустым")
+                for i in range(0, len(warnlistT)):
+                    if (combinedControls[0][i].get() == ""):
+                        messagebox.showinfo("ОШИБКА", f"Поле {warnlistT[i]} не должно быть пустым")
+                        flag = False
+                for i in range(0, len(warnlistC)):
+                    if (combinedControls[1][i].get() == ""):
+                        messagebox.showinfo("ОШИБКА", f"Поле {warnlistC[i]} не должно быть пустым")
                         flag = False
         return flag
+        #Оптимизировать с elif

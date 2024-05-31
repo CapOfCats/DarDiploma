@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  15 MAY 2024 23:41
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  16 MAY 2024 15:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -889,13 +889,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 130--131
 бё-
  []
 
-
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 138--139
 []\TU/TimesNewRoman(0)/m/n/14.4 Слева направо: каждая дверь(ДВЕРЬ) может вести 
 в комна-
  []
 
-[19]
+
 Underfull \hbox (badness 10000) in paragraph at lines 142--143
 []\TU/TimesNewRoman(0)/m/n/14.4 Слева направо: каждый пассажир(ПАССАЖИР) или ре
 бё-
@@ -926,36 +926,36 @@ Underfull \hbox (badness 3724) in paragraph at lines 190--190
  []
 
 [21]
-File: images/ER.jpg Graphic file (type bmp)
-<images/ER.jpg>
+File: images/ER.eps Graphic file (type eps)
+<images/ER.eps>
  [22]
-Underfull \hbox (badness 1715) in paragraph at lines 227--229
+Underfull \hbox (badness 1715) in paragraph at lines 229--231
 []\TU/TimesNewRoman(0)/m/n/14.4 На основании анализа предметной области, разраб
 атываемая про-
  []
 
 [23]
-File: images/CommonScheme2.jpg Graphic file (type bmp)
-<images/CommonScheme2.jpg>
-
-Underfull \hbox (badness 10000) in paragraph at lines 261--261
+File: images/CommonScheme2.eps Graphic file (type eps)
+<images/CommonScheme2.eps>
+ [24]
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []\TU/TimesNewRoman(0)/b/n/14.4 2.5.11 Вариант использования «Перейти к
  []
 
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 265--265
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--267
 []\TU/TimesNewRoman(0)/b/n/14.4 2.5.12 Вариант использования «Найти элемент по
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 273--273
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 275--275
 []\TU/TimesNewRoman(0)/b/n/14.4 2.5.14 Вариант использования «Редактировать выб
 ранный
  []
 
-[25] [26]
-File: images/CommonScheme3.jpg Graphic file (type bmp)
-<images/CommonScheme3.jpg>
+[26]
+File: images/CommonScheme3.eps Graphic file (type eps)
+<images/CommonScheme3.eps>
  [27]) (./ТехПроект.tex [28] [29]
 Underfull \hbox (badness 3108) in paragraph at lines 22--23
 []\TU/TimesNewRoman(0)/m/n/14.4 Технологии и инструменты: В разработке использо
@@ -977,7 +977,19 @@ Underfull \hbox (badness 2393) in paragraph at lines 83--84
 [33]
 File: images/CommonScheme4.jpg Graphic file (type bmp)
 <images/CommonScheme4.jpg>
- [34]) (./СписокИсточников.tex [35]
+ [34]
+Underfull \hbox (badness 6927) in paragraph at lines 133--134
+[]\TU/TimesNewRoman(0)/m/n/14.4 Для создания frontend используются модули tkint
+er и treeView.
+ []
+
+[35]
+Underfull \hbox (badness 3428) in paragraph at lines 139--140
+[]\TU/TimesNewRoman(0)/m/n/14.4 Utils.py - служебный класс, внутри которого реа
+лизованы функ-
+ []
+
+) (./СписокИсточников.tex [36]
 Underfull \hbox (badness 3536) in paragraph at lines 5--6
 []\TU/TimesNewRoman(0)/m/n/14.4 Словарь данных и система управления базами данн
 ых / Data
@@ -1019,7 +1031,7 @@ Underfull \hbox (badness 4556) in paragraph at lines 14--15
  guide: 2024.
  []
 
-[36]
+[37]
 Underfull \hbox (badness 1661) in paragraph at lines 17--18
 []\TU/TimesNewRoman(0)/m/n/14.4 Richmond Security / Locked. Secured. Protected/
  Learning About
@@ -1049,7 +1061,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--22
 ng-evolution-access-control-
  []
 
-[37]) [38] (./main.aux)
+[38]) [39] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-04-11>
@@ -1058,12 +1070,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 47F937546BE40452AF854B63377BA5EE;19044.
  ) 
 Here is how much of TeX's memory you used:
- 15659 strings out of 474705
- 310456 string characters out of 5750043
- 1946406 words of memory out of 5000000
- 37644 multiletter control sequences out of 15000+600000
+ 15732 strings out of 474705
+ 312266 string characters out of 5750043
+ 1948406 words of memory out of 5000000
+ 37716 multiletter control sequences out of 15000+600000
  559574 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,11n,110p,856b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (38 pages).
+Output written on main.pdf (39 pages).

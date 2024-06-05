@@ -14,21 +14,37 @@ isES = False
 ck = 0
 window = customtkinter.CTk()
 window.title('Круиз DB')
-window.geometry('700x300')
+window.geometry('600x150')
 frame = customtkinter.CTkFrame(
     master=window,
     width=500,
     height=200,
     border_width=2,
-    border_color=("aquamarine"),
-    fg_color="darkgrey"
+    border_color=("cyan"),
+    fg_color="black"
 )
-frame.pack(expand=True)
+frame.pack(fill = Y, expand = 1)
 validator = Validator.Validator()
 utils = Utils.Utils()
 window.resizable(False, False)
 connection = utils.create_connection("D:\Drova&Utilyty\MSVS\Diploma1.db")
 
+def styles_init(st):
+    if ( not ("Custom.Treeheading.border" in st.element_names())):
+        st.element_create("Custom.Treeheading.border", "from", "clam")
+    st.layout("Custom.Treeview.Heading", [
+        ("Custom.Treeheading.cell", {'sticky': 'nswe'}),
+        ("Custom.Treeheading.border", {'sticky': 'nswe', 'children': [
+            ("Custom.Treeheading.padding", {'sticky': 'nswe', 'children': [
+                ("Custom.Treeheading.image", {'side': 'right', 'sticky': ''}),
+                ("Custom.Treeheading.text", {'sticky': 'we'})
+            ]})
+        ]}),
+    ])
+    st.configure("Custom.Treeview.Heading",
+                    background="black", foreground="cyan", relief="flat")
+    st.map("Custom.Treeview.Heading",
+              relief=[('active', 'groove'), ('pressed', 'sunken')])
 
 def on_closing():
     if messagebox.askokcancel("Quit", "Do you want to quit?"):
@@ -273,7 +289,23 @@ def TreeCreate(tree, table, tableWin):
                     SELECT * FROM {table}
                     """
     cortage = utils.execute_read_query(connection, command)
-    tree = ttk.Treeview(tableWin, columns=colnames, show="headings")
+
+    treestyle = ttk.Style()
+    treestyle.theme_use('clam')
+    treestyle.configure(
+         "Treeview",
+         background="black",
+         foreground="cyan",
+         fieldbackground="black",
+         borderwidth=2,
+         bordercolor = "cyan"
+    )
+    treestyle.map('Treeview', background=[('selected', "green")], foreground=[('selected', "cyan")])
+    tableWin.bind("<<TreeviewSelect>>", lambda event: tableWin.focus_set())
+
+    headerstyle = ttk.Style()
+    styles_init(headerstyle)
+    tree = ttk.Treeview(tableWin, columns=colnames, show="headings", style="Custom.Treeview")
     tree.pack(fill=BOTH, expand=1)
     for i in range(0, len(colnames)):
         tree.heading(colnames[i], text=colnamesTranslated[i])
@@ -610,7 +642,7 @@ def search_element(combinedControls, table, tf, currentLb):
 
 
 def clear(keyLabel, combinedControls):
-    keyLabel.config(text="?????")
+    keyLabel.configure(text="??")
     for i in range(0, len(combinedControls[0])):
         combinedControls[0][i].delete(0, END)
     for i in range(0, len(combinedControls[1])):
@@ -648,8 +680,7 @@ def fields_creation(which, frameEx):
         case "Пассажиры":
             lbnames = ["Имя", "Фамилия", "Возраст", "Тариф", "Пол", "Комната", "Судимости", "Мед.Ограничения",
                        "Образование", "Квалификация"]
-            lenlist = [15, 15, 6, 12, 3, 11, 11, 11, 11,
-                       3]  # Тариф 3, пол 4,судимости 6, мед 7, образование 8,  квалификация 9
+            lenlist = [13, 13, 3, 9, 1, 3, 11, 9, 7, 3]  # Тариф 3, пол 4,судимости 6, мед 7, образование 8,  квалификация 9
             combonumbers = [3, 4, 6, 7, 8, 9]
             combodict = {
                 3: ["Эконом", "Средний", "Бизнес", "Персонал"],
@@ -701,27 +732,53 @@ def fields_creation(which, frameEx):
                 6: ["Убийство", "Домогательства", "Кража", "Хулиганство", "Мошенничество"],
                 7: ["Сердце", "Печень", "Легкие", "Моторные", "Желудок"],
             }
-            lenlist = [15, 15, 8, 16, 3, 11, 13, 13, 13]
+            lenlist = [16, 16, 9, 17, 4, 12, 14, 14, 14]
+    fields_multiplier = 1
+    if (which == "Двери"):
+        fields_multiplier = 4
+    if (which == "Штрафы"):
+        fields_multiplier = 3
     for i in range(0, len(lbnames)):
-        lblist.append(Label(
-            frameEx,
+        lblist.append(customtkinter.CTkLabel(
+            master=frameEx,
             text=lbnames[i],
+            width=30,
+            height=10,
+            text_color="Cyan",
+            font=customtkinter.CTkFont(family="Courier new", size=15, weight="bold")
         ))
-        lblist[i].grid(row=2, column=i + 1, pady=15, padx=7)
+        lblist[i].grid(row=2, column=i + fields_multiplier, pady=12, padx=5)
         if i in combonumbers:
-            combolist.append(ttk.Combobox(
-                frameEx,
-                textvariable=StringVar(value=""),
+            combolist.append(customtkinter.CTkComboBox(
+                master=frameEx,
+                variable=StringVar(value=""),
                 values=combodict[i],
-                width=lenlist[i]
-            ))
-            combolist[-1].grid(row=3, column=i + 1, pady=5, padx=5)
-        else:
-            tflist.append(Entry(
-                frameEx,
                 width=lenlist[i],
+                corner_radius=7,
+                border_color="cyan",
+                border_width=1,
+                fg_color="black",
+                button_hover_color="green",
+                dropdown_fg_color="black",
+                dropdown_hover_color="green",
+                dropdown_text_color="cyan",
+                text_color="cyan",
+                font=customtkinter.CTkFont(family="Consolas", size=15),
+                dropdown_font=customtkinter.CTkFont(family="Consolas", size=15)
             ))
-            tflist[-1].grid(row=3, column=i + 1, pady=5, padx=5)
+            combolist[-1].grid(row=3, column=i + fields_multiplier, pady=5, padx=5, ipadx=lenlist[i] * 3)
+        else:
+            tflist.append(customtkinter.CTkEntry(
+                master=frameEx,
+                width=lenlist[i],
+                corner_radius=7,
+                fg_color="black",
+                border_color="cyan",
+                border_width=1,
+                text_color="cyan",
+                font=customtkinter.CTkFont(family="Consolas", size=15)
+            ))
+            tflist[-1].grid(row=3, column=i + fields_multiplier, pady=5, padx=5,ipadx = lenlist[i]*3)
 
     validatedTFs = validate_whole(tflist, which)
     return (validatedTFs, combolist)
@@ -729,150 +786,283 @@ def fields_creation(which, frameEx):
 
 def show_table(which):
     window.ck = 0
-    tableWin = Toplevel()
+    tableWin = customtkinter.CTkToplevel()
     tableWin.title(which)
     tableWin.geometry('1200x600')
 
-    frameWin = Frame(
-        tableWin,
-        padx=10,
-        pady=10
+    frameWin = customtkinter.CTkFrame(
+        master=tableWin,
+        width=600,
+        height=200,
+        border_width=1,
+        border_color=("cyan"),
+        fg_color="black"
     )
-    frameWin.pack(anchor=N, expand=True)
+    frameWin.pack(anchor=N, expand=True, fill = BOTH)
     tableWin.resizable(False, False)
     tableWin.grab_set()
     combinedControls = (fields_creation(which, frameWin))
     tree = None
     tree = TreeCreate(tree, self_definition(which), tableWin)
-    current_lb = Label(
-        frameWin,
+    current_lb = customtkinter.CTkLabel(
+        master=frameWin,
         width=20,
-        height=2,
-        text="???????",
+        height=5,
+        text="??",
+        text_color="Cyan",
+        font=customtkinter.CTkFont(family="Consolas", size=18)
     )
 
-    prev_btn = Button(
+    prev_btn = customtkinter.CTkButton(
         frameWin,
         width=2,
         height=2,
         text="←",
+        corner_radius=25,
+        border_width=1,
+        border_color="cyan",
+        hover_color="green",
+        bg_color="black",
+        text_color="cyan",
+        fg_color="black",
+        font=customtkinter.CTkFont(family="Courier new", size=15),
         command=lambda: configure_list(False, self_definition(which), combinedControls, current_lb)
     )
 
-    next_btn = Button(
+    next_btn = customtkinter.CTkButton(
         frameWin,
         width=2,
         height=2,
         text="→",
+        corner_radius=25,
+        border_width=1,
+        border_color="cyan",
+        hover_color="green",
+        bg_color="black",
+        text_color="cyan",
+        fg_color="black",
+        font=customtkinter.CTkFont(family="Courier new", size=15),
         command=lambda: configure_list(True, self_definition(which), combinedControls, current_lb)
     )
 
-    delete_btn = Button(
+    delete_btn = customtkinter.CTkButton(
         frameWin,
         width=15,
         height=3,
         text="УДАЛИТЬ",
-        command=lambda: delete_element(self_definition(which), window.ck, current_lb, combinedControls, tree, tableWin)
+        corner_radius=25,
+        border_width=1,
+        border_color="cyan",
+        hover_color="green",
+        bg_color="black",
+        text_color="cyan",
+        fg_color="black",
+        font=customtkinter.CTkFont(family="Courier new", size=15),
+        command=lambda: delete_element(self_definition(which), window.ck, current_lb, combinedControls,tree,tableWin)
     )
 
-    add_btn = Button(
+    add_btn =  customtkinter.CTkButton(
         frameWin,
         width=15,
         height=3,
         text="ДОБАВИТЬ",
-        command=lambda: add_element(self_definition(which), combinedControls, current_lb, tree, tableWin)
+        corner_radius=25,
+        border_width=1,
+        border_color="cyan",
+        hover_color="green",
+        bg_color="black",
+        text_color="cyan",
+        fg_color="black",
+        font=customtkinter.CTkFont(family="Courier new", size=15),
+        command=lambda: add_element(self_definition(which), combinedControls,current_lb,tree,tableWin)
     )
 
-    update_btn = Button(
+    update_btn =  customtkinter.CTkButton(
         frameWin,
         width=15,
         height=3,
         text="ИЗМЕНИТЬ",
-        command=lambda: update_element(self_definition(which), combinedControls, window.ck, tree, tableWin)
+        corner_radius=25,
+        border_width=1,
+        border_color="cyan",
+        hover_color="green",
+        bg_color="black",
+        text_color="cyan",
+        fg_color="black",
+        font=customtkinter.CTkFont(family="Courier new", size=15),
+        command = lambda: update_element(self_definition(which), combinedControls, window.ck,tree,tableWin)
     )
-    searchLb = Label(
+    searchLb =customtkinter.CTkLabel(
         frameWin,
         width=20,
         height=2,
         text="Введите номер для поиска",
+        text_color="Cyan",
+        font=customtkinter.CTkFont(family="Consolas", size=14)
     )
 
-    searchTf = Entry(
+    searchTf = customtkinter.CTkEntry(
         frameWin,
         width=10,
+        corner_radius=7,
+        fg_color="black",
+        border_color="cyan",
+        border_width=1,
+        text_color="cyan",
+        font=customtkinter.CTkFont(family="Consolas", size=15)
     )
 
-    search_btn = Button(
+    search_btn = customtkinter.CTkButton(
         frameWin,
         width=15,
         height=3,
         text="НАЙТИ",
-        command=lambda: search_element(combinedControls, self_definition(which), searchTf, current_lb)
+        corner_radius=25,
+        border_width=1,
+        border_color="cyan",
+        hover_color="green",
+        bg_color="black",
+        text_color="cyan",
+        fg_color="black",
+        font=customtkinter.CTkFont(family="Courier new", size=15),
+        command = lambda: search_element(combinedControls,self_definition(which),searchTf, current_lb)
     )
     grid_coef = round((len(combinedControls[0]) + len(combinedControls[1])) / 2)
-    prev_btn.grid(row=1, column=grid_coef, pady=10)
-    next_btn.grid(row=1, column=grid_coef + 2, pady=10)
-    current_lb.grid(row=1, column=grid_coef + 1, pady=10)
-    delete_btn.grid(row=4, column=grid_coef - 1, pady=10, padx=10)
-    add_btn.grid(row=4, column=grid_coef, pady=10)
-    update_btn.grid(row=4, column=grid_coef + 1, pady=10)
-    search_btn.grid(row=4, column=grid_coef + 2, pady=10)
-    searchLb.grid(row=5, column=grid_coef, pady=5, padx=5)
-    searchTf.grid(row=6, column=grid_coef, pady=5, padx=5)
+    row1_empty_lb = customtkinter.CTkLabel(
+        master=frameWin,
+        width=1,
+        height=10,
+        text="",
+        text_color="Cyan",
+        font=customtkinter.CTkFont(family="Consolas", size=18)
+    )
+    column2_empty_lb = customtkinter.CTkLabel(
+        master=frameWin,
+        width=150,
+        height=5,
+        text="",
+        text_color="Cyan",
+        font=customtkinter.CTkFont(family="Consolas", size=18)
+    )
+    fields_multiplier = 0
+    if (which == "Двери" or which == "Штрафы"):
+        fields_multiplier = 3
+        column2_empty_lb.grid(row=2, column=2, pady=10, padx=5)
+    row1_empty_lb.grid(row=1, column=1, pady=10, padx=5)
+    # prev_btn.grid(row=1, column=grid_coef, pady=10)
+    # next_btn.grid(row=1, column=grid_coef + 2, pady=10)
+    # current_lb.grid(row=1, column=grid_coef + 1, ipady=5)
+    prev_btn.place(relx=0.3, rely=0.05)
+    next_btn.place(relx=0.7, rely=0.05)
+    current_lb.place(relx=0.5, rely=0.05)
+    delete_btn.grid(row=4, column=grid_coef - 1 + fields_multiplier, pady=10, padx=10)
+    add_btn.grid(row=4, column=grid_coef + fields_multiplier, pady=10)
+    update_btn.grid(row=4, column=grid_coef + 1 + fields_multiplier, pady=10)
+    search_btn.grid(row=4, column=grid_coef + 2 + fields_multiplier, pady=10)
+    searchLb.grid(row=5, column=grid_coef + fields_multiplier, pady=5, padx=5)
+    searchTf.grid(row=6, column=grid_coef + fields_multiplier, pady=5, padx=5, ipadx=15)
 
 
-ask_lb = Label(
-    frame,
+ask_lb = customtkinter.CTkLabel(
+    master=frame,
     text="Выберите таблицу:",
+    width= 30,
+    height = 10,
+    text_color= "Cyan",
+    font= customtkinter.CTkFont(family="Courier new", size=18)
 )
 
-psr_btn = Button(
-    frame,
+psr_btn = customtkinter.CTkButton(
+    master=frame,
     width=18,
-    height=2,
+    height=10,
     text="Пассажиры",
+    corner_radius=25,
+    border_width=1,
+    border_color="cyan",
+    hover_color="green",
+    bg_color= "black",
+    text_color="cyan",
+    fg_color= "black",
+    font= customtkinter.CTkFont(family="Courier new", size=15),
     command=lambda: show_table("Пассажиры")
 )
 
-psr_ua_btn = Button(
-    frame,
+psr_ua_btn = customtkinter.CTkButton(
+    master=frame,
+    width=18,
+    height=10,
     text="Дети",
-    width=8,
-    height=2,
+    corner_radius=25,
+    border_width=1,
+    border_color="cyan",
+    hover_color="green",
+    bg_color= "black",
+    text_color="cyan",
+    fg_color= "black",
+    font= customtkinter.CTkFont(family="Courier new", size=15),
     command=lambda: show_table("Дети")
 )
 
-drs_btn = Button(
-    frame,
-    width=10,
-    height=2,
+drs_btn = customtkinter.CTkButton(
+    master=frame,
+    width=18,
+    height=10,
     text="Двери",
+    corner_radius=25,
+    border_width=1,
+    border_color="cyan",
+    hover_color="green",
+    bg_color= "black",
+    text_color="cyan",
+    fg_color= "black",
+    font= customtkinter.CTkFont(family="Courier new", size=15),
     command=lambda: show_table("Двери")
 )
 
-rms_btn = Button(
-    frame,
-    width=14,
-    height=2,
+rms_btn = customtkinter.CTkButton(
+    master=frame,
+    width=18,
+    height=10,
     text="Комнаты",
+    corner_radius=25,
+    border_width=1,
+    border_color="cyan",
+    hover_color="green",
+    bg_color= "black",
+    text_color="cyan",
+    fg_color= "black",
+    font= customtkinter.CTkFont(family="Courier new", size=15),
     command=lambda: show_table("Комнаты")
 )
 
-pns_btn = Button(
-    frame,
-    width=12,
-    height=2,
+pns_btn = customtkinter.CTkButton(
+    master=frame,
+    width=18,
+    height=10,
     text="Штрафы",
+    corner_radius=25,
+    border_width=1,
+    border_color="cyan",
+    hover_color="green",
+    bg_color= "black",
+    text_color="cyan",
+    fg_color= "black",
+    font= customtkinter.CTkFont(family="Courier new", size=15),
     command=lambda: show_table("Штрафы")
 )
-timer_lb = Label(
-    frame,
+timer_lb = customtkinter.CTkLabel(
+    master=frame,
     text="Системное время:",
+    width= 30,
+    height = 10,
+    text_color= "Cyan",
+    font= customtkinter.CTkFont(family="Courier new", size=14, weight="bold")
 )
 
 ask_lb.pack(side=TOP, pady=15)
 timer_lb.pack(side=BOTTOM, pady=2)
-psr_btn.pack(side=LEFT, padx=10, pady=2)
+psr_btn.pack(side=LEFT, padx=10, pady=2, expand = 1)
 psr_ua_btn.pack(side=LEFT, padx=10, pady=2)
 drs_btn.pack(side=LEFT, padx=10, pady=2)
 rms_btn.pack(side=LEFT, padx=10, pady=2)

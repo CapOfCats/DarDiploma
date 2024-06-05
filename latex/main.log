@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  16 MAY 2024 15:04
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  5 JUN 2024 04:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -705,19 +705,79 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 33.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 33.
- [1] (./main.toc [2] [3])
-\tf@toc=\write4
-\openout4 = `main.toc'.
+
+Overfull \hbox (4.70218pt too wide) in paragraph at lines 33--33
+[] 
+ []
+
+
+Overfull \hbox (4.70218pt too wide) in paragraph at lines 33--33
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--33
+
+ []
+
+[1] (./ЛистЗадания.tex [2] (./main.lop)
+\tf@lop=\write4
+\openout4 = `main.lop'.
+
+
+Overfull \hbox (4.70218pt too wide) in paragraph at lines 97--108
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--108
+
+ []
+
+) (./Реферат.tex [3]
+\c=\count313
+\last=\count314
+\pnul=\count315
+\c=\count316
+\last=\count317
+\pnul=\count318
+\c=\count319
+\last=\count320
+\pnul=\count321
+\c=\count322
+\last=\count323
+\pnul=\count324
+ [4]
+\c=\count325
+\last=\count326
+\pnul=\count327
+\c=\count328
+\last=\count329
+\pnul=\count330
+\c=\count331
+\last=\count332
+\pnul=\count333
+\c=\count334
+\last=\count335
+\pnul=\count336
+) [5] (./main.toc [6] [7])
+\tf@toc=\write5
+\openout5 = `main.toc'.
 
  (./main.lpc)
-\tf@lpc=\write5
-\openout5 = `main.lpc'.
+\tf@lpc=\write6
+\openout6 = `main.lpc'.
 
 
-(./Обозначения.tex [4]) (./Анализ.tex [5] [6] [7] [8] [9]
+(./Обозначения.tex [8]) (./Введение.tex [9] [10] [11]
+\c=\count337
+\last=\count338
+\pnul=\count339
+) (./Анализ.tex [12]
+[13] [14] [15] [16]
 File: images/CommonScheme1.jpg Graphic file (type bmp)
 <images/CommonScheme1.jpg>
- [10] [11] [12]
+ [17] [18] [19]
 Underfull \hbox (badness 1552) in paragraph at lines 97--98
 \TU/TimesNewRoman(0)/m/n/14.4 ном режиме и в случае ЧС(ДОСТУПЫ-ЧС). Доступ кажд
 ого пассажи-
@@ -883,13 +943,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--124
 \TU/TimesNewRoman(0)/m/n/14.4 СКУД начинает работать в
  []
 
-[13] [14]) (./ТехЗадание.tex [15] [16] [17] [18]
+[20] [21]) (./ТехЗадание.tex [22] [23] [24] [25]
 Underfull \hbox (badness 10000) in paragraph at lines 130--131
 []\TU/TimesNewRoman(0)/m/n/14.4 Слева направо: Каждый пассажир(ПАССАЖИР) или ре
 бё-
  []
 
-[19]
+[26]
 Underfull \hbox (badness 10000) in paragraph at lines 138--139
 []\TU/TimesNewRoman(0)/m/n/14.4 Слева направо: каждая дверь(ДВЕРЬ) может вести 
 в комна-
@@ -919,25 +979,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--165
 бё-
  []
 
-[20]
+[27]
 Underfull \hbox (badness 3724) in paragraph at lines 190--190
 []\TU/TimesNewRoman(0)/b/n/14.4 2.5.5 Извлечение вторичных ключей из простых об
 ъектов с
  []
 
-[21]
+[28]
 File: images/ER.eps Graphic file (type eps)
 <images/ER.eps>
- [22]
+ [29]
 Underfull \hbox (badness 1715) in paragraph at lines 229--231
 []\TU/TimesNewRoman(0)/m/n/14.4 На основании анализа предметной области, разраб
 атываемая про-
  []
 
-[23]
+[30]
 File: images/CommonScheme2.eps Graphic file (type eps)
 <images/CommonScheme2.eps>
- [24]
+ [31]
 Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []\TU/TimesNewRoman(0)/b/n/14.4 2.5.11 Вариант использования «Перейти к
  []
@@ -947,16 +1007,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 267--267
 []\TU/TimesNewRoman(0)/b/n/14.4 2.5.12 Вариант использования «Найти элемент по
  []
 
-[25]
+[32]
 Underfull \hbox (badness 10000) in paragraph at lines 275--275
 []\TU/TimesNewRoman(0)/b/n/14.4 2.5.14 Вариант использования «Редактировать выб
 ранный
  []
 
-[26]
+[33]
 File: images/CommonScheme3.eps Graphic file (type eps)
 <images/CommonScheme3.eps>
- [27]) (./ТехПроект.tex [28] [29]
+ [34]) (./ТехПроект.tex [35] [36]
 Underfull \hbox (badness 3108) in paragraph at lines 22--23
 []\TU/TimesNewRoman(0)/m/n/14.4 Технологии и инструменты: В разработке использо
 вались tkinter,
@@ -968,28 +1028,175 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--26
 
  []
 
-[30] [31] [32]
+[37] [38] [39]
 Underfull \hbox (badness 2393) in paragraph at lines 83--84
 \TU/TimesNewRoman(0)/m/n/14.4 этого графического элемента (дерева) поддерживает
 ся за счёт методов
  []
 
-[33]
+[40]
 File: images/CommonScheme4.jpg Graphic file (type bmp)
 <images/CommonScheme4.jpg>
- [34]
+ [41]
 Underfull \hbox (badness 6927) in paragraph at lines 133--134
 []\TU/TimesNewRoman(0)/m/n/14.4 Для создания frontend используются модули tkint
 er и treeView.
  []
 
-[35]
+[42]
 Underfull \hbox (badness 3428) in paragraph at lines 139--140
 []\TU/TimesNewRoman(0)/m/n/14.4 Utils.py - служебный класс, внутри которого реа
 лизованы функ-
  []
 
-) (./СписокИсточников.tex [36]
+) (./РабочийПроект.tex [43]
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]|\TU/TimesNewRoman(0)/m/n/14.4 Главный
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]|\TU/TimesNewRoman(0)/m/n/14.4 CMain – главный
+ []
+
+
+Underfull \hbox (badness 1783) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 класс страницы web-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 приложения. После
+ []
+
+
+Underfull \hbox (badness 2884) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 одного из этапов по
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 загрузке страницы
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 в сценарии стано-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 вится доступным
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 инициализированный
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]|\TU/TimesNewRoman(0)/m/n/14.4 void ShowTitle(string
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 bool strip_tags =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 true) Выводит за-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 головок страницы
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 void SetTitle(string
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 title) Устанавливает
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]\TU/TimesNewRoman(0)/m/n/14.4 void ShowCSS(bool
+ []
+
+
+Underfull \hbox (badness 5970) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 external = true, bool
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 XhtmlStyle = true)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 Выводит таблицу
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]|\TU/TimesNewRoman(0)/m/n/14.4 Главный
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]|\TU/TimesNewRoman(0)/m/n/14.4 CFile – Класс для
+ []
+
+
+Underfull \hbox (badness 2302) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 работы с файлами и
+ []
+
+
+Underfull \hbox (badness 7888) in paragraph at lines 24--24
+\TU/TimesNewRoman(0)/m/n/14.4 щает массив, содер-
+ []
+
+
+(d:/TeX/texstudio/texlive/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.s
+ty
+File: lstlang1.sty 2024/03/11 1.10a listings language file
+)
+LaTeX Font Info:    Font shape `TU/Verdana(0)/m/n' will be
+(Font)              scaled to size 10.07994pt on input line 32.
+ [44] [45]
+File: images/main1.eps Graphic file (type eps)
+<images/main1.eps>
+File: images/main2.eps Graphic file (type eps)
+<images/main2.eps>
+File: images/main3.eps Graphic file (type eps)
+<images/main3.eps>
+File: images/menu.eps Graphic file (type eps)
+<images/menu.eps>
+
+
+! LaTeX Error: File `enter' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.78 ...\includegraphics[width=1\linewidth]{enter}
+                                                  }
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[46]) (./Заключение.tex [47]) (./СписокИсточников.tex [48]
 Underfull \hbox (badness 3536) in paragraph at lines 5--6
 []\TU/TimesNewRoman(0)/m/n/14.4 Словарь данных и система управления базами данн
 ых / Data
@@ -1031,7 +1238,7 @@ Underfull \hbox (badness 4556) in paragraph at lines 14--15
  guide: 2024.
  []
 
-[37]
+[49]
 Underfull \hbox (badness 1661) in paragraph at lines 17--18
 []\TU/TimesNewRoman(0)/m/n/14.4 Richmond Security / Locked. Secured. Protected/
  Learning About
@@ -1061,21 +1268,72 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--22
 ng-evolution-access-control-
  []
 
-[38]) [39] (./main.aux)
+[50]) (./Плакаты.tex [51] [52]) (./Код.tex
+(d:/TeX/texstudio/texlive/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.s
+ty
+File: lstlang1.sty 2024/03/11 1.10a listings language file
+)
+(d:/TeX/texstudio/texlive/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.s
+ty
+File: lstlang2.sty 2024/03/11 1.10a listings language file
+)
+(d:/TeX/texstudio/texlive/texlive/2024/texmf-dist/tex/latex/listings/lstlang3.s
+ty
+File: lstlang3.sty 2024/03/11 1.10a listings language file
+)
+(d:/TeX/texstudio/texlive/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.s
+ty
+File: lstlang1.sty 2024/03/11 1.10a listings language file
+)
+(d:/TeX/texstudio/texlive/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.s
+ty
+File: lstlang2.sty 2024/03/11 1.10a listings language file
+)
+(d:/TeX/texstudio/texlive/texlive/2024/texmf-dist/tex/latex/listings/lstlang3.s
+ty
+File: lstlang3.sty 2024/03/11 1.10a listings language file
+)
+(d:/TeX/texstudio/texlive/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.s
+ty
+File: lstlang1.sty 2024/03/11 1.10a listings language file
+)
+(d:/TeX/texstudio/texlive/texlive/2024/texmf-dist/tex/latex/listings/lstlang2.s
+ty
+File: lstlang2.sty 2024/03/11 1.10a listings language file
+)
+(d:/TeX/texstudio/texlive/texlive/2024/texmf-dist/tex/latex/listings/lstlang3.s
+ty
+File: lstlang3.sty 2024/03/11 1.10a listings language file
+)
+(d:/TeX/texstudio/texlive/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.st
+y
+File: lstmisc.sty 2024/03/11 1.10a (Carsten Heinz)
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 4.
+ (./main.tex [53
+
+
+]) (./ТехПроект.tex [54] [55] [56] [57]) [58]) [59]
+(./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-04-11>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 47F937546BE40452AF854B63377BA5EE;19044.
+(rerunfilecheck)             Checksum: D1637462B1F644BAA11FFD54FB82EC78;21967.
  ) 
 Here is how much of TeX's memory you used:
- 15732 strings out of 474705
- 312266 string characters out of 5750043
- 1948406 words of memory out of 5000000
- 37716 multiletter control sequences out of 15000+600000
- 559574 words of font info for 69 fonts, out of 8000000 for 9000
+ 19634 strings out of 474705
+ 366389 string characters out of 5750043
+ 2272406 words of memory out of 5000000
+ 41563 multiletter control sequences out of 15000+600000
+ 559598 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,11n,110p,856b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,11n,110p,953b,2956s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (39 pages).
+Output written on main.pdf (59 pages).

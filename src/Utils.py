@@ -3,6 +3,8 @@ import sqlite3
 from sqlite3 import Error
 import time
 
+connstring = None
+
 class Utils:
     @staticmethod
     def create_connection(path):
@@ -10,6 +12,7 @@ class Utils:
         try:
             connection = sqlite3.connect(path)
             print("Connection to SQLite DB successful")
+            connstring = connection
         except Error as e:
             print(f"The error '{e}' occurred")
         return connection
@@ -47,6 +50,7 @@ class Utils:
             connection.commit()
             return True
         except Error as e:
+            print(f"The error '{e}' occurred")
             return False
 
     @staticmethod
@@ -71,4 +75,15 @@ class Utils:
     async def asyncMLoop(wndw):
         wndw.update()
         await asyncio.sleep(0.01)
-
+    @staticmethod
+    async def asyncStart(window, timer_lb, connection):
+        while True:
+            windowtask = asyncio.create_task(Utils.asyncMLoop(window))
+            timetask = asyncio.create_task(Utils.timetick(timer_lb))
+            await windowtask
+            await timetask
+            command = f"""
+                                        UPDATE Doors SET
+                                        System_time = (datetime('now','localtime')) ;
+                                    """
+            Utils.execute_silent(connection, command)

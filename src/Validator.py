@@ -50,6 +50,27 @@ class Validator:
                 return True
         else:
             return False
+    @staticmethod
+    def validate_whole(tfS, which, window):
+        checkDig = (window.register(Validator.validation_digits), '%P')
+        checkText = (window.register(Validator.validation_text), "%P")
+        checkTime = (window.register(Validator.validation_time), "%P")
+        vcomms = []
+        match which:
+            case "Пассажиры":
+                vcomms = [checkText, checkText, checkDig, checkDig]  # Имя, Фамилия, возраст, комната
+            case "Двери":
+                vcomms = [checkText, checkDig, checkDig, checkDig]  # Наименование, принадлежность, номер, вместимость
+            case "Комнаты":
+                vcomms = [checkText, checkTime]  # Наименование, огр. время
+            case "Штрафы":
+                vcomms = [checkDig, checkDig]  # Сумма выкупа, принадлежность
+            case "Дети":
+                vcomms = [checkText, checkText, checkDig, checkDig,
+                          checkDig]  # имя, фамилия, возраст, комната, сопровождающий
+        for i in range(0, len(tfS)):
+            tfS[i].configure(validate="key", validatecommand=vcomms[i])
+        return tfS
 
     @staticmethod
     def overvalidation(table, combinedControls):

@@ -1,26 +1,119 @@
 \section{Рабочий проект}
-\subsection{Классы, используемые при разработке сайта}
+\subsection{Описание классов системы}
 
-Можно выделить следующий список классов и их методов, использованных при разработке web-приложения (таблица \ref{class:table}). Пример таблицы с уменьшенным межстрочным интервалом.
+\begin{itemize}
+	\item \textquotedbl main \textquotedbl является фундаментальным классом для главного меню. Помимо основных свойств, таких как connection, экземпляров utils, controller и tables, содержит в себе стартовые виджеты.
+	\item \textquotedbl Controller \textquotedbl -- расширяет \textquotedbl main \textquotedbl, представляя панель управления таблицами, необходимую для взаимодействия пользователя с данными внутри таблицы.
+	\item \textquotedbl Utils \textquotedbl применяется для отправки запросов в БД. Содержит только самые необходимые методы, взаимодействующие с БД непосредственно.
+	\item \textquotedbl Tables \textquotedbl служит для формирования необходимых сложных запросов к БД. Сформировав строку, класс использует \textquotedbl Utils \textquotedbl для отправки.
+	\item \textquotedbl Validator \textquotedbl представляет собой служебный класс, конфигурирующий интерфейс таким образом, чтобы пользователь не мог ввести данные неподходящего формата.
+\end{itemize}
+
+Можно выделить следующий список классов, их полей методов, использованных при разработке приложения (таблица \ref{class:table}).
 
 \renewcommand{\arraystretch}{0.8} % уменьшение расстояний до сетки таблицы
 \begin{xltabular}{\textwidth}{|X|p{2.5cm}|>{\setlength{\baselineskip}{0.7\baselineskip}}p{4.85cm}|>{\setlength{\baselineskip}{0.7\baselineskip}}p{4.85cm}|}
-\caption{Описание классов Bitrix, используемых в приложении\label{class:table}}\\
-\hline \centrow \setlength{\baselineskip}{0.7\baselineskip} Название класса & \centrow \setlength{\baselineskip}{0.7\baselineskip} Модуль, к которому относится класс & \centrow Описание класса & \centrow Методы \\
+\caption{Описание классов, используемых в приложении\label{class:table}}\\
+\hline \centrow \setlength{\baselineskip}{0.7\baselineskip} Название класса & \centrow \setlength{\baselineskip}{0.7\baselineskip} Модуль, к которому относится класс & \centrow Описание поля/метода & \centrow Поле/метод \\
 \hline \centrow 1 & \centrow 2 & \centrow 3 & \centrow 4\\ \hline
 \endfirsthead
 \caption*{Продолжение таблицы \ref{class:table}}\\
 \hline \centrow 1 & \centrow 2 & \centrow 3 & \centrow 4\\ \hline
 \finishhead
-CMain & Главный модуль & CMain – главный класс страницы web-приложения. После одного из этапов по загрузке страницы в сценарии становится доступным инициализированный системой объект данного класса с именем \$APPLICATION & void ShowTitle(string property\_code = «title», bool strip\_tags = true)
-Выводит заголовок страницы
-void SetTitle(string title)
-Устанавливает заголовок страницы
+main & Главный модуль & isES -- поле для определения режима работы программы (Обычный или ЧС) & bool isES\\
+\hline  & Главный модуль & window -- экземпляр класса customtkinter.CTk(), представляющий окно & CTk window\\
+\hline  & Главный модуль & frame -- экземпляр класса customtkinter.CTkFrame(), представляющий поле для виджетов & CTkFrame frame\\
+\hline  & Главный модуль & connection -- строка, содержащая путь для подключения к БД & string connection\\
+\hline  & Главный модуль & ask\underline{ }lb, timer\underline{ }lb -- виджеты текста в главном меню &
+CTkLabel ask\underline{ }lb
 
-void ShowCSS(bool external = true, bool XhtmlStyle = true)
-Выводит таблицу стилей CSS страницы\\
-\hline CFile & Главный модуль & CFile – Класс для работы с файлами и изображениями & array GetFileArray (int file\_id)
-Метод возвращает массив, содержащий описание файла (путь к файлу, имя файла, размер) с идентификатором file\_id
+CTkLabel timer\underline{ }lb
+\\
+\hline  & Главный модуль & pns\underline{ }btn, rms\underline{ }btn, drs\underline{ }btn, psr\underline{ }btn, psr\underline{ }ua\underline{ }btn -- виджеты кнопок в главном меню &
+CTkButton pns\underline{ }btn
+
+CTkButton rms\underline{ }btn
+
+CTkButton drs\underline{ }btn
+
+CTkButton psr\underline{ }btn
+
+CTkButton psr\underline{ }ua\underline{ }btn
+\\
+\hline  & Главный модуль & on\underline{ }closing -- метод для вывода вопроса о том, уверен ли пользователь в своём решении выйти & on\underline{ }closing() Возвращает: ничего\\
+\hline Controller & Главный модуль & styles\underline{ }init -- метод для инициализации стилей и добавления его в список ttk.element\underline{ }names & styles\underline{ }init(st). Принимает на вход экземпляр класса Style, который будет настраивать. 
+
+Возвращает: ничего\\
+\hline  & Главный модуль & show\underline{ }table -- метод для перехода к панели управления выбранной таблицей. Отображает, настраивает и группирует каждый элемент по сетке & show\underline{ }table(which, window, tables, connection). 
+
+Принимает на вход название таблицы, экземпляр окна, экземпляр tables, и строку подключения connection. 
+
+Возвращает: ничего\\
+\hline  & Главный модуль & fields\underline{ }creation -- метод, вызываемый в show\underline{ }table и дополняющий его. Определяет и направленно настраивает поля ввода информации & fields\underline{ }creation(which, frameEx, window). 
+
+На вход принимает название таблицы, экземпляр поля для виджетов, экземпляр окна.
+
+Возвращает: tuple (validatedTFs, combolist) -- кортеж сформированных полей ввода\\
+\hline  & Главный модуль & clear -- метод, очищающий поля ввода & clear(keyLabel, combinedControls, window). 
+
+На вход принимает таблицу отображения Id текущей строки для очищения, кортеж полей ввода, экземпляр окна. 
+
+Возвращает: ничего\\
+\hline  & Главный модуль & TreeCreate -- метод, отображающий текущую таблицу в виде виджета древа & TreeCreate(tree, table, tableWin, connection). 
+
+На вход принимает экземпляр класса ttk.TreeView, который будет пересоздавать, название таблицы, экземпляр поля виджетов, строку подключения. 
+
+Возвращает: TreeView.tree -- созданный виджет древа\\
+\hline  & Главный модуль & TreeRefresh -- метод, обновляющий виджет древа & TreeRefresh(tree, table, connection). 
+
+На вход принимает экземпляр класса ttk.TreeView, который будет обновлять, название таблицы, строку подключения. 
+
+Возвращает: Ничего\\
+\hline  & Главный модуль & MoveTo -- метод для перехода просмотра к конкретному элементу таблицы по индентификатору & MoveTo(id, table, combinedControls, currentLb, window, connection). 
+
+На вход принимает идентификатор элемента для перехода, имя таблицы, кортеж полей вывода, табличку отображения текущего Id, экземпляр окна и строку подключения. 
+
+Возвращает: Ничего\\
+\hline Utils & Главный модуль & create\underline{ }connection -- метод создаёт подключение к базе данных & create\underline{ }connection(path). 
+
+На вход принимает строковый путь к файлу базы данных. 
+
+Возвращает: sqlite3.connection connection - экземпляр созданного подключения\\
+\hline  & Главный модуль & read\underline{ }single\underline{ }row -- считывает единственную строку с БД & read\underline{ }single\underline{ }row(id, connection, table). 
+
+На вход принимает идентификатор, по которому будет считываться строка, экземпляр подключения, название таблицы 
+
+Возвращает: строку в формате кортежа\\
+\hline  & Главный модуль & execute\underline{ }query -- посылает команду в БД & execute\underline{ }query(connection, query).
+
+На вход принимает экземпляр подключения и строку команды для выполнения.
+
+Возвращает: bool True/bool False -- флаг о том, успешно ли выполнен запрос\\
+\hline  & Главный модуль & execute\underline{ }read\underline{ }query -- отдельный метод для послания запроса в БД на чтение & execute\underline{ }read\underline{ }query(connection, query).
+
+На вход принимает экземпляр подключения и строку команды для выполнения.
+
+Возвращает: строку в формате кортежа\\
+\hline  & Главный модуль & timetick -- асинхронный метод для отображения и вывода текущего времени в главном меню & timetick(timerLb).
+
+На вход принимает, куда будет выводиться время.
+
+Возвращает: ничего\\
+\hline  & Главный модуль & timetick -- асинхронный метод для отображения и вывода текущего времени в главном меню & timetick(timerLb).
+
+На вход принимает, куда будет выводиться время.
+
+Возвращает: ничего\\
+\hline  & Главный модуль & asyncMLoop -- метод для обеспечения асинхронной работы окна с часами & asyncMLoop(wndw).
+
+На вход принимает окно главного меню.
+
+Возвращает: ничего\\
+\hline  & Главный модуль & asyncStart -- асинхронный метод для настройки взаимодействия главного меню с часами в асинхронном порядке и обновления полей со временем в БД & asyncStart(window, timer\underline{ }lb, connection).
+
+На вход принимает экземпляр окна, поле для вывода времени, строку подключения к БД.
+
+Возвращает: ничего\\
 \end{xltabular}
 \renewcommand{\arraystretch}{1.0} % восстановление сетки
 
@@ -54,28 +147,28 @@ class ShpoTestCases(TestCase):
 
 \subsection{Системное тестирование разработанного web-сайта}
 
-На рисунке \ref{main:image} представлена главная страница сайта «Русатом – Аддитивные технологии».
-\newpage % при необходимости можно переносить рисунок на новую страницу
-\begin{figure}[H] % H - рисунок обязательно здесь, или переносится, оставляя пустоту
-\center{\includegraphics[width=1\linewidth]{main1}}
-\center{\includegraphics[width=1\linewidth]{main2}}
-\center{\includegraphics[width=1\linewidth]{main3}}
-\caption{Главная страница сайта «Русатом – Аддитивные технологии»}
-\label{main:image}
-\end{figure}
+%На рисунке \ref{main:image} представлена главная страница сайта «Русатом – Аддитивные технологии».
+%\newpage % при необходимости можно переносить рисунок на новую страницу
+%\begin{figure}[H] % H - рисунок обязательно здесь, или переносится, оставляя пустоту
+%\center{\includegraphics[width=1\linewidth]{main1}}
+%\center{\includegraphics[width=1\linewidth]{main2}}
+%\center{\includegraphics[width=1\linewidth]{main3}}
+%\caption{Главная страница сайта «Русатом – Аддитивные технологии»}
+%\label{main:image}
+%\end{figure}
 
-На рисунке \ref{menu:image} представлен динамический вывод заголовков, включающий в себя искомые фразы при поиске фраз.
+%На рисунке \ref{menu:image} представлен динамический вывод заголовков, включающий в себя искомые фразы при поиске фраз.
 
-\begin{figure}[ht]
-\center{\includegraphics[width=1\linewidth]{menu}}
-\caption{Динамический вывод заголовков}
-\label{menu:image}
-\end{figure}
+%\begin{figure}[ht]
+%\center{\includegraphics[width=1\linewidth]{menu}}
+%\caption{Динамический вывод заголовков}
+%\label{menu:image}
+%\end{figure}
 
-На рисунке \ref{enter:image} представлен ввод данных для публикации новости.
+%На рисунке \ref{enter:image} представлен ввод данных для публикации новости.
 
-\begin{figure}[ht]
-\center{\includegraphics[width=1\linewidth]{enter}}
-\caption{Ввод данных для публикации очень-очень длинной, интересной и полезной новости}
-\label{enter:image}
-\end{figure}
+%\begin{figure}[ht]
+%\center{\includegraphics[width=1\linewidth]{enter}}
+%\caption{Ввод данных для публикации очень-очень длинной, интересной и полезной новости}
+%\label{enter:image}
+%\end{figure}

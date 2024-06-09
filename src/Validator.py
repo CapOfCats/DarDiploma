@@ -7,13 +7,10 @@ import Utils
 class Validator:
     utils = Utils.Utils()
     connection = utils.create_connection("D:\Drova&Utilyty\MSVS\Diploma1.db")
-    @staticmethod
-    def setMask(self,mask,strValue):
-        return re.match(mask, strValue)
 
     @staticmethod
     def validation_digits(stringVal):
-        return re.match(r"^\d{0,2}$", stringVal) is not None
+        return re.match(r"^\d{0,3}$", stringVal) is not None
 
     @staticmethod
     def validation_text(stringVal):
@@ -22,14 +19,6 @@ class Validator:
     @staticmethod
     def validation_char(stringVal):
         return re.match(r'^[МЖ]?$', stringVal) is not None
-
-    @staticmethod
-    def validation_char2(stringVal):
-        return re.match(r'^[ОЗ]?$', stringVal) is not None
-
-    @staticmethod
-    def validation_charD(stringVal):
-        return re.match(r'^[0-9]?$', stringVal) is not None
 
     @staticmethod
     def validation_time(stringVal):
@@ -50,6 +39,21 @@ class Validator:
                 return True
         else:
             return False
+
+    @staticmethod
+    def validate_single(element, window, type):
+        checkDig = (window.register(Validator.validation_digits), '%P')
+        checkText = (window.register(Validator.validation_text), "%P")
+        checkTime = (window.register(Validator.validation_time), "%P")
+        if type == "Number":
+            element.configure (validate="key", validatecommand = checkDig)
+        elif type == "Time":
+            element.configure(validate="key", validatecommand=checkTime)
+        else:
+            element.configure(validate="key", validatecommand=checkText)
+        return element
+
+
     @staticmethod
     def validate_whole(tfS, which, window):
         checkDig = (window.register(Validator.validation_digits), '%P')

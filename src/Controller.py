@@ -10,6 +10,133 @@ validator = Validator.Validator()
 
 class Controller:
     @staticmethod
+    def show_acc(connection, isES, tables, window):
+        tableWin = customtkinter.CTkToplevel()
+        tableWin.title("Праверка доступа")
+        tableWin.geometry('1200x600')
+
+        frameWin = customtkinter.CTkFrame(
+            master=tableWin,
+            width=600,
+            height=200,
+            border_width=1,
+            border_color=("cyan"),
+            fg_color="black"
+        )
+        frameWin.pack(anchor=N, expand=True, fill=BOTH)
+        tableWin.resizable(False, False)
+        tableWin.grab_set()
+
+        title_lb = customtkinter.CTkLabel(
+            master=frameWin,
+            width=20,
+            height=5,
+            text="Проверить доступ:",
+            text_color="Cyan",
+            font=customtkinter.CTkFont(family="Courier New", size=18)
+        )
+        title_lb.place(relx=0.4, rely=0.05)
+
+        psr_lb = customtkinter.CTkLabel(
+            master=frameWin,
+            width=20,
+            height=5,
+            text="Ребёнок:",
+            text_color="Cyan",
+            font=customtkinter.CTkFont(family="Consolas", size=17)
+        )
+        psr_lb.place(relx=0.25, rely=0.35)
+
+        dor_lb = customtkinter.CTkLabel(
+            master=frameWin,
+            width=20,
+            height=5,
+            text="Дверь:",
+            text_color="Cyan",
+            font=customtkinter.CTkFont(family="Consolas", size=17)
+        )
+        dor_lb.place(relx=0.65, rely=0.35)
+
+        psr_switch = customtkinter.CTkSwitch(
+            master=frameWin,
+            width= 20,
+            height = 8,
+            switch_height= 24,
+            switch_width= 60,
+            border_width= 1,
+            fg_color= "green",
+            border_color= "cyan",
+            button_color= "grey",
+            button_hover_color = "aquamarine",
+            text_color= "cyan",
+            onvalue= "Пассажир",
+            offvalue= "Ребёнок",
+            text = "Ребёнок",
+            font=customtkinter.CTkFont(family="Consolas", size=15),
+            command= lambda : Controller.toggle_ES(psr_switch, psr_lb, tables, connection, tree, isES)
+        )
+        psr_switch.place(relx=0.43, rely=0.2)
+
+        psr_tf = customtkinter.CTkEntry(
+            master = frameWin,
+            width=100,
+            corner_radius=7,
+            fg_color="black",
+            border_color="cyan",
+            border_width=1,
+            text_color="cyan",
+            font=customtkinter.CTkFont(family="Consolas", size=15)
+        )
+        psr_tf.place(relx = 0.235, rely =0.45)
+
+
+        dor_tf = customtkinter.CTkEntry(
+            master=frameWin,
+            width=100,
+            corner_radius=7,
+            fg_color="black",
+            border_color="cyan",
+            border_width=1,
+            text_color="cyan",
+            font=customtkinter.CTkFont(family="Consolas", size=15)
+        )
+        dor_tf.place(relx=0.625, rely=0.45)
+
+
+        acc_btn = customtkinter.CTkButton(
+            frameWin,
+            width=100,
+            text="Проверить доступ",
+            corner_radius=15,
+            border_width=1,
+            border_color="cyan",
+            hover_color="green",
+            bg_color="black",
+            text_color="cyan",
+            fg_color="black",
+            font=customtkinter.CTkFont(family="Consolas", size=15),
+            command=lambda: tables.check_access(validator.validate_single(psr_tf,window,"Number"),  validator.validate_single(dor_tf, window, "Number"), psr_switch, connection)
+        )
+        acc_btn.place(relx=0.415, rely=0.45)
+
+        tables.start_accesses(connection, psr_switch)
+        tree = None
+        which = "Доступы"
+        if isES:
+            which = "ДоступыЧС"
+        tree = Controller.TreeCreate(tree, tables.self_definition(which), tableWin, connection)
+
+    @staticmethod
+    def toggle_ES(switch, psrlb, tables,connection, tree, isES):
+        switch.configure(text=switch.get())
+        psrlb.configure(text=switch.get() + ":")
+        which = "Доступы"
+        if isES:
+            which = "ДоступыЧС"
+        tables.start_accesses(connection,switch)
+        tree = Controller.TreeRefresh(tree, tables.self_definition(which), connection)
+
+    @staticmethod
     def styles_init(st):
         if (not ("Custom.Treeheading.border" in st.element_names())):
             st.element_create("Custom.Treeheading.border", "from", "clam")
@@ -346,35 +473,26 @@ class Controller:
         colnamesTranslated = []
         match table:
             case "Passengers":
-                colnames = ["ID", "Name", "Surname", "Age", "Rate", "Sex", "Room", "Judgements", "Medical_restrictions",
-                            "Education", "Qualification"]
-                colnamesTranslated = ["Идентификатор", "Имя", "Фамилия", "Возраст", "Тариф", "Пол", "Комната",
-                                      "Судимости",
-                                      "Мед.Ограничения",
-                                      "Образование", "Квалификация"]
+                colnames = ["ID", "Name", "Surname", "Age", "Rate", "Sex", "Room", "Judgements", "Medical_restrictions", "Education", "Qualification"]
+                colnamesTranslated = ["Идентификатор", "Имя", "Фамилия", "Возраст", "Тариф", "Пол", "Комната", "Судимости", "Мед.Ограничения", "Образование", "Квалификация"]
             case "Doors":
-                colnames = ["ID", "Name", "Room_it_belongs_to", "System_Time", "Number", "Status", "Opening_Speed",
-                            "Max_Amount"]
-                colnamesTranslated = ["Идентификатор", "Наименование", "Принадлежность", "Системное время", "Номер",
-                                      "Статус", "Скорость открытия", "Вместимость"]
+                colnames = ["ID", "Name", "Room_it_belongs_to", "System_Time", "Number", "Status", "Opening_Speed", "Max_Amount"]
+                colnamesTranslated = ["Идентификатор", "Наименование", "Принадлежность", "Системное время", "Номер", "Статус", "Скорость открытия", "Вместимость"]
             case "Rooms":
-                colnames = ["ID", "Name", "Door_Amount", "Type", "Time_Restrictions", "Sex_Restrictions",
-                            "Med_Restrictions",
-                            "Judge_Restrictions", "Penalty_Restrictions", "Age_Restrictions"]
-                colnamesTranslated = ["Идентификатор", "Наименование", "Кол-во дверей", "Тип", "Огр.Время", "Огр.Пол",
-                                      "Огр.Здоровья",
-                                      "Огр.Судимости", "Огр.Штраф", "Огр.Возраст"]
+                colnames = ["ID", "Name", "Door_Amount", "Type", "Time_Restrictions", "Sex_Restrictions", "Med_Restrictions", "Judge_Restrictions", "Penalty_Restrictions", "Age_Restrictions"]
+                colnamesTranslated = ["Идентификатор", "Наименование", "Кол-во дверей", "Тип", "Огр.Время", "Огр.Пол", "Огр.Здоровья", "Огр.Судимости", "Огр.Штраф", "Огр.Возраст"]
             case "Penalties":
                 colnames = ["ID", "Is_active", "Is_removable", "Remove_wage", "Type", "Belongness", "Time_Created"]
-                colnamesTranslated = ["Идентификатор", "Активность", "Возможность снять", "Сумма выкупа", "Тип",
-                                      "Принадлежность", "Время создания"]
+                colnamesTranslated = ["Идентификатор", "Активность", "Возможность снять", "Сумма выкупа", "Тип", "Принадлежность", "Время создания"]
             case "Passengers_Underage":
-                colnames = ["ID", "Name", "Surname", "Age", "Rate", "Sex", "Room", "Judgements", "Medical_restrictions",
-                            "Sattelite"]
-                colnamesTranslated = ["Идентификатор", "Имя", "Фамилия", "Возраст", "Тариф", "Пол", "Комната",
-                                      "Судимости",
-                                      "Мед.Ограничения",
-                                      "Сопровождающий"]
+                colnames = ["ID", "Name", "Surname", "Age", "Rate", "Sex", "Room", "Judgements", "Medical_restrictions", "Sattelite"]
+                colnamesTranslated = ["Идентификатор", "Имя", "Фамилия", "Возраст", "Тариф", "Пол", "Комната", "Судимости", "Мед.Ограничения", "Сопровождающий"]
+            case "Accesses":
+                colnames = ["Psr_ID", "Dor_ID", "Access_age", "Access_sex", "Access_judge", "Access_penalty", "Access_health", "Access_number", "Access_time", "Access_rate"]
+                colnamesTranslated = ["Идентификатор пассажира", "Идентификатор двери", "Огр.Возраст", "Огр.Пол", "Огр.Судимости","Огр.Штраф", "Огр.Здоровья", "Огр.Номер", "Огр.Время", "Огр.Тариф"]
+            case "Accesses_ES":
+                colnames = ["Psr_ID", "Dor_ID", "Does_contain_room", "Access_education", "Access_qualification"]
+                colnamesTranslated = ["Идентификатор пассажира", "Идентификатор двери", "Ведёт ли в комнату", "Огр.Образование", "Огр.Квалификация"]
         command = f"""
                         SELECT * FROM {table}
                         """

@@ -12,14 +12,15 @@ isES = False
 ck = 0
 window = customtkinter.CTk()
 window.title('Круиз DB')
-window.geometry('600x150')
+window.geometry('600x200')
 frame = customtkinter.CTkFrame(
     master=window,
     width=500,
     height=200,
     border_width=2,
     border_color=("cyan"),
-    fg_color="black"
+    fg_color="black",
+
 )
 frame.pack(fill = Y, expand = 1)
 controller = Controller.Controller()
@@ -54,7 +55,7 @@ psr_btn = customtkinter.CTkButton(
     bg_color= "black",
     text_color="cyan",
     fg_color= "black",
-    font= customtkinter.CTkFont(family="Courier new", size=15),
+    font= customtkinter.CTkFont(family="Courier new", size=16),
     command=lambda: controller.show_table("Пассажиры", window, tables, connection)
 )
 
@@ -70,7 +71,7 @@ psr_ua_btn = customtkinter.CTkButton(
     bg_color= "black",
     text_color="cyan",
     fg_color= "black",
-    font= customtkinter.CTkFont(family="Courier new", size=15),
+    font= customtkinter.CTkFont(family="Courier new", size=16),
     command=lambda: controller.show_table("Дети", window, tables, connection)
 )
 
@@ -86,7 +87,7 @@ drs_btn = customtkinter.CTkButton(
     bg_color= "black",
     text_color="cyan",
     fg_color= "black",
-    font= customtkinter.CTkFont(family="Courier new", size=15),
+    font= customtkinter.CTkFont(family="Courier new", size=16),
     command=lambda: controller.show_table("Двери", window,tables, connection)
 )
 
@@ -102,7 +103,7 @@ rms_btn = customtkinter.CTkButton(
     bg_color= "black",
     text_color="cyan",
     fg_color= "black",
-    font= customtkinter.CTkFont(family="Courier new", size=15),
+    font= customtkinter.CTkFont(family="Courier new", size=16),
     command=lambda: controller.show_table("Комнаты", window, tables, connection)
 )
 
@@ -118,7 +119,7 @@ pns_btn = customtkinter.CTkButton(
     bg_color= "black",
     text_color="cyan",
     fg_color= "black",
-    font= customtkinter.CTkFont(family="Courier new", size=15),
+    font= customtkinter.CTkFont(family="Courier new", size=16),
     command=lambda: controller.show_table("Штрафы",window, tables, connection)
 )
 timer_lb = customtkinter.CTkLabel(
@@ -127,15 +128,31 @@ timer_lb = customtkinter.CTkLabel(
     width= 30,
     height = 10,
     text_color= "Cyan",
-    font= customtkinter.CTkFont(family="Courier new", size=14, weight="bold")
+    font= customtkinter.CTkFont(family="Courier new", size=16)
+)
+acs_btn = customtkinter.CTkButton(
+    master=frame,
+    width=18,
+    height=10,
+    text="Проверка доступа",
+    corner_radius=25,
+    border_width=1,
+    border_color="cyan",
+    hover_color="green",
+    bg_color= "black",
+    text_color="cyan",
+    fg_color= "black",
+    font= customtkinter.CTkFont(family="Courier new", size=16),
+    command=lambda: controller.show_acc(connection, isES, tables, window)
 )
 
 ask_lb.pack(side=TOP, pady=15)
+acs_btn.pack(side = BOTTOM, pady = 10)
 timer_lb.pack(side=BOTTOM, pady=2)
-psr_btn.pack(side=LEFT, padx=10, pady=2, expand = 1)
-psr_ua_btn.pack(side=LEFT, padx=10, pady=2)
-drs_btn.pack(side=LEFT, padx=10, pady=2)
-rms_btn.pack(side=LEFT, padx=10, pady=2)
-pns_btn.pack(side=LEFT, padx=10, pady=2)
+psr_btn.pack(side=LEFT, padx=10, pady=2, ipadx = 10, ipady = 7)
+psr_ua_btn.pack(side=LEFT, padx=10, pady=2, ipadx = 10, ipady = 7)
+drs_btn.pack(side=LEFT, padx=10, pady=2, ipadx = 10, ipady = 7)
+rms_btn.pack(side=LEFT, padx=10, pady=2, ipadx = 10, ipady = 7)
+pns_btn.pack(side=LEFT, padx=10, pady=2, ipadx = 10, ipady = 7)
 window.protocol("WM_DELETE_WINDOW", on_closing)
 asyncio.run(utils.asyncStart(window, timer_lb, connection))

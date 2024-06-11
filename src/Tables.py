@@ -10,6 +10,8 @@ controller = Controller.Controller()
 class Tables:
     @staticmethod
     def self_definition(which):
+        if type(which) is not str:
+            return "Invalid table name type"
         if which == "Пассажиры":
             return "Passengers"
         elif which == "Двери":
@@ -22,14 +24,27 @@ class Tables:
             return "Accesses"
         elif which == "ДоступыЧС":
             return "Accesses_ES"
-        else:
+        elif which == "Дети":
             return "Passengers_Underage"
+        else:
+            return "Unknown_table"
     @staticmethod
     def timeAppend(timeString):
+        if type(timeString) is not str:
+            return "Invalid time type"
+        if type(int(timeString)) is not int:
+            raise ValueError
+        elif (len(timeString)!=6):
+            return  "Time format error"
+        elif (int(timeString[0]+timeString[1])>23):
+            return "Invalid hours"
+        elif (int(timeString[2] + timeString[3]) > 59):
+            return "Invalid minutes"
+        elif (int(timeString[4] + timeString[5]) > 59):
+            return "Invalid seconds"
         return timeString[0] + timeString[1] + ":" + timeString[2] + timeString[3] + ":" + timeString[4] + timeString[5]
     @staticmethod
     def penalty_check(pennies, type):
-        #print(pennies)
         allow = True
         if (pennies!=None):
             for penny in pennies:

@@ -141,7 +141,7 @@ connection, query).
 На вход принимает экземпляры текстовых полей куда были введены идентификаторы для поиска, жкземпляр переключателя, строку подключения к БД. 
 
 Возвращает: ничего\\
-\hline  & Главный модуль & start\underline{ }accesses -- метод заполнения данных о доступах пассажиров к дверям по каждому из критериев ограничений. & start\underline{ }accesses(
+\hline  & Главный модуль & start\underline{ }accesses -- метод заполнения данных о доступе пассажиров к дверям по каждому из критериев ограничений. & start\underline{ }accesses(
 connection, psr\underline{ }switch). 
 
 На вход принимает строку подключения к БД и экземпляр переключателя. 
@@ -227,58 +227,142 @@ stringVal).
 \end{xltabular}
 \renewcommand{\arraystretch}{1.0} % восстановление сетки
 
-\subsection{Модульное тестирование разработанного web-сайта}
+\subsection{Модульное тестирование разработанного приложение}
+\subsubsection{Структура тестового проекта}
 
-Модульный тест для класса User из модели данных представлен на рисунке \ref{unitUser:image}.
+В рамках тестирования программного обеспечения была разработан тестовый проект, структура которого представлена на рисунке ~\ref{fig:test1}. Данный проект включает в себя модульные тесты для различных компонентов системы.
+Тестирование моделей и контроллеров позволяет обеспечить надежность и корректность работы программного обеспечения. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{images/test1}
+	\caption{Структура тестового проекта}
+	\label{fig:test1}
+\end{figure}
+Тестовый проект включает в себя следующие ключевые элементы:
+\begin{itemize}
+	\item test\underline{ }Controller.py: Наборы модульных тестов для класса панели управления Controller;
+	\item test\underline{ }Tables.py: Наборы модульных тестов для класса формирования запросов к БД Tables;
+	\item test\underline{ }Validator.py: Наборы модульных тестов для вспомогательного класса валидации Validator;
+	\item test\underline{ }Utils.py: Наборы модульных тестов для cлужебного класса запросов в БД;
+\end{itemize}
+Модульные тесты для класса Tables.py, который является основным классом для формирования запросов в БД, позволяют проверить корректность
+логики и поведения этого компонента и исключить возникновение проблем в этом классе. Тесты охватывают такие аспекты, как самоопределение имени раздела данных, а также форматирование строки времени перед запросом.
+Модульные тесты класса Tables.py представлены на рисунке \ref{tablestest:image}.
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \begin{lstlisting}[language=Python]
-from django.test import TestCase
-from .models import *
-User = get_user_model()
+from Tables import *
+import unittest
 
+	class TablesTest(unittest.TestCase):
+	def test_self_definition(self):
+		self.assertEqual(Tables.self_definition("Пассажиры"), "Passengers")
+		self.assertEqual(Tables.self_definition("Двери"), "Doors")
+		self.assertEqual(Tables.self_definition("Комнаты"), "Rooms")
+		self.assertEqual(Tables.self_definition("Штрафы"), "Penalties")
+		self.assertEqual(Tables.self_definition("Дети"), "Passengers_Underage")
+		self.assertEqual(Tables.self_definition("Доступы"), "Accesses")
+		self.assertEqual(Tables.self_definition("ДоступыЧС"), "Accesses_ES")
+	
+	def test_invalid_definition(self):
+		self.assertEqual(Tables.self_definition("ААААААААААААА"), "Unknown_table")
+		self.assertEqual(Tables.self_definition([]), "Invalid table name type")
+		self.assertEqual(Tables.self_definition(3), "Invalid table name type")
+		self.assertEqual(Tables.self_definition(None), "Invalid table name type")
+	
+	def test_timeAppend(self):
+		self.assertEqual(Tables.timeAppend("200000"), "20:00:00")
+		self.assertEqual(Tables.timeAppend("032914"), "03:29:14")
+	
+	def test_invalid_time(self):
+		self.assertEqual(Tables.timeAppend(([2], ['a'])), "Invalid time type")
+		self.assertEqual(Tables.timeAppend("14"), "Time format error")
+		self.assertEqual(Tables.timeAppend("320000"), "Invalid hours")
+		self.assertEqual(Tables.timeAppend("238911"), "Invalid minutes")
+		self.assertEqual(Tables.timeAppend("232399"), "Invalid seconds")
+		self.assertRaises(ValueError, Tables.timeAppend, "*2****")
 
-class ShpoTestCases(TestCase):
-
-    def setUp(self) -> None:
-        self.user = User.objects.create(username='testtestovich', password='testtestovich', first_name='Sad', last_name='')
-
-    def test_2(self):
-
-        self.assertEqual(self.user.first_name, 'Sad')
-        self.assertEqual(self.user.last_name, 'Cat')
-        print((self.user))
-        print((self.user.first_name))
-        print((self.user.last_name))
-\end{lstlisting}  
-\caption{Модульный тест класса User}
-\label{unitUser:image}
+if __name__ == '__main__':
+	unittest.main()
+%\end{lstlisting}  
+\caption{Модульный тест класса Tables.py}
+\label{tablestest:image}
+\end{figure}
+На рисунке ~\ref{fig:test2} представлены результаты выполнения модульных тестов, подтверждающие успешную проверку всех компонентов системы, что свидетельствует об отсутствии критических ошибок и готовности продукта к дальнейшим этапам разработки и внедрения.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{images/test2}
+	\caption{результаты выполнения тестов}
+	\label{fig:test2}
 \end{figure}
 
-\subsection{Системное тестирование разработанного web-сайта}
+\subsection{Системное тестирование разработанного приложения}
+Каждое окно приложения представляет уникальный интерфейс, исходя из его функций.  Каждое окно, кроме главного меню, содержит виджет древа.
+Древо состоит из:
+\begin{itemize}
+	\item столбцов с заголовками данных элементов;
+	\item данных, внессённых в текущую базу;
+	\item полосы прокрутки (появляется, если не все элементы древа помещаются в окно);
+\end{itemize}
+Главное окно включает в себя кнопки для перехода в другие окна, а также виджет переключателя режимов работы СКУД.
+Основное содержимое панели управления меняется в зависимости от выбранной таблицы данных и включает в себя виджеты для изменения, удаления, добавления, поиска и просмотра данных.
+Окно проверки доступа включает в себя виджеты для ввода искомых данных, кнопку проверки доступа и виджет переключения режима поиска. Пользователь может просматривать данные различных пассажиров в зависимости от выбранного режима -- <<Пассажир>> или <<Ребёнок>>.
 
-%На рисунке \ref{main:image} представлена главная страница сайта «Русатом – Аддитивные технологии».
-%\newpage % при необходимости можно переносить рисунок на новую страницу
-%\begin{figure}[H] % H - рисунок обязательно здесь, или переносится, оставляя пустоту
-%\center{\includegraphics[width=1\linewidth]{main1}}
-%\center{\includegraphics[width=1\linewidth]{main2}}
-%\center{\includegraphics[width=1\linewidth]{main3}}
-%\caption{Главная страница сайта «Русатом – Аддитивные технологии»}
-%\label{main:image}
-%\end{figure}
+На рисунке ~\ref{fig:example4} представлено главное меню в режиме ЧС.
+Режим главного окна пользователь может изменить с помощью переключателя -- от этого будет зависеть дальнейшее поведение системы.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\linewidth]{images/Example4}
+	\caption{главное меню в режиме Чрезвычайной ситуации}
+	\label{fig:example4}
+\end{figure}
 
-%На рисунке \ref{menu:image} представлен динамический вывод заголовков, включающий в себя искомые фразы при поиске фраз.
+На рисунке ~\ref{fig:example5} представлено окно панели управления данными о штрафах и выбранным штрафом для просмотра детальной информации и последующего изменения. 
+Взаимодействовать с элементом можно только тогда, когда он выбран. Его данные отображаются в соответствующих полях для этого вида данных. 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\linewidth]{images/Example5}
+	\caption{панель управления с выбранным элементом}
+	\label{fig:example5}
+\end{figure}
 
-%\begin{figure}[ht]
-%\center{\includegraphics[width=1\linewidth]{menu}}
-%\caption{Динамический вывод заголовков}
-%\label{menu:image}
-%\end{figure}
+Менять выбранный элемент пользователь может с помощью виджета \textquotedbl стрелок \textquotedbl, расположенных в верхней части окна, или воспользовавшись опцией поиска, введя в поле \textquotedbl номер для поиска \textquotedbl идентификатор искомого элемента и нажав <<Найти>>. После чего, пользователь получит сообщение о том, был ли найден элемент.
+На рисунках  ~\ref{fig:example6} и ~\ref{fig:example7} пользователь видит, что в базе есть данные о пяти штрафах и пытается найти элемент с номером идентификатором 10 и 3 соответственно.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\linewidth]{images/Example6}
+	\caption{поиск несуществующего элемента}
+	\label{fig:example6}
+\end{figure}
 
-%На рисунке \ref{enter:image} представлен ввод данных для публикации новости.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\linewidth]{images/Example7}
+	\caption{поиск существующего элемента}
+	\label{fig:example7}
+\end{figure}
+В случае, когда пользователю нужно зарегистрировать новый штраф, он может добавить новый элемент, посредством заполнения всех обязательных полей и нажатием <<Добавить>>. На рисунке ~\ref{fig:example8} изображен результат добавления нового штрафа в базу.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\linewidth]{images/Example8}
+	\caption{добавление нового элемента в панели управления}
+	\label{fig:example8}
+\end{figure}
+Пользователь мог внести и добавить данные об элементе по ошибке. В этом случае он выбирает элемент и удаляет его, посредством клика по кнопке <<Удалить>>.
+На рисунке ~\ref{fig:example9} изображён случай удаления недавно добавленного элемента.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\linewidth]{images/Example9}
+	\caption{удаление данных о штрафе}
+	\label{fig:example9}
+\end{figure}
 
-%\begin{figure}[ht]
-%\center{\includegraphics[width=1\linewidth]{enter}}
-%\caption{Ввод данных для публикации очень-очень длинной, интересной и полезной новости}
-%\label{enter:image}
-%\end{figure}
+На рисунке ~\ref{fig:example10} представлена панель проверки доступа к двери, работающая в режиме <<Ребёнок>> и отражающая в виджете древа данные о доступах детей соответственно. Пользователь может переключить панель в режим <<Пассажир>> для просмотра данных о доступе пассажиров к дверям. При вводе идентификаторов пассажира и двери, и последующем нажатии на <<Проверить доступ>> пользователь получает сообщение о предоставлении доступа, принцип которого был рассмотрен в пункте 3.4 технического проекта.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\linewidth]{images/Example10}
+	\caption{проверка доступа к двери}
+	\label{fig:example10}
+\end{figure}
+
+\newpage

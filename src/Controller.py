@@ -73,7 +73,7 @@ class Controller:
             offvalue= "Ребёнок",
             text = "Ребёнок",
             font=customtkinter.CTkFont(family="Consolas", size=15),
-            command= lambda : Controller.toggle_ES(psr_switch, psr_lb, tables, connection, tree, isES)
+            command= lambda : Controller.toggle_switch(psr_switch, psr_lb, tables, connection, tree, isES)
         )
         psr_switch.place(relx=0.43, rely=0.2)
 
@@ -127,7 +127,7 @@ class Controller:
         tree = Controller.TreeCreate(tree, tables.self_definition(which), tableWin, connection)
 
     @staticmethod
-    def toggle_ES(switch, psrlb, tables,connection, tree, isES):
+    def toggle_switch(switch, psrlb, tables,connection, tree, isES):
         switch.configure(text=switch.get())
         psrlb.configure(text=switch.get() + ":")
         which = "Доступы"

@@ -1,0 +1,199 @@
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  10 JUN 2024 18:18
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Содержание.tex
+(./Содержание.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-04-11>
+! Undefined control sequence.
+l.2 \section
+            *{СОДЕРЖАНИЕ}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2 \section*
+             {СОДЕРЖАНИЕ}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no * ("2A) in font nullfont!
+Missing character: There is no С ("421) in font nullfont!
+Missing character: There is no О ("41E) in font nullfont!
+Missing character: There is no Д ("414) in font nullfont!
+Missing character: There is no Е ("415) in font nullfont!
+Missing character: There is no Р ("420) in font nullfont!
+Missing character: There is no Ж ("416) in font nullfont!
+Missing character: There is no А ("410) in font nullfont!
+Missing character: There is no Н ("41D) in font nullfont!
+Missing character: There is no И ("418) in font nullfont!
+Missing character: There is no Е ("415) in font nullfont!
+! Undefined control sequence.
+l.3 \tableofcontents
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 5.
+Missing character: There is no С ("421) in font nullfont!
+Missing character: There is no в ("432) in font nullfont!
+Missing character: There is no е ("435) in font nullfont!
+Missing character: There is no д ("434) in font nullfont!
+Missing character: There is no е ("435) in font nullfont!
+Missing character: There is no н ("43D) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no я ("44F) in font nullfont!
+Missing character: There is no о ("43E) in font nullfont!
+Missing character: There is no В ("412) in font nullfont!
+Missing character: There is no К ("41A) in font nullfont!
+Missing character: There is no Р ("420) in font nullfont!
+Missing character: There is no Б ("411) in font nullfont!
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no Г ("413) in font nullfont!
+Missing character: There is no р ("440) in font nullfont!
+Missing character: There is no а ("430) in font nullfont!
+Missing character: There is no ф ("444) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no ч ("447) in font nullfont!
+Missing character: There is no е ("435) in font nullfont!
+Missing character: There is no с ("441) in font nullfont!
+Missing character: There is no к ("43A) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no й ("439) in font nullfont!
+Missing character: There is no м ("43C) in font nullfont!
+Missing character: There is no а ("430) in font nullfont!
+Missing character: There is no т ("442) in font nullfont!
+Missing character: There is no е ("435) in font nullfont!
+Missing character: There is no р ("440) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no а ("430) in font nullfont!
+Missing character: There is no л ("43B) in font nullfont!
+Missing character: There is no / ("2F) in font nullfont!
+Missing character: There is no С ("421) in font nullfont!
+Missing character: There is no в ("432) in font nullfont!
+Missing character: There is no е ("435) in font nullfont!
+Missing character: There is no д ("434) in font nullfont!
+Missing character: There is no е ("435) in font nullfont!
+Missing character: There is no н ("43D) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no я ("44F) in font nullfont!
+Missing character: There is no о ("43E) in font nullfont!
+Missing character: There is no В ("412) in font nullfont!
+Missing character: There is no К ("41A) in font nullfont!
+Missing character: There is no Р ("420) in font nullfont!
+Missing character: There is no Б ("411) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no Л ("41B) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no с ("441) in font nullfont!
+Missing character: There is no т ("442) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no Ц ("426) in font nullfont!
+Missing character: There is no е ("435) in font nullfont!
+Missing character: There is no л ("43B) in font nullfont!
+Missing character: There is no ь ("44C) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no з ("437) in font nullfont!
+Missing character: There is no а ("430) in font nullfont!
+Missing character: There is no д ("434) in font nullfont!
+Missing character: There is no а ("430) in font nullfont!
+Missing character: There is no ч ("447) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no р ("440) in font nullfont!
+Missing character: There is no а ("430) in font nullfont!
+Missing character: There is no з ("437) in font nullfont!
+Missing character: There is no р ("440) in font nullfont!
+Missing character: There is no а ("430) in font nullfont!
+Missing character: There is no б ("431) in font nullfont!
+Missing character: There is no о ("43E) in font nullfont!
+Missing character: There is no т ("442) in font nullfont!
+Missing character: There is no к ("43A) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no ( ("28) in font nullfont!
+Missing character: There is no Г ("413) in font nullfont!
+Missing character: There is no р ("440) in font nullfont!
+Missing character: There is no а ("430) in font nullfont!
+Missing character: There is no ф ("444) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no ч ("447) in font nullfont!
+Missing character: There is no е ("435) in font nullfont!
+Missing character: There is no с ("441) in font nullfont!
+Missing character: There is no к ("43A) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no й ("439) in font nullfont!
+Missing character: There is no м ("43C) in font nullfont!
+Missing character: There is no а ("430) in font nullfont!
+Missing character: There is no т ("442) in font nullfont!
+Missing character: There is no е ("435) in font nullfont!
+Missing character: There is no р ("440) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no а ("430) in font nullfont!
+Missing character: There is no л ("43B) in font nullfont!
+Missing character: There is no / ("2F) in font nullfont!
+Missing character: There is no Ц ("426) in font nullfont!
+Missing character: There is no е ("435) in font nullfont!
+Missing character: There is no л ("43B) in font nullfont!
+Missing character: There is no ь ("44C) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no з ("437) in font nullfont!
+Missing character: There is no а ("430) in font nullfont!
+Missing character: There is no д ("434) in font nullfont!
+Missing character: There is no а ("430) in font nullfont!
+Missing character: There is no ч ("447) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no р ("440) in font nullfont!
+Missing character: There is no а ("430) in font nullfont!
+Missing character: There is no з ("437) in font nullfont!
+Missing character: There is no р ("440) in font nullfont!
+Missing character: There is no а ("430) in font nullfont!
+Missing character: There is no б ("431) in font nullfont!
+Missing character: There is no о ("43E) in font nullfont!
+Missing character: There is no т ("442) in font nullfont!
+Missing character: There is no к ("43A) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+Missing character: There is no ) ("29) in font nullfont!
+Missing character: There is no Л ("41B) in font nullfont!
+Missing character: There is no и ("438) in font nullfont!
+Missing character: There is no с ("441) in font nullfont!
+Missing character: There is no т ("442) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
+)
+! Emergency stop.
+<*> Содержание.tex
+                  
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 17 strings out of 474705
+ 356 string characters out of 5750043
+ 1918406 words of memory out of 5000000
+ 22339 multiletter control sequences out of 15000+600000
+ 558069 words of font info for 36 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 19i,8n,20p,103b,123s stack positions out of 10000i,1000n,20000p,200000b,200000s
+No pages of output.

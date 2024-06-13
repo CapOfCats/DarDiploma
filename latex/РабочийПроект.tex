@@ -9,15 +9,15 @@
 	\item \textquotedbl Validator \textquotedbl представляет собой служебный класс, конфигурирующий интерфейс таким образом, чтобы пользователь не мог ввести данные неподходящего формата.
 \end{itemize}
 
-Можно выделить следующий список классов, их полей методов, использованных при разработке приложения (таблица \ref{class:table}).
+Можно выделить следующий список классов, их полей методов, использованных при разработке приложения (таблицах \ref{class:table1}-\ref{class:table5}).
 
 \renewcommand{\arraystretch}{0.8} % уменьшение расстояний до сетки таблицы
 \begin{xltabular}{\textwidth}{|X|p{2.5cm}|>{\setlength{\baselineskip}{0.7\baselineskip}}p{4.85cm}|>{\setlength{\baselineskip}{0.7\baselineskip}}p{4.85cm}|}
-\caption{Описание классов, используемых в приложении\label{class:table}}\\
+\caption{Описание класса main\label{class:table1}}\\
 \hline \centrow \setlength{\baselineskip}{0.7\baselineskip} Название класса & \centrow \setlength{\baselineskip}{0.7\baselineskip} Модуль, к которому относится класс & \centrow Описание поля/метода & \centrow Поле/метод \\
 \hline \centrow 1 & \centrow 2 & \centrow 3 & \centrow 4\\ \hline
 \endfirsthead
-\caption*{Продолжение таблицы \ref{class:table}}\\
+\caption*{Продолжение таблицы \ref{class:table1}}\\
 \hline \centrow 1 & \centrow 2 & \centrow 3 & \centrow 4\\ \hline
 \finishhead
 main & Главный модуль & isES -- поле для определения режима работы программы (Обычный или ЧС) & bool isES\\
@@ -40,8 +40,22 @@ CTkButton psr\underline{ }btn
 
 CTkButton psr\underline{ }ua\underline{ }btn
 \\
-\hline  & Главный модуль & on\underline{ }closing -- метод для вывода вопроса о том, уверен ли пользователь в своём решении выйти & on\underline{ }closing() Возвращает: ничего\\
-\hline Controller & Главный модуль & styles\underline{ }init -- метод для инициализации стилей и добавления его в список ttk.element\underline{ }names & styles\underline{ }init(st). Принимает на вход экземпляр класса Style, который будет настраивать. 
+\hline  & Главный модуль & on\underline{ }closing -- метод для вывода вопроса о том, уверен ли пользователь в своём решении выйти & on\underline{ }closing() Возвращает: ничего\\ 
+
+
+\end{xltabular}
+\renewcommand{\arraystretch}{1.0} % восстановление сетки
+
+
+\begin{xltabular}{\textwidth}{|X|p{2.5cm}|>{\setlength{\baselineskip}{0.7\baselineskip}}p{4.85cm}|>{\setlength{\baselineskip}{0.7\baselineskip}}p{4.85cm}|}
+	\caption{Описание класса Controller \label{class:table2}}\\
+	\hline \centrow \setlength{\baselineskip}{0.7\baselineskip} Название класса & \centrow \setlength{\baselineskip}{0.7\baselineskip} Модуль, к которому относится класс & \centrow Описание поля/метода & \centrow Поле/метод \\
+	\hline \centrow 1 & \centrow 2 & \centrow 3 & \centrow 4\\ \hline
+	\endfirsthead
+	\caption*{Продолжение таблицы \ref{class:table2}}\\
+	\hline \centrow 1 & \centrow 2 & \centrow 3 & \centrow 4\\ \hline
+	\finishhead
+Controller & Главный модуль & styles\underline{ }init -- метод для инициализации стилей и добавления его в список ttk.element\underline{ }names & styles\underline{ }init(st). Принимает на вход экземпляр класса Style, который будет настраивать. 
 
 Возвращает: ничего\\
 \hline  & Главный модуль & show\underline{ }table -- метод для перехода к панели управления выбранной таблицей. Отображает, настраивает и группирует каждый элемент по сетке & show\underline{ }table(which, window, tables, connection). 
@@ -81,10 +95,20 @@ CTkButton psr\underline{ }ua\underline{ }btn
 Возвращает: Ничего\\
 \hline  & Главный модуль & toggle\underline{ }ES -- метод обработки состояний переключателя, применяемый в определении одной из двух таблиц для показа & toggle\underline{ }ES(switch, psrlb, tables,connection, tree, isES). 
 
-На вход принимает экземпляр переключателя, текстовое поле для изменения выводимой информации, строку подключения, экземпляр виджета древа и флаг ЧС. 
+На вход принимает экземпляр переключателя, текстовое поле для изменения выводимой информации, строку подключения, экземпляр виджета древа и флаг ЧС.
 
-Возвращает: Ничего\\
-\hline Utils & Главный модуль & create\underline{ }connection -- метод создаёт подключение к базе данных & create\underline{ }connection(path). 
+\end{xltabular}
+\renewcommand{\arraystretch}{1.0} % восстановление сетки
+
+\begin{xltabular}{\textwidth}{|X|p{2.5cm}|>{\setlength{\baselineskip}{0.7\baselineskip}}p{4.85cm}|>{\setlength{\baselineskip}{0.7\baselineskip}}p{4.85cm}|}
+	\caption{Описание класса Utils \label{class:table3}}\\
+	\hline \centrow \setlength{\baselineskip}{0.7\baselineskip} Название класса & \centrow \setlength{\baselineskip}{0.7\baselineskip} Модуль, к которому относится класс & \centrow Описание поля/метода & \centrow Поле/метод \\
+	\hline \centrow 1 & \centrow 2 & \centrow 3 & \centrow 4\\ \hline
+	\endfirsthead
+	\caption*{Продолжение таблицы \ref{class:table3}}\\
+	\hline \centrow 1 & \centrow 2 & \centrow 3 & \centrow 4\\ \hline
+	\finishhead
+Utils & Главный модуль & create\underline{ }connection -- метод создаёт подключение к базе данных & create\underline{ }connection(path). 
 
 На вход принимает строковый путь к файлу базы данных. 
 
@@ -121,112 +145,136 @@ connection, query).
 На вход принимает экземпляр окна, поле для вывода времени, строку подключения к БД.
 
 Возвращает: Ничего\\
-\hline Tables & Главный модуль & self\underline{ }definition -- метод переводит названия таблиц данных с русского языка на английский для последующих запросов к БД & self\underline{ }definition(which). 
-
-На вход принимает строку названия на русском языке. 
-
-Возвращает: строку названия на английском языке\\
-\hline  & Главный модуль & timeAppend -- метод, переводящий строку времени из формата <<ЧЧММСС>> в формат <<ЧЧ:ММ:СС>> & timeAppend(timeString). 
-
-На вход принимает неотформатированную строку времени. 
-
-Возвращает: строку времени в отформатированном виде\\
-\hline  & Главный модуль & penalty\underline{ }check -- метод, сравнивающий данные о штрафных ограничениях данных о Дверях и данных о Штрафах & penalty\underline{ }check(pennies, type). 
-
-На вход принимает кортеж из найденных по принадлежности штрафов и строку типа штрафа, с которой нужно сопоставить элементы кортежа. 
-
-Возвращает: флаг о том, совпали ли типы\\
-\hline  & Главный модуль & check\underline{ }access -- метод реализации опции <<Проверка доступа>>, проверяет введённые данные на наличие в базе и выводит информацию о предоставлении доступа. & check\underline{ }access(psr\underline{ }Tf, dor\underline{ }Tf, switch, connection). 
-
-На вход принимает экземпляры текстовых полей куда были введены идентификаторы для поиска, жкземпляр переключателя, строку подключения к БД. 
-
-Возвращает: ничего\\
-\hline  & Главный модуль & start\underline{ }accesses -- метод заполнения данных о доступе пассажиров к дверям по каждому из критериев ограничений. & start\underline{ }accesses(
-connection, psr\underline{ }switch). 
-
-На вход принимает строку подключения к БД и экземпляр переключателя. 
-
-Возвращает: ничего\\
-\hline  & Главный модуль & add\underline{ }element -- метод, реализующий опцию формирования запроса добавления элемента в БД. & add\underline{ }element(table, combinedControls, currentLb, tree, tableWin, connection, window). 
-
-На вход принимает строку названия таблицы, кортеж полей ввода, экземпляр текстового поля для отображения идентификатора текущего элемента, экземпляр виджета древа, экземпляр контейнера для виджетов, строку подключения, экземпляр окна. 
-
-Возвращает: ничего\\
-\hline  & Главный модуль & delete\underline{ }element -- метод, реализующий опцию формирования запроса удаления элемента в БД. & delete\underline{ }element(table, key, currentLb, combinedControls, tree, connection, window). 
-
-На вход принимает строку названия таблицы, идентификатор текущего элемента, кортеж полей ввода, экземпляр текстового поля для отображения идентификатора текущего элемента, экземпляр виджета древа, строку подключения, экземпляр окна. 
-
-Возвращает: ничего\\
-\hline  & Главный модуль & update\underline{ }element -- метод, реализующий опцию формирования запроса изменения элемента в БД. & update\underline{ }element(table, combinedControls, key, tree, connection). 
-
-На вход принимает строку названия таблицы, кортеж полей ввода,  идентификатор текущего элемента, экземпляр виджета древа, строку подключения.
-
-Возвращает: ничего\\
-\hline  & Главный модуль & search\underline{ }element -- метод, реализующий опцию поиска элемента в БД. & search\underline{ }element(
-combinedControls, table, tf, currentLb, connection, window). 
-
-На вход принимает кортеж полей ввода, строку названия таблицы, текстовое поля для воода идентификатора поиска, экземпляр текстового поля для отображения идентификатора текущего элемента,  строку подключения.
-
-Возвращает: ничего\\
-\hline  & Главный модуль & list\underline{ }table -- метод, реализующий опцию \textquotedbl пролистывания \textquotedbl текущей таблицы данных. & list\underline{ }table(direction, table, connection, window). 
-
-На вход принимает флаг направления (вперёд или назад), строку названия таблицы, строку подключения к БД, экземпляр окна.
-
-Возвращает: массив данных текущего элемента\\
-\hline  & Главный модуль & configure\underline{ }list -- метод, дополняющий list\underline{ }table и выводящий данные текущего элемента в поля ввода . & configure\underline{ }list(direction, table, combinedControls, currentLb, connection, window). 
-
-На вход принимает флаг направления (вперёд или назад), строку названия таблицы, кортеж полей ввода, экземпляр текстового поля для отображения идентификатора текущего элемента, строку подключения к БД, экземпляр окна.
-
-Возвращает: массив данных текущего элемента\\
-\hline Validator & Главный модуль & connection -- строка для подключения к базе данных & string connection\\
-\hline  & Главный модуль & validation\underline{ }digits -- метод, использующийся для регистрации правила валидации цифр & validation\underline{ }digits(
-stringVal). 
-
-На вход принимает строку для проверки соответствия правилу.
-
-Возвращает: ту часть строки, что соответствует маске цифр\\
-\hline  & Главный модуль & validation\underline{ }text -- метод, использующийся для регистрации правила валидации символов Кириллицы & validation\underline{ }text(
-stringVal). 
-
-На вход принимает строку для проверки соответствия правилу.
-
-Возвращает: ту часть строки, что соответствует маске символов Кириллицы\\
-\hline  & Главный модуль & validation\underline{ }char -- метод, использующийся для регистрации правила валидации единичного символа Кириллицы & validation\underline{ }char(
-stringVal). 
-
-На вход принимает строку для проверки соответствия правилу.
-
-Возвращает: ту часть строки, что соответствует маске единичного символа Кириллицы\\
-\hline  & Главный модуль & validation\underline{ }time -- метод, использующийся для регистрации правила валидации текстового поля для ввода времени & validation\underline{ }time(
-stringVal). 
-
-На вход принимает строку для проверки соответствия правилу.
-
-Возвращает: ту часть строки, что соответствует маске формата времени\\
-\hline  & Главный модуль & FKValid -- метод, проверяющий наличие элемента с идентификатором для создания внешнего ключа & FKValid(number, tableName). 
-
-На вход принимает номер для поиска, строку названия таблицы.
-
-Возвращает: флаг о том, был ли найден элемент\\
-\hline  & Главный модуль & validate\underline{ }single -- метод, задающий правила ввода для единичного поля ввода & validate\underline{ }single(element, window, type). 
-
-На вход принимает экземпляр поля ввода, экземпляр окна, строку типа валидации.
-
-Возвращает: поле ввода с изменёнными правилами\\
-\hline  & Главный модуль & validate\underline{ }whole -- метод, задающий правила ввода для массива полей ввода & validate\underline{ }whole(tfS, which, window). 
-
-На вход принимает массив полей ввода, строку названия таблицы данных, экземпляр окна.
-
-Возвращает: массив полей ввода с изменёнными правилами\\
-\hline  & Главный модуль & overvalidation -- метод, проверяющий уже введённые данные на корректность перед отправкой & overvalidation(table, combinedControls). 
-
-На вход принимает строку названия таблицы, кортеж полей ввода.
-
-Возвращает: флаг соответствия корректности\\
-
+	
 \end{xltabular}
 \renewcommand{\arraystretch}{1.0} % восстановление сетки
 
+\begin{xltabular}{\textwidth}{|X|p{2.5cm}|>{\setlength{\baselineskip}{0.7\baselineskip}}p{4.85cm}|>{\setlength{\baselineskip}{0.7\baselineskip}}p{4.85cm}|}
+	\caption{Описание класса Tables \label{class:table4}}\\
+	\hline \centrow \setlength{\baselineskip}{0.7\baselineskip} Название класса & \centrow \setlength{\baselineskip}{0.7\baselineskip} Модуль, к которому относится класс & \centrow Описание поля/метода & \centrow Поле/метод \\
+	\hline \centrow 1 & \centrow 2 & \centrow 3 & \centrow 4\\ \hline
+	\endfirsthead
+	\caption*{Продолжение таблицы \ref{class:table4}}\\
+	\hline \centrow 1 & \centrow 2 & \centrow 3 & \centrow 4\\ \hline
+	\finishhead
+	Tables & Главный модуль & self\underline{ }definition -- метод переводит названия таблиц данных с русского языка на английский для последующих запросов к БД & self\underline{ }definition(which). 
+	
+	На вход принимает строку названия на русском языке. 
+	
+	Возвращает: строку названия на английском языке\\
+	\hline  & Главный модуль & timeAppend -- метод, переводящий строку времени из формата <<ЧЧММСС>> в формат <<ЧЧ:ММ:СС>> & timeAppend(timeString). 
+	
+	На вход принимает неотформатированную строку времени. 
+	
+	Возвращает: строку времени в отформатированном виде\\
+	\hline  & Главный модуль & penalty\underline{ }check -- метод, сравнивающий данные о штрафных ограничениях данных о Дверях и данных о Штрафах & penalty\underline{ }check(pennies, type). 
+	
+	На вход принимает кортеж из найденных по принадлежности штрафов и строку типа штрафа, с которой нужно сопоставить элементы кортежа. 
+	
+	Возвращает: флаг о том, совпали ли типы\\
+	\hline  & Главный модуль & check\underline{ }access -- метод реализации опции <<Проверка доступа>>, проверяет введённые данные на наличие в базе и выводит информацию о предоставлении доступа. & check\underline{ }access(psr\underline{ }Tf, dor\underline{ }Tf, switch, connection). 
+	
+	На вход принимает экземпляры текстовых полей куда были введены идентификаторы для поиска, жкземпляр переключателя, строку подключения к БД. 
+	
+	Возвращает: ничего\\
+	\hline  & Главный модуль & start\underline{ }accesses -- метод заполнения данных о доступе пассажиров к дверям по каждому из критериев ограничений. & start\underline{ }accesses(
+	connection, psr\underline{ }switch). 
+	
+	На вход принимает строку подключения к БД и экземпляр переключателя. 
+	
+	Возвращает: ничего\\
+	\hline  & Главный модуль & add\underline{ }element -- метод, реализующий опцию формирования запроса добавления элемента в БД. & add\underline{ }element(table, combinedControls, currentLb, tree, tableWin, connection, window). 
+	
+	На вход принимает строку названия таблицы, кортеж полей ввода, экземпляр текстового поля для отображения идентификатора текущего элемента, экземпляр виджета древа, экземпляр контейнера для виджетов, строку подключения, экземпляр окна. 
+	
+	Возвращает: ничего\\
+	\hline  & Главный модуль & delete\underline{ }element -- метод, реализующий опцию формирования запроса удаления элемента в БД. & delete\underline{ }element(table, key, currentLb, combinedControls, tree, connection, window). 
+	
+	На вход принимает строку названия таблицы, идентификатор текущего элемента, кортеж полей ввода, экземпляр текстового поля для отображения идентификатора текущего элемента, экземпляр виджета древа, строку подключения, экземпляр окна. 
+	
+	Возвращает: ничего\\
+	\hline  & Главный модуль & update\underline{ }element -- метод, реализующий опцию формирования запроса изменения элемента в БД. & update\underline{ }element(table, combinedControls, key, tree, connection). 
+	
+	На вход принимает строку названия таблицы, кортеж полей ввода,  идентификатор текущего элемента, экземпляр виджета древа, строку подключения.
+	
+	Возвращает: ничего\\
+	\hline  & Главный модуль & search\underline{ }element -- метод, реализующий опцию поиска элемента в БД. & search\underline{ }element(
+	combinedControls, table, tf, currentLb, connection, window). 
+	
+	На вход принимает кортеж полей ввода, строку названия таблицы, текстовое поля для воода идентификатора поиска, экземпляр текстового поля для отображения идентификатора текущего элемента,  строку подключения.
+	
+	Возвращает: ничего\\
+	\hline  & Главный модуль & list\underline{ }table -- метод, реализующий опцию \textquotedbl пролистывания \textquotedbl текущей таблицы данных. & list\underline{ }table(direction, table, connection, window). 
+	
+	На вход принимает флаг направления (вперёд или назад), строку названия таблицы, строку подключения к БД, экземпляр окна.
+	
+	Возвращает: массив данных текущего элемента\\
+	\hline  & Главный модуль & configure\underline{ }list -- метод, дополняющий list\underline{ }table и выводящий данные текущего элемента в поля ввода . & configure\underline{ }list(direction, table, combinedControls, currentLb, connection, window). 
+	
+	На вход принимает флаг направления (вперёд или назад), строку названия таблицы, кортеж полей ввода, экземпляр текстового поля для отображения идентификатора текущего элемента, строку подключения к БД, экземпляр окна.
+	
+	Возвращает: массив данных текущего элемента\\
+	
+\end{xltabular}
+\renewcommand{\arraystretch}{1.0} % восстановление сетки
+
+
+\begin{xltabular}{\textwidth}{|X|p{2.5cm}|>{\setlength{\baselineskip}{0.7\baselineskip}}p{4.85cm}|>{\setlength{\baselineskip}{0.7\baselineskip}}p{4.85cm}|}
+	\caption{Описание класса Validator \label{class:table5}}\\
+	\hline \centrow \setlength{\baselineskip}{0.7\baselineskip} Название класса & \centrow \setlength{\baselineskip}{0.7\baselineskip} Модуль, к которому относится класс & \centrow Описание поля/метода & \centrow Поле/метод \\
+	\hline \centrow 1 & \centrow 2 & \centrow 3 & \centrow 4\\ \hline
+	\endfirsthead
+	\caption*{Продолжение таблицы \ref{class:table5}}\\
+	\hline \centrow 1 & \centrow 2 & \centrow 3 & \centrow 4\\ \hline
+	\finishhead
+	Validator & Главный модуль & connection -- строка для подключения к базе данных & string connection\\
+	\hline  & Главный модуль & validation\underline{ }digits -- метод, использующийся для регистрации правила валидации цифр & validation\underline{ }digits(
+	stringVal). 
+	
+	На вход принимает строку для проверки соответствия правилу.
+	
+	Возвращает: ту часть строки, что соответствует маске цифр\\
+	\hline  & Главный модуль & validation\underline{ }text -- метод, использующийся для регистрации правила валидации символов Кириллицы & validation\underline{ }text(
+	stringVal). 
+	
+	На вход принимает строку для проверки соответствия правилу.
+	
+	Возвращает: ту часть строки, что соответствует маске символов Кириллицы\\
+	\hline  & Главный модуль & validation\underline{ }char -- метод, использующийся для регистрации правила валидации единичного символа Кириллицы & validation\underline{ }char(
+	stringVal). 
+	
+	На вход принимает строку для проверки соответствия правилу.
+	
+	Возвращает: ту часть строки, что соответствует маске единичного символа Кириллицы\\
+	\hline  & Главный модуль & validation\underline{ }time -- метод, использующийся для регистрации правила валидации текстового поля для ввода времени & validation\underline{ }time(
+	stringVal). 
+	
+	На вход принимает строку для проверки соответствия правилу.
+	
+	Возвращает: ту часть строки, что соответствует маске формата времени\\
+	\hline  & Главный модуль & FKValid -- метод, проверяющий наличие элемента с идентификатором для создания внешнего ключа & FKValid(number, tableName). 
+	
+	На вход принимает номер для поиска, строку названия таблицы.
+	
+	Возвращает: флаг о том, был ли найден элемент\\
+	\hline  & Главный модуль & validate\underline{ }single -- метод, задающий правила ввода для единичного поля ввода & validate\underline{ }single(element, window, type). 
+	
+	На вход принимает экземпляр поля ввода, экземпляр окна, строку типа валидации.
+	
+	Возвращает: поле ввода с изменёнными правилами\\
+	\hline  & Главный модуль & validate\underline{ }whole -- метод, задающий правила ввода для массива полей ввода & validate\underline{ }whole(tfS, which, window). 
+	
+	На вход принимает массив полей ввода, строку названия таблицы данных, экземпляр окна.
+	
+	Возвращает: массив полей ввода с изменёнными правилами\\
+	\hline  & Главный модуль & overvalidation -- метод, проверяющий уже введённые данные на корректность перед отправкой & overvalidation(table, combinedControls). 
+	
+	На вход принимает строку названия таблицы, кортеж полей ввода.
+	
+	Возвращает: флаг соответствия корректности\\
+	
+\end{xltabular}
+\renewcommand{\arraystretch}{1.0} % восстановление сетки
 \subsection{Модульное тестирование разработанного приложение}
 \subsubsection{Структура тестового проекта}
 
@@ -292,7 +340,7 @@ if __name__ == '__main__':
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\linewidth]{images/test2}
-	\caption{результаты выполнения тестов}
+	\caption{Результаты выполнения тестов}
 	\label{fig:test2}
 \end{figure}
 
@@ -313,7 +361,7 @@ if __name__ == '__main__':
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{images/Example4}
-	\caption{главное меню в режиме Чрезвычайной ситуации}
+	\caption{Главное меню в режиме Чрезвычайной ситуации}
 	\label{fig:example4}
 \end{figure}
 
@@ -322,7 +370,7 @@ if __name__ == '__main__':
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{images/Example5}
-	\caption{панель управления с выбранным элементом}
+	\caption{Панель управления с выбранным элементом}
 	\label{fig:example5}
 \end{figure}
 
@@ -331,21 +379,21 @@ if __name__ == '__main__':
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{images/Example6}
-	\caption{поиск несуществующего элемента}
+	\caption{Поиск несуществующего элемента}
 	\label{fig:example6}
 \end{figure}
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{images/Example7}
-	\caption{поиск существующего элемента}
+	\caption{Поиск существующего элемента}
 	\label{fig:example7}
 \end{figure}
 В случае, когда пользователю нужно зарегистрировать новый штраф, он может добавить новый элемент, посредством заполнения всех обязательных полей и нажатием <<Добавить>>. На рисунке ~\ref{fig:example8} изображен результат добавления нового штрафа в базу.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{images/Example8}
-	\caption{добавление нового элемента в панели управления}
+	\caption{Добавление нового элемента в панели управления}
 	\label{fig:example8}
 \end{figure}
 Пользователь мог внести и добавить данные об элементе по ошибке. В этом случае он выбирает элемент и удаляет его, посредством клика по кнопке <<Удалить>>.
@@ -353,7 +401,7 @@ if __name__ == '__main__':
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{images/Example9}
-	\caption{удаление данных о штрафе}
+	\caption{Удаление данных о штрафе}
 	\label{fig:example9}
 \end{figure}
 
@@ -361,7 +409,7 @@ if __name__ == '__main__':
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\linewidth]{images/Example10}
-	\caption{проверка доступа к двери}
+	\caption{Проверка доступа к двери}
 	\label{fig:example10}
 \end{figure}
 

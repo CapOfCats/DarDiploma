@@ -29,7 +29,7 @@
 \contentsline {subsubsection}{\numberline {2.4.2}Требования к данным программной системы}{25}{subsubsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.5}Построение ER-модели данных}{25}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Функциональные требования к программной системе}{25}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Моделирование вариантов использования}{26}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.7}Варианты использования}{26}{subsection.2.7}%
 \contentsline {subsubsection}{\numberline {2.7.1}Вариант использования <<Открыть/закрыть раздел данных>>}{27}{subsubsection.2.7.1}%
 \contentsline {subsubsection}{\numberline {2.7.2}Вариант использования <<Сменить режим работы>>}{28}{subsubsection.2.7.2}%
 \contentsline {subsubsection}{\numberline {2.7.3}Вариант использования <<Редактировать данныe>>}{28}{subsubsection.2.7.3}%
@@ -57,15 +57,14 @@
 \contentsline {subsubsection}{\numberline {3.3.6}Язык структурированных запросов к базе данных SQL}{34}{subsubsection.3.3.6}%
 \contentsline {subsubsection}{\numberline {3.3.7}Язык программирования Python}{35}{subsubsection.3.3.7}%
 \contentsline {paragraph}{\numberline {3.3.7.1}Достоинства языка Python}{35}{paragraph.3.3.7.1}%
-\contentsline {paragraph}{\numberline {3.3.7.2}Недостатки языка Python}{35}{paragraph.3.3.7.2}%
-\contentsline {subsection}{\numberline {3.4}Проектирование пользовательского интерфейса}{36}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.4}Проектирование пользовательского интерфейса}{35}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Диаграмма размещения}{39}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Описание архитектуры приложения}{40}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.6}Описание архитектуры приложения}{39}{subsection.3.6}%
 \contentsline {section}{\numberline {4}Рабочий проект}{43}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Описание классов системы}{43}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Модульное тестирование разработанного приложение}{56}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}Модульное тестирование программной системы}{56}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Структура тестового проекта}{56}{subsubsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.3}Системное тестирование разработанного приложения}{59}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}Интеграционное тестирование программной системы}{59}{subsection.4.3}%
 \contentsline {section}{ЗАКЛЮЧЕНИЕ}{64}{section*.24}%
 \contentsline {section}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}{64}{Item.23}%
 \contentsline {section}{ПРИЛОЖЕНИЕ А\ Представление графического материала}{68}{section*.26}%

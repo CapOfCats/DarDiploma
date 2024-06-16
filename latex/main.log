@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  13 JUN 2024 04:11
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  16 JUN 2024 05:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -811,7 +811,7 @@ File: images/CommonScheme1.jpg Graphic file (type bmp)
 File: images/ER.eps Graphic file (type eps)
 <images/ER.eps>
 
-Underfull \hbox (badness 1715) in paragraph at lines 78--80
+Underfull \hbox (badness 1715) in paragraph at lines 76--78
 []\TU/TimesNewRoman(0)/m/n/14.4 На основании анализа предметной области, разраб
 атываемая про-
  []
@@ -820,17 +820,17 @@ Underfull \hbox (badness 1715) in paragraph at lines 78--80
 File: images/CommonScheme2.eps Graphic file (type eps)
 <images/CommonScheme2.eps>
  [27]
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 114--114
 []\TU/TimesNewRoman(0)/b/n/14.4 2.7.4 Вариант использования «Перейти к
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--120
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 []\TU/TimesNewRoman(0)/b/n/14.4 2.7.5 Вариант использования «Найти элемент по
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--128
+Underfull \hbox (badness 10000) in paragraph at lines 126--126
 []\TU/TimesNewRoman(0)/b/n/14.4 2.7.7 Вариант использования «Редактировать выбр
 анный
  []
@@ -850,1852 +850,1859 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--26
 
  []
 
-[33] [34] [35]
+[33] [34]
+Underfull \hbox (badness 1946) in paragraph at lines 74--75
+[]\TU/TimesNewRoman(0)/m/n/14.4 На основании требований к пользовательскому инт
+ерфейсу, пред-
+ []
+
+[35]
 File: images/Example2.jpg Graphic file (type bmp)
 <images/Example2.jpg>
- [36] [37]
+ [36]
 File: images/Example1.jpg Graphic file (type bmp)
 <images/Example1.jpg>
+ [37]
 File: images/Example3.jpg Graphic file (type bmp)
 <images/Example3.jpg>
  [38]
 File: images/CommonScheme4.jpg Graphic file (type bmp)
 <images/CommonScheme4.jpg>
  [39] [40] [41]
-Underfull \hbox (badness 3428) in paragraph at lines 193--194
+Underfull \hbox (badness 3428) in paragraph at lines 185--186
 []\TU/TimesNewRoman(0)/m/n/14.4 Utils.py - служебный класс, внутри которого реа
 лизованы функ-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--194
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
 \TU/TimesNewRoman(0)/m/n/14.4 ции запросов к базе данных, асинхронное обновлени
 е системного
  []
 
 
-Underfull \hbox (badness 6542) in paragraph at lines 193--194
+Underfull \hbox (badness 6542) in paragraph at lines 185--186
 \TU/TimesNewRoman(0)/m/n/14.4 времени(Например, подключение к БД - create$[]$co
 nnection(), чтение -
  []
 
 ) (./РабочийПроект.tex [42]
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 []|\TU/TimesNewRoman(0)/m/n/14.4 window – эк-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 \TU/TimesNewRoman(0)/m/n/14.4 земпляр класса
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 \TU/TimesNewRoman(0)/m/n/14.4 customtkinter.CTk(),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 []|\TU/TimesNewRoman(0)/m/n/14.4 frame – экзем-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 \TU/TimesNewRoman(0)/m/n/14.4 пляр класса
  []
 
 
-Overfull \hbox (19.57422pt too wide) in paragraph at lines 46--46
+Overfull \hbox (19.57422pt too wide) in paragraph at lines 47--47
 \TU/TimesNewRoman(0)/m/n/14.4 customtkinter.CTkFrame(),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 []|\TU/TimesNewRoman(0)/m/n/14.4 connection – строка,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 3646) in paragraph at lines 46--46
+Underfull \hbox (badness 3646) in paragraph at lines 47--47
 []|\TU/TimesNewRoman(0)/m/n/14.4 ask$[]$lb, timer$[]$lb – ви-
  []
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 46--46
+Underfull \hbox (badness 1102) in paragraph at lines 47--47
 \TU/TimesNewRoman(0)/m/n/14.4 джеты текста в глав-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 []|\TU/TimesNewRoman(0)/m/n/14.4 pns$[]$btn, rms$[]$btn,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 \TU/TimesNewRoman(0)/m/n/14.4 drs$[]$btn, psr$[]$btn,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 \TU/TimesNewRoman(0)/m/n/14.4 psr$[]$ua$[]$btn – видже-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 7558) in paragraph at lines 46--46
+Underfull \hbox (badness 7558) in paragraph at lines 47--47
 \TU/TimesNewRoman(0)/m/n/14.4 уверен ли пользова-
  []
 
 [43]
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 styles$[]$init – метод
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 для инициализации
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 стилей и добавле-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 ния его в список
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 styles$[]$init(st). При-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 нимает на вход
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 экземпляр класса
  []
 
 
-Underfull \hbox (badness 5091) in paragraph at lines 100--100
+Underfull \hbox (badness 5091) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 Style, который будет
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 show$[]$table – метод
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 для перехода к па-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 нели управления
  []
 
 
-Underfull \hbox (badness 4832) in paragraph at lines 100--100
+Underfull \hbox (badness 4832) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 выбранной таблицей.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 Отображает, настра-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 ивает и группирует
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 каждый элемент по
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 show$[]$table(which,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 window, tables,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []\TU/TimesNewRoman(0)/m/n/14.4 Принимает на вход
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 название таблицы,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 экземпляр окна, эк-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 земпляр tables, и
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 строку подключения
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 fields$[]$creation – ме-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 тод, вызываемый в
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 и направленно на-
  []
 
 
-Underfull \hbox (badness 1275) in paragraph at lines 100--100
+Underfull \hbox (badness 1275) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 страивает поля ввода
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 fields$[]$creation(which,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 название таблицы,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 экземпляр поля для
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 виджетов, экземпляр
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []\TU/TimesNewRoman(0)/m/n/14.4 Возвращает: tuple
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 (validatedTFs,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 combolist) – кор-
  []
 
 
-Underfull \hbox (badness 2368) in paragraph at lines 100--100
+Underfull \hbox (badness 2368) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 теж сформированных
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 clear(keyLabel,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 combinedControls,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 2626) in paragraph at lines 100--100
+Underfull \hbox (badness 2626) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 таблицу отображения
  []
 
 
-Underfull \hbox (badness 1565) in paragraph at lines 100--100
+Underfull \hbox (badness 1565) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 лей ввода, экземпляр
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 TreeCreate – метод,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 отображающий теку-
  []
 
 
-Underfull \hbox (badness 1558) in paragraph at lines 100--100
+Underfull \hbox (badness 1558) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 щую таблицу в виде
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 TreeCreate(tree, table,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 экземпляр класса
  []
 
 
-Underfull \hbox (badness 2970) in paragraph at lines 100--100
+Underfull \hbox (badness 2970) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 ttk.TreeView, который
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 будет пересоздавать,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 название табли-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 цы, экземпляр поля
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 виджетов, строку
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []\TU/TimesNewRoman(0)/m/n/14.4 Возвращает:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 TreeView.tree – со-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 зданный виджет
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 5417) in paragraph at lines 100--100
+Underfull \hbox (badness 5417) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 TreeRefresh – метод,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 экземпляр класса
  []
 
 
-Underfull \hbox (badness 2970) in paragraph at lines 100--100
+Underfull \hbox (badness 2970) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 ttk.TreeView, который
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 будет обновлять,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 название таблицы,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 100--100
+Underfull \hbox (badness 1953) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 MoveTo – метод для
  []
 
 
-Underfull \hbox (badness 1158) in paragraph at lines 100--100
+Underfull \hbox (badness 1158) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 таблицы по инденти-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 MoveTo(id, table,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 combinedControls,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 currentLb, window,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 идентификатор эле-
  []
 
 
-Underfull \hbox (badness 7722) in paragraph at lines 100--100
+Underfull \hbox (badness 7722) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 мента для перехода,
  []
 
 
-Underfull \hbox (badness 1331) in paragraph at lines 100--100
+Underfull \hbox (badness 1331) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 имя таблицы, кортеж
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 полей вывода, таб-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 личку отображения
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 текущего Id, экзем-
  []
 
 
-Underfull \hbox (badness 6063) in paragraph at lines 100--100
+Underfull \hbox (badness 6063) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 пляр окна и строку
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 show$[]$acc(connection,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 строку подключения
  []
 
 
-Underfull \hbox (badness 4954) in paragraph at lines 100--100
+Underfull \hbox (badness 4954) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 к БД, флаг ЧС, эк-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []|\TU/TimesNewRoman(0)/m/n/14.4 toggle$[]$ES – метод
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 обработки состоя-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 ний переключателя,
  []
 
 
-Underfull \hbox (badness 2478) in paragraph at lines 100--100
+Underfull \hbox (badness 2478) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 tables,connection, tree,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 4621) in paragraph at lines 100--100
+Underfull \hbox (badness 4621) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 теля, текстовое поле
  []
 
 
-Underfull \hbox (badness 1931) in paragraph at lines 100--100
+Underfull \hbox (badness 1931) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 для изменения выво-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 димой информации,
  []
 
 
-Underfull \hbox (badness 7704) in paragraph at lines 100--100
+Underfull \hbox (badness 7704) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 строку подключения,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
 \TU/TimesNewRoman(0)/m/n/14.4 экземпляр виджета
  []
 
 [44] [45] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Overfull \hbox (1.12424pt too wide) in paragraph at lines 149--149
+Overfull \hbox (1.12424pt too wide) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 create$[]$connection(path). 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 \TU/TimesNewRoman(0)/m/n/14.4 строковый путь к
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []\TU/TimesNewRoman(0)/m/n/14.4 Возвращает:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 \TU/TimesNewRoman(0)/m/n/14.4 sqlite3.connection
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 \TU/TimesNewRoman(0)/m/n/14.4 connection - экзем-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 \TU/TimesNewRoman(0)/m/n/14.4 пляр созданного
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 1546) in paragraph at lines 149--149
+Underfull \hbox (badness 1546) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 read$[]$single$[]$row – счи-
  []
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 149--149
+Underfull \hbox (badness 1708) in paragraph at lines 150--150
 \TU/TimesNewRoman(0)/m/n/14.4 тывает единственную
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 read$[]$single$[]$row(id,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принима-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 \TU/TimesNewRoman(0)/m/n/14.4 ет идентификатор,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 \TU/TimesNewRoman(0)/m/n/14.4 по которому будет
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 \TU/TimesNewRoman(0)/m/n/14.4 считываться строка,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 \TU/TimesNewRoman(0)/m/n/14.4 экземпляр подклю-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 \TU/TimesNewRoman(0)/m/n/14.4 чения, название
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 execute$[]$query(
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []\TU/TimesNewRoman(0)/m/n/14.4 Возвращает: bool
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 \TU/TimesNewRoman(0)/m/n/14.4 о том, успешно ли
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 execute$[]$read$[]$query –
  []
 
 
-Underfull \hbox (badness 1210) in paragraph at lines 149--149
+Underfull \hbox (badness 1210) in paragraph at lines 150--150
 \TU/TimesNewRoman(0)/m/n/14.4 отдельный метод для
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 execute$[]$read$[]$query(
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 6016) in paragraph at lines 149--149
+Underfull \hbox (badness 6016) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 timetick – асинхрон-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 3590) in paragraph at lines 149--149
+Underfull \hbox (badness 3590) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 asyncMLoop – метод
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 asyncStart – асин-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 \TU/TimesNewRoman(0)/m/n/14.4 хронный метод для
  []
 
 
-Underfull \hbox (badness 1014) in paragraph at lines 149--149
+Underfull \hbox (badness 1014) in paragraph at lines 150--150
 \TU/TimesNewRoman(0)/m/n/14.4 полей со временем в
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []|\TU/TimesNewRoman(0)/m/n/14.4 asyncStart(window,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 2903) in paragraph at lines 149--149
+Underfull \hbox (badness 2903) in paragraph at lines 150--150
 \TU/TimesNewRoman(0)/m/n/14.4 для вывода времени,
  []
 
 [47] [48]
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 переводит названия
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 таблиц данных с
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 русского языка на
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 дующих запросов к
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 строку названия на
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 Возвращает: строку
  []
 
 
-Underfull \hbox (badness 7522) in paragraph at lines 218--218
+Underfull \hbox (badness 7522) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 названия на англий-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 4805) in paragraph at lines 218--218
+Underfull \hbox (badness 4805) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 timeAppend – метод,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 переводящий строку
  []
 
 
-Underfull \hbox (badness 6775) in paragraph at lines 218--218
+Underfull \hbox (badness 6775) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 времени из формата
  []
 
 
-Overfull \hbox (7.17813pt too wide) in paragraph at lines 218--218
+Overfull \hbox (7.17813pt too wide) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 timeAppend(timeString). 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 неотформатирован-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 Возвращает: строку
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 penalty$[]$check – ме-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 тод, сравнивающий
  []
 
 
-Underfull \hbox (badness 5077) in paragraph at lines 218--218
+Underfull \hbox (badness 5077) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 данные о штрафных
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 penalty$[]$check(pennies,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 по принадлежности
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 нужно сопоставить
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 Возвращает: флаг о
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 5787) in paragraph at lines 218--218
+Underfull \hbox (badness 5787) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 check$[]$access – метод
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 реализации опции
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 «Проверка доступа»,
  []
 
 
-Underfull \hbox (badness 8000) in paragraph at lines 218--218
+Underfull \hbox (badness 8000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 проверяет введённые
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 данные на наличие
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 в базе и выводит
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 check$[]$access(psr$[]$Tf,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 dor$[]$Tf, switch,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 земпляры текстовых
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 для поиска, жкзем-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 пляр переключателя,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 2635) in paragraph at lines 218--218
+Underfull \hbox (badness 2635) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 start$[]$accesses – метод
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 доступе пассажиров
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 к дверям по каж-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 дому из критериев
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 start$[]$accesses(
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 строку подключения
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 к БД и экземпляр
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 6268) in paragraph at lines 218--218
+Underfull \hbox (badness 6268) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 add$[]$element – метод,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 реализующий оп-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 цию формирования
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 запроса добавления
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 add$[]$element(table,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 combinedControls,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 currentLb, tree,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 tableWin, connection,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 218--218
+Underfull \hbox (badness 1975) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 строку названия таб-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 лицы, кортеж полей
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 ввода, экземпляр
  []
 
 
-Underfull \hbox (badness 7925) in paragraph at lines 218--218
+Underfull \hbox (badness 7925) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 текстового поля для
  []
 
 
-Underfull \hbox (badness 6001) in paragraph at lines 218--218
+Underfull \hbox (badness 6001) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 отображения иденти-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 фикатора текущего
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 элемента, экземпляр
  []
 
 
-Underfull \hbox (badness 3417) in paragraph at lines 218--218
+Underfull \hbox (badness 3417) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 пляр контейнера для
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 ключения, экземпляр
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 реализующий опцию
  []
 
 
-Underfull \hbox (badness 3407) in paragraph at lines 218--218
+Underfull \hbox (badness 3407) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 формирования запро-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 delete$[]$element(table,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 key, currentLb,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 combinedControls,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 tree, connection,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 218--218
+Underfull \hbox (badness 1975) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 строку названия таб-
  []
 
 
-Underfull \hbox (badness 2213) in paragraph at lines 218--218
+Underfull \hbox (badness 2213) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 лицы, идентификатор
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 текущего элемента,
  []
 
 
-Underfull \hbox (badness 5970) in paragraph at lines 218--218
+Underfull \hbox (badness 5970) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 кортеж полей ввода,
  []
 
 
-Underfull \hbox (badness 3407) in paragraph at lines 218--218
+Underfull \hbox (badness 3407) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 экземпляр текстового
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 поля для отображе-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 ния идентификатора
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 текущего элемента,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 экземпляр виджета
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 древа, строку под-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 ключения, экземпляр
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 update$[]$element – ме-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 тод, реализующий
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 запроса изменения
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 update$[]$element(table,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принима-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 ет строку названия
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 таблицы, кортеж
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 полей ввода, иден-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 тификатор текущего
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 элемента, экземпляр
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 реализующий опцию
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 search$[]$element(
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 combinedControls,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 table, tf, currentLb,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 кортеж полей вво-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 да, строку названия
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 таблицы, текстовое
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 тификатора поиска,
  []
 
 
-Underfull \hbox (badness 3407) in paragraph at lines 218--218
+Underfull \hbox (badness 3407) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 экземпляр текстового
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 list$[]$table – метод,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 реализующий оп-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 цию []пролистывания
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 текущей таблицы
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 list$[]$table(direction,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 table, connection,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 флаг направления
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 (вперёд или назад),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 строку названия
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 таблицы, строку
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 подключения к БД,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 Возвращает: массив
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 данных текущего
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 configure$[]$list – ме-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 тод, дополняющий
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 данные текущего
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []|\TU/TimesNewRoman(0)/m/n/14.4 configure$[]$list(direction,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 table,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 combinedControls,
  []
 
 
-Underfull \hbox (badness 6526) in paragraph at lines 218--218
+Underfull \hbox (badness 6526) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 currentLb, connection,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 флаг направления
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 (вперёд или назад),
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 218--218
+Underfull \hbox (badness 1975) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 строку названия таб-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 лицы, кортеж полей
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 ввода, экземпляр
  []
 
 
-Underfull \hbox (badness 7925) in paragraph at lines 218--218
+Underfull \hbox (badness 7925) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 текстового поля для
  []
 
 
-Underfull \hbox (badness 6001) in paragraph at lines 218--218
+Underfull \hbox (badness 6001) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 отображения иденти-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 фикатора текущего
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 элемента, строку
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 подключения к БД,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 []\TU/TimesNewRoman(0)/m/n/14.4 Возвращает: массив
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
 \TU/TimesNewRoman(0)/m/n/14.4 данных текущего
  []
 
 [49] [50] [51] [52]
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 connection – строка
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 для подключения к
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 2205) in paragraph at lines 276--276
+Underfull \hbox (badness 2205) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 validation$[]$digits – ме-
  []
 
 
-Underfull \hbox (badness 2343) in paragraph at lines 276--276
+Underfull \hbox (badness 2343) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 тод, использующийся
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 validation$[]$digits(
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 3078) in paragraph at lines 276--276
+Underfull \hbox (badness 3078) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 строку для проверки
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 276--276
+Underfull \hbox (badness 5374) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 строки, что соответ-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 использующийся для
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 регистрации правила
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 валидации символов
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 validation$[]$text(
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 3078) in paragraph at lines 276--276
+Underfull \hbox (badness 3078) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 строку для проверки
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 276--276
+Underfull \hbox (badness 5374) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 строки, что соответ-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 validation$[]$char – ме-
  []
 
 
-Underfull \hbox (badness 2343) in paragraph at lines 276--276
+Underfull \hbox (badness 2343) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 тод, использующийся
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 для регистрации
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 правила валидации
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 единичного символа
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 validation$[]$char(
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 3078) in paragraph at lines 276--276
+Underfull \hbox (badness 3078) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 строку для проверки
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 276--276
+Underfull \hbox (badness 5374) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 строки, что соответ-
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 276--276
+Underfull \hbox (badness 1360) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 ствует маске единич-
  []
 
 
-Underfull \hbox (badness 1286) in paragraph at lines 276--276
+Underfull \hbox (badness 1286) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 ного символа Кирил-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 validation$[]$time – ме-
  []
 
 
-Underfull \hbox (badness 2343) in paragraph at lines 276--276
+Underfull \hbox (badness 2343) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 тод, использующийся
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 для регистрации
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 правила валидации
  []
 
 
-Underfull \hbox (badness 7925) in paragraph at lines 276--276
+Underfull \hbox (badness 7925) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 текстового поля для
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 validation$[]$time(
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 3078) in paragraph at lines 276--276
+Underfull \hbox (badness 3078) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 строку для проверки
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 276--276
+Underfull \hbox (badness 5374) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 строки, что соответ-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 веряющий наличие
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 FKValid(number,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []\TU/TimesNewRoman(0)/m/n/14.4 Возвращает: флаг о
  []
 
 
-Underfull \hbox (badness 4454) in paragraph at lines 276--276
+Underfull \hbox (badness 4454) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 том, был ли найден
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 задающий правила
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 validate$[]$single(element,
  []
 
 
-Underfull \hbox (badness 6876) in paragraph at lines 276--276
+Underfull \hbox (badness 6876) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 земпляр поля ввода,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []\TU/TimesNewRoman(0)/m/n/14.4 Возвращает: поле
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 задающий правила
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 ввода для массива
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 validate$[]$whole(tfS,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 массив полей вво-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 да, строку названия
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 таблицы данных,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []\TU/TimesNewRoman(0)/m/n/14.4 Возвращает: массив
  []
 
 
-Underfull \hbox (badness 3291) in paragraph at lines 276--276
+Underfull \hbox (badness 3291) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 полей ввода с изме-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 проверяющий уже
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 корректность перед
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []|\TU/TimesNewRoman(0)/m/n/14.4 overvalidation(table,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 []\TU/TimesNewRoman(0)/m/n/14.4 На вход принимает
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 276--276
+Underfull \hbox (badness 1975) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 строку названия таб-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
 \TU/TimesNewRoman(0)/m/n/14.4 лицы, кортеж полей
  []
 
@@ -2708,7 +2715,7 @@ ty
 File: lstlang1.sty 2024/03/11 1.10a listings language file
 )
 LaTeX Font Info:    Font shape `TU/Verdana(0)/m/n' will be
-(Font)              scaled to size 10.07994pt on input line 301.
+(Font)              scaled to size 10.07994pt on input line 302.
  [57]
 File: images/test2.jpg Graphic file (type bmp)
 <images/test2.jpg>
@@ -2907,6 +2914,7 @@ Invalid UTF-8 byte or sequence at line 60 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 60 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 60 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 60 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 60 replaced by U+FFFD.
 File: images/плакат9.eps Graphic file (type eps)
 <images/плакат9.eps>
  [75] [76] [77])
@@ -2931,7 +2939,7 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-04-11>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DBA824DC52F02333E2C68588F9798365;21504.
+(rerunfilecheck)             Checksum: 595F8EA057B2406A632C7B58B015F0AB;21091.
  ) 
 Here is how much of TeX's memory you used:
  17410 strings out of 474705

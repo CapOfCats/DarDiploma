@@ -58,8 +58,8 @@
 \contentsline {subsubsection}{\numberline {3.3.7}Язык программирования Python}{35}{subsubsection.3.3.7}%
 \contentsline {paragraph}{\numberline {3.3.7.1}Достоинства языка Python}{35}{paragraph.3.3.7.1}%
 \contentsline {subsection}{\numberline {3.4}Проектирование пользовательского интерфейса}{35}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Диаграмма размещения}{39}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Описание архитектуры приложения}{39}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.5}Диаграмма компонентов}{39}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Описание архитектуры приложения}{40}{subsection.3.6}%
 \contentsline {section}{\numberline {4}Рабочий проект}{43}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Описание классов системы}{43}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Модульное тестирование программной системы}{56}{subsection.4.2}%

@@ -115,11 +115,11 @@ class Controller:
             text_color="cyan",
             fg_color="black",
             font=customtkinter.CTkFont(family="Consolas", size=15),
-            command=lambda: tables.check_access(validator.validate_single(psr_tf,window,"Number"),  validator.validate_single(dor_tf, window, "Number"), psr_switch, connection)
+            command=lambda: tables.check_access(validator.validate_single(psr_tf,window,"Number"),  validator.validate_single(dor_tf, window, "Number"), psr_switch, connection, isES)
         )
         acc_btn.place(relx=0.415, rely=0.45)
 
-        tables.start_accesses(connection, psr_switch)
+        tables.start_accesses(connection, psr_switch, isES)
         tree = None
         which = "Доступы"
         if isES:
@@ -133,7 +133,7 @@ class Controller:
         which = "Доступы"
         if isES:
             which = "ДоступыЧС"
-        tables.start_accesses(connection,switch)
+        tables.start_accesses(connection,switch,isES)
         tree = Controller.TreeRefresh(tree, tables.self_definition(which), connection)
 
     @staticmethod
@@ -491,8 +491,8 @@ class Controller:
                 colnames = ["Psr_ID", "Dor_ID", "Access_age", "Access_sex", "Access_judge", "Access_penalty", "Access_health", "Access_number", "Access_time", "Access_rate"]
                 colnamesTranslated = ["Идентификатор пассажира", "Идентификатор двери", "Огр.Возраст", "Огр.Пол", "Огр.Судимости","Огр.Штраф", "Огр.Здоровья", "Огр.Номер", "Огр.Время", "Огр.Тариф"]
             case "Accesses_ES":
-                colnames = ["Psr_ID", "Dor_ID", "Does_contain_room", "Access_education", "Access_qualification"]
-                colnamesTranslated = ["Идентификатор пассажира", "Идентификатор двери", "Ведёт ли в комнату", "Огр.Образование", "Огр.Квалификация"]
+                colnames = ["Psr_ID", "Dor_ID", "Does_contain_room", "Access_number", "Access_education", "Access_qualification"]
+                colnamesTranslated = ["Идентификатор пассажира", "Идентификатор двери", "Ведёт ли в комнату", "Огр.Номер", "Огр.Образование", "Огр.Квалификация"]
         command = f"""
                         SELECT * FROM {table}
                         """

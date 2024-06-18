@@ -34,8 +34,6 @@ window.resizable(False, False)
 connection = utils.create_connection("D:\Drova&Utilyty\MSVS\Diploma1.db")
 isES = False
 
-
-
 ask_lb = customtkinter.CTkLabel(
     master=frame,
     text="Выберите таблицу:",
@@ -145,7 +143,7 @@ acs_btn = customtkinter.CTkButton(
     text_color=syscolor,
     fg_color= "black",
     font= customtkinter.CTkFont(family="Courier new", size=16),
-    command=lambda: controller.show_acc(connection, isES, tables, window)
+    command=lambda: controller.show_acc(connection, main.isES, tables, window)
 )
 
 ES_switch = customtkinter.CTkSwitch(

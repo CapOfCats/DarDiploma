@@ -53,7 +53,9 @@ class Tables:
         return allow
 
     @staticmethod
-    def check_access(psr_Tf, dor_Tf, switch, connection):
+    def check_access(psr_Tf, dor_Tf, switch, connection, isES):
+        table =""
+        numtostart = 0
         if (switch.get() == "Пассажир"):
             pastable ="Passengers"
         else:
@@ -75,13 +77,19 @@ class Tables:
             elif(len(utils.execute_read_query(connection,dorFindCommand)) == 0):
                 messagebox.showerror(title="Ошибка", message="Двери с таким идентификатором не существует")
             else:
+                if not isES:
+                    table = "Accesses"
+                    numtostart = 2
+                else:
+                    table = "Accesses_ES"
+                    numtostart = 3
                 acccomand = f"""
-                            SELECT * FROM Accesses WHERE (Psr_ID = {psr_Tf.get()}) AND (Dor_ID = {dor_Tf.get()}) 
+                            SELECT * FROM {table} WHERE (Psr_ID = {psr_Tf.get()}) AND (Dor_ID = {dor_Tf.get()}) 
                             """
                 access = utils.execute_read_query(connection,acccomand)
                 if (len(access[0]) != 0):
                     giveaccess = True
-                    for i in range (2,len(access[0])-1):
+                    for i in range (numtostart,len(access[0])-1):
                         if (access[0][i] == "Нет"):
                             giveaccess = False
                     if giveaccess:
@@ -91,8 +99,9 @@ class Tables:
 
 
 
+
     @staticmethod
-    def start_accesses(connection, psr_switch):
+    def start_accesses(connection, psr_switch, isES):
         command = f"""
                       DELETE FROM Accesses
                       """
@@ -114,101 +123,202 @@ class Tables:
                         SELECT * FROM Doors
                         """
         doors = utils.execute_read_query(connection, command)
-        colnames = "Psr_ID" + ',' + "Dor_ID" + ',' +  "Access_age" + ',' + "Access_sex" + ',' + "Access_judge" + ',' + "Access_penalty" + ',' "Access_health" + ',' + "Access_number" + ',' + "Access_time" + ',' + "Access_rate"
-        giveaccess = True
-        for door in doors:
-
-            if (door[2]!=""):
-                room = utils.read_single_row(door[2],connection,"Rooms")
-                for passenger in passengers:
-                    resultcolls = f"(SELECT ID FROM {pastable} WHERE ID={passenger[0]})" + ',' + f"(SELECT ID FROM Doors WHERE ID={door[0]})" + ','
-                    if (room[9] == None):
-                        resultcolls+='"' + "Да" + '"' + ','
-                    else:
-                        if (passenger[3]>=room[9]):
+        if not isES:
+            colnames = "Psr_ID" + ',' + "Dor_ID" + ',' +  "Access_age" + ',' + "Access_sex" + ',' + "Access_judge" + ',' + "Access_penalty" + ',' "Access_health" + ',' + "Access_number" + ',' + "Access_time" + ',' + "Access_rate"
+            giveaccess = True
+            for door in doors:
+                if (door[2]!=""):
+                    room = utils.read_single_row(door[2],connection,"Rooms")
+                    for passenger in passengers:
+                        resultcolls = f"(SELECT ID FROM {pastable} WHERE ID={passenger[0]})" + ',' + f"(SELECT ID FROM Doors WHERE ID={door[0]})" + ','
+                        if (room[9] == None):
                             resultcolls+='"' + "Да" + '"' + ','
                         else:
-                            resultcolls += "Нет" + ',' # на возраст
-                            giveaccess = False
-                    if (room[5] == None ) or (room[5]==""):
-                        resultcolls+='"' + "Да" + '"' + ','
-                    else:
-                        if (room[5]!=passenger[5]):
-                            resultcolls += '"' +"Нет" + '"'+ ','
-                            giveaccess = False
+                            if (passenger[3]>=room[9]):
+                                resultcolls+='"' + "Да" + '"' + ','
+                            else:
+                                resultcolls += "Нет" + ',' # на возраст
+                                giveaccess = False
+                        if (room[5] == None ) or (room[5]==""):
+                            resultcolls+='"' + "Да" + '"' + ','
                         else:
-                            resultcolls+='"' + "Да" + '"' + ',' # на пол
-                    if (room[7] == None ) or (room[7]==""):
-                        resultcolls+='"' + "Да" + '"' + ','
-                    else:
-                        if (room[7] ==passenger[7]):
-                            resultcolls += '"' +"Нет" + '"'+ ','
-                            giveaccess = False
+                            if (room[5]!=passenger[5]):
+                                resultcolls += '"' +"Нет" + '"'+ ','
+                                giveaccess = False
+                            else:
+                                resultcolls+='"' + "Да" + '"' + ',' # на пол
+                        if (room[7] == None ) or (room[7]==""):
+                            resultcolls+='"' + "Да" + '"' + ','
                         else:
-                            resultcolls+='"' + "Да" + '"' + ',' # на судимости
-                    if (room[8]== None) or (room[8] ==""):
-                        resultcolls+='"' + "Да" + '"' + ','
-                    else:
+                            if (room[7] ==passenger[7]):
+                                resultcolls += '"' +"Нет" + '"'+ ','
+                                giveaccess = False
+                            else:
+                                resultcolls+='"' + "Да" + '"' + ',' # на судимости
+                        if (room[8]== None) or (room[8] ==""):
+                            resultcolls+='"' + "Да" + '"' + ','
+                        else:
+                            command = f"""
+                                        SELECT * FROM Penalties WHERE Belongness = {passenger[0]}
+                                        """
+                            if Tables.penalty_check(utils.execute_read_query(connection,command),room[8]):
+                                resultcolls+='"' + "Да" + '"' + ','
+                            else:
+                                resultcolls += '"' +"Нет" + '"'+ ','
+                                giveaccess = False# на штрафы
+                        if (room[6]== None) or (room[6] ==""):
+                            resultcolls+='"' + "Да" + '"' + ','
+                        else:
+                            if (room[6] == passenger[6]):
+                                resultcolls += '"' +"Нет" + '"'+ ','
+                                giveaccess = False
+                            else:
+                                resultcolls+='"' + "Да" + '"' + ',' # на здоровье
+                        if (door[4] == "") or (door[4] == None):
+                            resultcolls+='"' + "Да" + '"' + ','
+                        else:
+                            if (door[4]!=passenger[6]):
+                                resultcolls += '"' +"Нет" + '"'+ ','
+                                giveaccess = False
+                            else:
+                                resultcolls+='"' + "Да" + '"' + ',' # на номер
+                        if (room[4]== None) or (room[4] ==""):
+                            resultcolls+='"' + "Да" + '"' + ','
+                        else:
+                            convTimeR = room[4][:2] + room[4][3:]
+                            convTimeR = convTimeR[:4] + convTimeR[5:]
+                            t = time.localtime()
+                            current_time = time.strftime("%H%M%S", t)
+                            if (current_time<convTimeR):
+                                resultcolls += '"' +"Нет" + '"'+ ','
+                                giveaccess= False
+                            else:
+                                resultcolls+='"' + "Да" + '"' + ',' # на время
+                        if (room[3]=="Служебная"):
+                            if (passenger[4]!= "Персонал"):
+                                resultcolls += '"' +"Нет" + '"'+ ','
+                                giveaccess = False
+                        else:
+                            resultcolls += '"' + "Да" + '"' + ','
+
+                        lastElementRc = resultcolls[len(resultcolls) - 1]
+                        if (lastElementRc == ','):
+                            resultcolls = resultcolls[:len(resultcolls)-1]
                         command = f"""
-                                    SELECT * FROM Penalties WHERE Belongness = {passenger[0]}
-                                    """
-                        if Tables.penalty_check(utils.execute_read_query(connection,command),room[8]):
-                            resultcolls+='"' + "Да" + '"' + ','
-                        else:
-                            resultcolls += '"' +"Нет" + '"'+ ','
-                            giveaccess = False# на штрафы
-                    if (room[6]== None) or (room[6] ==""):
-                        resultcolls+='"' + "Да" + '"' + ','
-                    else:
-                        if (room[6] == passenger[6]):
-                            resultcolls += '"' +"Нет" + '"'+ ','
-                            giveaccess = False
-                        else:
-                            resultcolls+='"' + "Да" + '"' + ',' # на здоровье
-                    if (door[4] == "") or (door[4] == None):
-                        resultcolls+='"' + "Да" + '"' + ','
-                    else:
-                        if (door[4]!=passenger[6]):
-                            resultcolls += '"' +"Нет" + '"'+ ','
-                            giveaccess = False
-                        else:
-                            resultcolls+='"' + "Да" + '"' + ',' # на номер
-                    if (room[4]== None) or (room[4] ==""):
-                        resultcolls+='"' + "Да" + '"' + ','
-                    else:
-                        convTimeR = room[4][:2] + room[4][3:]
-                        convTimeR = convTimeR[:4] + convTimeR[5:]
-                        t = time.localtime()
-                        current_time = time.strftime("%H%M%S", t)
-                        if (current_time<convTimeR):
-                            resultcolls += '"' +"Нет" + '"'+ ','
-                            giveaccess= False
-                        else:
-                            resultcolls+='"' + "Да" + '"' + ',' # на время
-                    if (room[3]=="Служебная"):
-                        if (passenger[4]!= "Персонал"):
-                            resultcolls += '"' +"Нет" + '"'+ ','
-                            giveaccess = False
-                    else:
-                        resultcolls += '"' + "Да" + '"' + ','
+                                            INSERT INTO Accesses ({colnames}) VALUES ({resultcolls})
+                                            """
 
-                    lastElementRc = resultcolls[len(resultcolls) - 1]
-                    if (lastElementRc == ','):
-                        resultcolls = resultcolls[:len(resultcolls)-1]
-                    command = f"""
+                        utils.execute_silent(connection,command)
+                else:
+                    for passenger in passengers:
+                        resultcolls = f"(SELECT ID FROM {pastable} WHERE ID={passenger[0]})" + ',' + f"(SELECT ID FROM Doors WHERE ID={door[0]})" + ','
+                        resultcolls += "Да" + ',' + "Да" + ',' + "Да" + ',' + "Да" + ',' + "Да" + ',' + "Да" + ',' + "Да" + ',' + "Да"
+                        command = f"""
+                                                                INSERT INTO Accesses ({colnames}) VALUES ({resultcolls})
+                                                                """
+
+                        utils.execute_silent(connection, command)
+        else:
+            colnames = "Psr_ID" + ',' + "Dor_ID" + ',' + "Does_contain_room" + ',' + "Access_number" + ',' + "Access_education" + ',' + "Access_qualification"
+            giveaccess = True
+            for door in doors:
+                if (door[2]!=""):
+                    room = utils.read_single_row(door[2],connection,"Rooms")
+                    for passenger in passengers:
+                        resultcolls = f"(SELECT ID FROM {pastable} WHERE ID={passenger[0]})" + ',' + f"(SELECT ID FROM Doors WHERE ID={door[0]})" + ',' + '"'+"Да"+'"' + ','
+                        if room[3] == "Жилая":
+                            if (door[4] == "") or (door[4] == None):
+                                resultcolls+='"' + "Да" + '"' + ','
+                            else:
+                                if (door[4]!=passenger[6]):
+                                    resultcolls += '"' +"Нет" + '"'+ ','
+                                    giveaccess = False
+                                else:
+                                    resultcolls+='"' + "Да" + '"' + ',' # на номер
+                            resultcolls += '"' + "Да" + '"' + ',' + '"' + "Да" + '"' + ','
+                        elif room[3]=="Служебная":
+                            resultcolls += '"' + "Да" + '"' + ','
+                            if passenger[4] == "Персонал":
+                                resultcolls += '"' + "Да" + '"' + ',' + '"' + "Да" + '"' + ','
+                            else:
+                                match (room[1]):
+                                    case "Медпункт":
+                                        if (passenger[9]!=None) and (passenger[9] == "Медик"):
+                                            resultcolls += '"' + "Да" + '"' + ','
+                                            if (passenger[10]!=None) and (passenger[10]>1):
+                                                resultcolls += '"' + "Да" + '"' + ','
+                                            else:
+                                                resultcolls += '"' + "Нет" + '"' + ','
+                                                giveaccess = False
+                                        else:
+                                            resultcolls += '"' + "Нет" + '"' + ','
+                                            giveaccess = False
+                                    case "ТрубныйОтсек":
+                                        if (passenger[9] != None) and (passenger[9] == "Инженер"):
+                                            resultcolls += '"' + "Да" + '"' + ','
+                                            if (passenger[10] != None) and (passenger[10] > 2):
+                                                resultcolls += '"' + "Да" + '"' + ','
+                                            else:
+                                                resultcolls += '"' + "Нет" + '"' + ','
+                                                giveaccess = False
+                                        else:
+                                            resultcolls += '"' + "Нет" + '"' + ','
+                                            giveaccess = False
+                                    case "КапитанскийМостик":
+                                        if (passenger[9] != None) and (passenger[9] == "Штурман"):
+                                            resultcolls += '"' + "Да" + '"' + ','
+                                            if (passenger[10] != None) and (passenger[10] > 4):
+                                                resultcolls += '"' + "Да" + '"' + ','
+                                            else:
+                                                resultcolls += '"' + "Нет" + '"' + ','
+                                                giveaccess = False
+                                        else:
+                                            resultcolls += '"' + "Нет" + '"' + ','
+                                            giveaccess = False
+                                    case "КомнатаСвязи":
+                                        if (passenger[9] != None) and (passenger[9] == "Радист"):
+                                            resultcolls += '"' + "Да" + '"' + ','
+                                            if (passenger[10] != None) and (passenger[10] > 3):
+                                                resultcolls += '"' + "Да" + '"' + ','
+                                            else:
+                                                resultcolls += '"' + "Нет" + '"' + ','
+                                                giveaccess = False
+                                        else:
+                                            resultcolls += '"' + "Нет" + '"' + ','
+                                            giveaccess = False
+                                    case "КомнатаПогружений":
+                                        if (passenger[9] != None) and (passenger[9] == "Пловец"):
+                                            resultcolls += '"' + "Да" + '"' + ','
+                                            if (passenger[10] != None) and (passenger[10] > 2):
+                                                resultcolls += '"' + "Да" + '"' + ','
+                                            else:
+                                                resultcolls += '"' + "Нет" + '"' + ','
+                                                giveaccess = False
+                                        else:
+                                            resultcolls += '"' + "Нет" + '"' + ','
+                                            giveaccess = False
+                                    case _:
+                                        resultcolls += '"' + "Нет" + '"' + ',' + '"' + "Нет" + '"' + ','
+                                        giveaccess = False
+                        else:
+                            resultcolls += '"' + "Да" + '"' + ',' + '"' + "Да" + '"' + ',' + '"' + "Да" + '"' + ','
+                        lastElementRc = resultcolls[len(resultcolls) - 1]
+                        if (lastElementRc == ','):
+                            resultcolls = resultcolls[:len(resultcolls) - 1]
+                        command = f"""
+                                      INSERT INTO Accesses_ES ({colnames}) VALUES ({resultcolls})
+                                      """
+
+                        utils.execute_silent(connection, command)
+                else:
+                    for passenger in passengers:
+                        resultcolls = f"(SELECT ID FROM {pastable} WHERE ID={passenger[0]})" + ',' + f"(SELECT ID FROM Doors WHERE ID={door[0]})" + ','
+                        resultcolls += "Нет" + ',' + "Да" + ',' + "Да" + ',' + "Да"
+                        command = f"""
                                         INSERT INTO Accesses ({colnames}) VALUES ({resultcolls})
                                         """
 
-                    utils.execute_silent(connection,command)
-            else:
-                for passenger in passengers:
-                    resultcolls = f"(SELECT ID FROM {pastable} WHERE ID={passenger[0]})" + ',' + f"(SELECT ID FROM Doors WHERE ID={door[0]})" + ','
-                    resultcolls += "Да" + ',' + "Да" + ',' + "Да" + ',' + "Да" + ',' + "Да" + ',' + "Да" + ',' + "Да" + ',' + "Да"
-                    command = f"""
-                                                            INSERT INTO Accesses ({colnames}) VALUES ({resultcolls})
-                                                            """
-
-                    utils.execute_silent(connection, command)
+                        utils.execute_silent(connection, command)
 
 
     @staticmethod

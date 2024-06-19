@@ -2,6 +2,7 @@ import asyncio
 import sqlite3
 from sqlite3 import Error
 import time
+import os
 
 connstring = None
 
@@ -87,3 +88,13 @@ class Utils:
                                         System_time = (datetime('now','localtime')) ;
                                     """
             Utils.execute_silent(connection, command)
+
+    @staticmethod
+    def writeLog(text):
+        text = '[' + time.strftime("%H:%M:%S", time.localtime()) + ']' + text + '\n'
+        if not os.path.exists("ASLog.txt"):
+            stream = open("ASLog.txt", "x")
+            stream.close()
+        stream = open("ASLog.txt", "a")
+        stream.write(text)
+        stream.close()

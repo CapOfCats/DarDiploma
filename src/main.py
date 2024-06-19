@@ -183,9 +183,11 @@ def change_state(isES,switch):
     fg=""
     switch.configure(text=switch.get())
     if main.isES:
+        utils.writeLog("Система переведена в режим Чрезвычайной Ситуации")
         colorToProceed = EScolor
         fg = "Yellow"
     else:
+        utils.writeLog("Система переведена в штатный режим")
         colorToProceed = syscolor
         fg = "green"
     for button in list_btn:

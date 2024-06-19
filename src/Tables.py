@@ -28,6 +28,27 @@ class Tables:
             return "Passengers_Underage"
         else:
             return "Unknown_table"
+
+    @staticmethod
+    def self_definition_reverse(which):
+        if type(which) is not str:
+            return "Invalid table name type"
+        if which == "Passengers":
+            return "Пассажиров"
+        elif which == "Doors":
+            return "Дверей"
+        elif which == "Rooms":
+            return "Комнаты"
+        elif which == "Penalties":
+            return "Штрафов"
+        elif which == "Accesses":
+            return "Доступов"
+        elif which == "Accesses_ES":
+            return "ДоступовЧС"
+        elif which == "Passengers_Underage":
+            return "Детей"
+        else:
+            return "Unknown_table"
     @staticmethod
     def timeAppend(timeString):
         if type(timeString) is not str:
@@ -92,10 +113,14 @@ class Tables:
                     for i in range (numtostart,len(access[0])-1):
                         if (access[0][i] == "Нет"):
                             giveaccess = False
+                    utils.writeLog = utils.writeLog
+                    utils.writeLog(f"Запрошен доступ пассажира #{psr_Tf.get()} к двери #{dor_Tf.get()}")
                     if giveaccess:
                         messagebox.showinfo(title="Контакт", message= "Доступ разрешён")
+                        utils.writeLog("Доступ предоставлен")
                     else:
                         messagebox.showerror(title="Контакт", message="Доступ запрещён")
+                        utils.writeLog("В доступе отказано")
 
 
 
@@ -419,6 +444,8 @@ class Tables:
                 controller.MoveTo(utils.execute_read_query(connection, command)[0][0], table, combinedControls, currentLb, window, connection)
                 tree = controller.TreeRefresh(tree, table, connection)
                 messagebox.showinfo("Успех", "Элемент успешно добавлен")
+                utils.writeLog(f"В таблицу {Tables.self_definition_reverse(table)} был добавлен новый элемент:")
+                utils.writeLog('[' + tfValues + ']')
     @staticmethod
     def delete_element(table, key, currentLb, combinedControls, tree, connection, window):
         command = ""
@@ -436,6 +463,7 @@ class Tables:
                 utils.execute_silent(connection, command)
                 messagebox.showinfo('Готово', "Элемент успешно удалён")
                 tree = controller.TreeRefresh(tree, table, connection)
+                utils.writeLog(f"Из таблицы {Tables.self_definition_reverse(table)} был удалён элемент №{key}")
     @staticmethod
     def update_element(table, combinedControls, key, tree, connection):
         colnames = []
@@ -538,14 +566,19 @@ class Tables:
             if (utils.execute_silent(connection, command)):
                 messagebox.showinfo("Успех", "Элемент успешно отредактирован!")
                 tree = controller.TreeRefresh(tree, table, connection)
+                utils.writeLog(f"В таблице {Tables.self_definition_reverse(table)} были изменены данные элемента №{key}. Теперь они выглядят так:")
+                utils.writeLog('[' + ''.join(tfValues) + ']')
     @staticmethod
     def search_element(combinedControls, table, tf, currentLb, connection, window):
         cortage = utils.read_single_row(int(tf.get()), connection, table)
+        utils.writeLog(f"Запрос на поиск элемента #{int(tf.get())} в таблице {Tables.self_definition_reverse(table)}")
         if cortage == None:
             messagebox.showwarning("Ошибка", "Элемента с таким id не существует")
+            utils.writeLog(f"Элемент #{int(tf.get())} не был найден")
         else:
             controller.MoveTo(int(tf.get()), table, combinedControls, currentLb, window, connection)
             messagebox.showinfo("Успех", "Элемент найден")
+            utils.writeLog(f"Элемент #{int(tf.get())} найден")
     @staticmethod
     def list_table(direction, table, connection, window):
         command = f"""
@@ -654,4 +687,5 @@ class Tables:
             window.ck = cortage[0]
         else:
             messagebox.showinfo('Ой!', "Таблица пуста. Для пролистывания нужно её заполнить.")
+
 

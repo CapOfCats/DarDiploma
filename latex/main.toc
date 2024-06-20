@@ -62,8 +62,8 @@
 \contentsline {subsection}{\numberline {3.6}Описание архитектуры приложения}{40}{subsection.3.6}%
 \contentsline {section}{\numberline {4}Рабочий проект}{43}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Описание классов системы}{43}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Модульное тестирование программной системы}{56}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Структура тестового проекта}{56}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2}Модульное тестирование программной системы}{57}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Структура тестового проекта}{57}{subsubsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.3}Интеграционное тестирование программной системы}{59}{subsection.4.3}%
 \contentsline {section}{ЗАКЛЮЧЕНИЕ}{64}{section*.24}%
 \contentsline {section}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}{64}{Item.23}%

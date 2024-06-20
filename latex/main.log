@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  18 JUN 2024 15:18
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  20 JUN 2024 03:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -857,14 +857,14 @@ Underfull \hbox (badness 1946) in paragraph at lines 74--75
  []
 
 [35]
-File: images/Example2.jpg Graphic file (type bmp)
-<images/Example2.jpg>
+File: images/Example2.png Graphic file (type bmp)
+<images/Example2.png>
  [36]
-File: images/Example1.jpg Graphic file (type bmp)
-<images/Example1.jpg>
+File: images/Example1.png Graphic file (type bmp)
+<images/Example1.png>
  [37]
-File: images/Example3.jpg Graphic file (type bmp)
-<images/Example3.jpg>
+File: images/Example3.png Graphic file (type bmp)
+<images/Example3.png>
 
 
 LaTeX Warning: Reference `comp:commonscheme5' on page 38 undefined on input lin
@@ -2376,7 +2376,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 217--217
 \TU/TimesNewRoman(0)/m/n/14.4 данных текущего
  []
 
-[49] [50] [51] [52]
+[49] [50] [51] [52] [53]
 Underfull \hbox (badness 10000) in paragraph at lines 275--275
 []|\TU/TimesNewRoman(0)/m/n/14.4 Главный
  []
@@ -2711,16 +2711,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 275--275
 \TU/TimesNewRoman(0)/m/n/14.4 лицы, кортеж полей
  []
 
-[53] [54] [55]
+[54] [55]
 File: images/test1.jpg Graphic file (type bmp)
 <images/test1.jpg>
-
+ [56]
 Underfull \hbox (badness 3088) in paragraph at lines 290--291
 []\TU/TimesNewRoman(0)/m/n/14.4 test$[]$Controller.py: Наборы модульных тестов 
 для класса панели
  []
 
-[56]
+
 (d:/TeX/texstudio/texlive/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.s
 ty
 File: lstlang1.sty 2024/03/11 1.10a listings language file
@@ -2731,23 +2731,23 @@ LaTeX Font Info:    Font shape `TU/Verdana(0)/m/n' will be
 File: images/test2.jpg Graphic file (type bmp)
 <images/test2.jpg>
  [58]
-File: images/Example4.jpg Graphic file (type bmp)
-<images/Example4.jpg>
-File: images/Example5.jpg Graphic file (type bmp)
-<images/Example5.jpg>
+File: images/Example4.png Graphic file (type bmp)
+<images/Example4.png>
+File: images/Example5.png Graphic file (type bmp)
+<images/Example5.png>
  [59]
-File: images/Example6.jpg Graphic file (type bmp)
-<images/Example6.jpg>
+File: images/Example6.png Graphic file (type bmp)
+<images/Example6.png>
  [60]
 File: images/Example7.png Graphic file (type bmp)
 <images/Example7.png>
-File: images/Example8.jpg Graphic file (type bmp)
-<images/Example8.jpg>
-File: images/Example9.jpg Graphic file (type bmp)
-<images/Example9.jpg>
+File: images/Example8.png Graphic file (type bmp)
+<images/Example8.png>
+File: images/Example9.png Graphic file (type bmp)
+<images/Example9.png>
  [61]
-File: images/Example10.jpg Graphic file (type bmp)
-<images/Example10.jpg>
+File: images/Example10.png Graphic file (type bmp)
+<images/Example10.png>
  [62] [63]) (./Заключение.tex
 Underfull \hbox (badness 1281) in paragraph at lines 10--11
 []\TU/TimesNewRoman(0)/m/n/14.4 Разработан и реализован пользовательский интерф
@@ -2833,14 +2833,8 @@ ng-evolution-access-control-
  []
 
 [66]) (./Плакаты.tex [67] [68]
-Invalid UTF-8 byte or sequence at line 12 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 12 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 12 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 12 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 12 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 12 replaced by U+FFFD.
-File: images/плакат1.eps Graphic file (type eps)
-<images/плакат1.eps>
+File: images/плакат1.png Graphic file (type bmp)
+<images/плакат1.png>
 Invalid UTF-8 byte or sequence at line 18 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 18 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 18 replaced by U+FFFD.
@@ -2863,18 +2857,11 @@ Invalid UTF-8 byte or sequence at line 24 replaced by U+FFFD.
 File: images/плакат3.eps Graphic file (type eps)
 <images/плакат3.eps>
  [70]
-Invalid UTF-8 byte or sequence at line 30 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 30 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 30 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 30 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 30 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 30 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 30 replaced by U+FFFD.
-File: images/плакат4.eps Graphic file (type eps)
-<images/плакат4.eps>
+File: images/плакат4.png Graphic file (type bmp)
+<images/плакат4.png>
  [71]
-File: images/плакат5.eps Graphic file (type eps)
-<images/плакат5.eps>
+File: images/плакат5.png Graphic file (type bmp)
+<images/плакат5.png>
  [72]
 Invalid UTF-8 byte or sequence at line 42 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 42 replaced by U+FFFD.
@@ -2889,11 +2876,26 @@ Invalid UTF-8 byte or sequence at line 42 replaced by U+FFFD.
 File: images/плакат6.eps Graphic file (type eps)
 <images/плакат6.eps>
  [73]
-File: images/плакат7.jpg Graphic file (type bmp)
-<images/плакат7.jpg>
+Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
+File: images/плакат7.eps Graphic file (type eps)
+<images/плакат7.eps>
  [74]
-File: images/плакат8.jpg Graphic file (type bmp)
-<images/плакат8.jpg>
+Invalid UTF-8 byte or sequence at line 56 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 56 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 56 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 56 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 56 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 56 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 56 replaced by U+FFFD.
+File: images/плакат8.eps Graphic file (type eps)
+<images/плакат8.eps>
  [75]
 Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
@@ -2934,10 +2936,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1C7DC39DBC83D12752CE5D7BED4839C4;21099.
  ) 
 Here is how much of TeX's memory you used:
- 17391 strings out of 474705
- 341148 string characters out of 5750043
+ 17293 strings out of 474705
+ 338789 string characters out of 5750043
  2254406 words of memory out of 5000000
- 39311 multiletter control sequences out of 15000+600000
+ 39213 multiletter control sequences out of 15000+600000
  559598 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,11n,110p,672b,2163s stack positions out of 10000i,1000n,20000p,200000b,200000s

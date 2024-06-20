@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  20 JUN 2024 03:49
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  20 JUN 2024 17:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2835,27 +2835,13 @@ ng-evolution-access-control-
 [66]) (./Плакаты.tex [67] [68]
 File: images/плакат1.png Graphic file (type bmp)
 <images/плакат1.png>
-Invalid UTF-8 byte or sequence at line 18 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 18 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 18 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 18 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 18 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 18 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 18 replaced by U+FFFD.
-File: images/плакат2.eps Graphic file (type eps)
-<images/плакат2.eps>
+File: images/плакат2.png Graphic file (type bmp)
+<images/плакат2.png>
  [69
 
 ]
-Invalid UTF-8 byte or sequence at line 24 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 24 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 24 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 24 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 24 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 24 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 24 replaced by U+FFFD.
-File: images/плакат3.eps Graphic file (type eps)
-<images/плакат3.eps>
+File: images/плакат3.png Graphic file (type bmp)
+<images/плакат3.png>
  [70]
 File: images/плакат4.png Graphic file (type bmp)
 <images/плакат4.png>
@@ -2863,50 +2849,17 @@ File: images/плакат4.png Graphic file (type bmp)
 File: images/плакат5.png Graphic file (type bmp)
 <images/плакат5.png>
  [72]
-Invalid UTF-8 byte or sequence at line 42 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 42 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 42 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 42 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 42 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 42 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 42 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 42 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 42 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 42 replaced by U+FFFD.
-File: images/плакат6.eps Graphic file (type eps)
-<images/плакат6.eps>
+File: images/плакат6.png Graphic file (type bmp)
+<images/плакат6.png>
  [73]
-Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
-File: images/плакат7.eps Graphic file (type eps)
-<images/плакат7.eps>
+File: images/плакат7.png Graphic file (type bmp)
+<images/плакат7.png>
  [74]
-Invalid UTF-8 byte or sequence at line 56 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 56 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 56 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 56 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 56 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 56 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 56 replaced by U+FFFD.
-File: images/плакат8.eps Graphic file (type eps)
-<images/плакат8.eps>
+File: images/плакат8.png Graphic file (type bmp)
+<images/плакат8.png>
  [75]
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-File: images/плакат9.eps Graphic file (type eps)
-<images/плакат9.eps>
+File: images/плакат9.png Graphic file (type bmp)
+<images/плакат9.png>
  [76] [77])
 (./Код.tex
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
@@ -2936,10 +2889,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1C7DC39DBC83D12752CE5D7BED4839C4;21099.
  ) 
 Here is how much of TeX's memory you used:
- 17293 strings out of 474705
- 338789 string characters out of 5750043
+ 17083 strings out of 474705
+ 333773 string characters out of 5750043
  2254406 words of memory out of 5000000
- 39213 multiletter control sequences out of 15000+600000
+ 39003 multiletter control sequences out of 15000+600000
  559598 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,11n,110p,672b,2163s stack positions out of 10000i,1000n,20000p,200000b,200000s

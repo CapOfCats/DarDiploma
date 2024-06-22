@@ -6,7 +6,7 @@ import Utils
 
 class Validator:
     utils = Utils.Utils()
-    connection = utils.create_connection("D:\Drova&Utilyty\MSVS\Diploma1.db")
+    connection = utils.create_connection("Diploma1.db")
 
     @staticmethod
     def validation_digits(stringVal):

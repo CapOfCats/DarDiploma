@@ -65,11 +65,17 @@ class Tables:
             return "Invalid seconds"
         return timeString[0] + timeString[1] + ":" + timeString[2] + timeString[3] + ":" + timeString[4] + timeString[5]
     @staticmethod
-    def penalty_check(pennies, type):
+    def penalty_check(pennies, typ):
+        types = ["Загрязнение", "Хулиганство", "ОбманСистемы", "Грубость"]
+        if (pennies != None) and (pennies != []):
+            if (len(pennies[0]) != 7):
+                return "Not a penalty tuple given"
+        if (type(typ) is not str) or (typ not in types):
+            return "Wrong penalty type"
         allow = True
-        if (pennies!=None):
+        if (pennies != None):
             for penny in pennies:
-                if (penny[4] == type):
+                if (penny[4] == typ):
                     allow = False
         return allow
 

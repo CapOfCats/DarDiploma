@@ -9,17 +9,25 @@ connstring = None
 class Utils:
     @staticmethod
     def create_connection(path):
+        if (type(path) is not str):
+            return "Wrong path format given"
+        #     return "Wrong database for this project"
         connection = None
-        try:
+        if os.path.exists(f"{path}"):
             connection = sqlite3.connect(path)
             print("Connection to SQLite DB successful")
             connstring = connection
-        except Error as e:
-            print(f"The error '{e}' occurred")
+        else:
+            raise FileNotFoundError
         return connection
 
     @staticmethod
     def read_single_row(id, connection, table):
+        tables = ["Passengers", "Passengers_Underage", "Doors", "Rooms", "Penalties", "Accesses", "Accesses_ES"]
+        if (type(id) is not int) or (id < 1):
+            return "ID should be int natural value"
+        elif (type(table) is not str) or (table not in tables):
+            return "Wrong table name given"
         cursor = connection.cursor()
         result = None
         try:
@@ -27,12 +35,16 @@ class Utils:
             cursor.execute(sqlite_select_query, {"ID": id})
             connection.commit()
             result = cursor.fetchone()
+            # if result == None:
+            #     raise KeyError
             return result
         except sqlite3.Error as e:
             print(f"The error '{e}' occurred")
 
     @staticmethod
     def execute_query(connection, query):
+        if (type(query) is not str):
+            return "Invalid query given"
         cursor = connection.cursor()
         try:
             cursor.execute(query)
@@ -41,7 +53,7 @@ class Utils:
             return True
         except Error as e:
             print(f"The error '{e}' occurred")
-            return False
+            raise SyntaxError
 
     @staticmethod
     def execute_silent(connection, query):

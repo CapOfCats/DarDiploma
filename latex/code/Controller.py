@@ -10,7 +10,7 @@ validator = Validator.Validator()
 
 class Controller:
     @staticmethod
-    def show_acc(connection, isES, tables, window):
+    def show_acc(connection, isES, tables, window, stylecolors):
         tableWin = customtkinter.CTkToplevel()
         tableWin.title("Праверка доступа")
         tableWin.geometry('1200x600')
@@ -20,7 +20,7 @@ class Controller:
             width=600,
             height=200,
             border_width=1,
-            border_color=("cyan"),
+            border_color=(stylecolors[0]),
             fg_color="black"
         )
         frameWin.pack(anchor=N, expand=True, fill=BOTH)
@@ -32,7 +32,7 @@ class Controller:
             width=20,
             height=5,
             text="Проверить доступ:",
-            text_color="Cyan",
+            text_color=stylecolors[0],
             font=customtkinter.CTkFont(family="Courier New", size=18)
         )
         title_lb.place(relx=0.4, rely=0.05)
@@ -42,7 +42,7 @@ class Controller:
             width=20,
             height=5,
             text="Ребёнок:",
-            text_color="Cyan",
+            text_color=stylecolors[0],
             font=customtkinter.CTkFont(family="Consolas", size=17)
         )
         psr_lb.place(relx=0.25, rely=0.35)
@@ -52,7 +52,7 @@ class Controller:
             width=20,
             height=5,
             text="Дверь:",
-            text_color="Cyan",
+            text_color=stylecolors[0],
             font=customtkinter.CTkFont(family="Consolas", size=17)
         )
         dor_lb.place(relx=0.65, rely=0.35)
@@ -64,11 +64,11 @@ class Controller:
             switch_height= 24,
             switch_width= 60,
             border_width= 1,
-            fg_color= "green",
-            border_color= "cyan",
+            fg_color= stylecolors[1],
+            border_color= stylecolors[0],
             button_color= "grey",
             button_hover_color = "aquamarine",
-            text_color= "cyan",
+            text_color= stylecolors[0],
             onvalue= "Пассажир",
             offvalue= "Ребёнок",
             text = "Ребёнок",
@@ -82,9 +82,9 @@ class Controller:
             width=100,
             corner_radius=7,
             fg_color="black",
-            border_color="cyan",
+            border_color=stylecolors[0],
             border_width=1,
-            text_color="cyan",
+            text_color=stylecolors[0],
             font=customtkinter.CTkFont(family="Consolas", size=15)
         )
         psr_tf.place(relx = 0.235, rely =0.45)
@@ -95,9 +95,9 @@ class Controller:
             width=100,
             corner_radius=7,
             fg_color="black",
-            border_color="cyan",
+            border_color=stylecolors[0],
             border_width=1,
-            text_color="cyan",
+            text_color=stylecolors[0],
             font=customtkinter.CTkFont(family="Consolas", size=15)
         )
         dor_tf.place(relx=0.625, rely=0.45)
@@ -109,22 +109,22 @@ class Controller:
             text="Проверить доступ",
             corner_radius=15,
             border_width=1,
-            border_color="cyan",
-            hover_color="green",
+            border_color=stylecolors[0],
+            hover_color=stylecolors[1],
             bg_color="black",
-            text_color="cyan",
+            text_color=stylecolors[0],
             fg_color="black",
             font=customtkinter.CTkFont(family="Consolas", size=15),
-            command=lambda: tables.check_access(validator.validate_single(psr_tf,window,"Number"),  validator.validate_single(dor_tf, window, "Number"), psr_switch, connection)
+            command=lambda: tables.check_access(validator.validate_single(psr_tf,window,"Number"),  validator.validate_single(dor_tf, window, "Number"), psr_switch, connection, isES)
         )
         acc_btn.place(relx=0.415, rely=0.45)
 
-        tables.start_accesses(connection, psr_switch)
+        tables.start_accesses(connection, psr_switch, isES)
         tree = None
         which = "Доступы"
         if isES:
             which = "ДоступыЧС"
-        tree = Controller.TreeCreate(tree, tables.self_definition(which), tableWin, connection)
+        tree = Controller.TreeCreate(tree, tables.self_definition(which), tableWin, connection, stylecolors)
 
     @staticmethod
     def toggle_switch(switch, psrlb, tables,connection, tree, isES):
@@ -133,11 +133,11 @@ class Controller:
         which = "Доступы"
         if isES:
             which = "ДоступыЧС"
-        tables.start_accesses(connection,switch)
+        tables.start_accesses(connection,switch,isES)
         tree = Controller.TreeRefresh(tree, tables.self_definition(which), connection)
 
     @staticmethod
-    def styles_init(st):
+    def styles_init(st, stylecolors):
         if (not ("Custom.Treeheading.border" in st.element_names())):
             st.element_create("Custom.Treeheading.border", "from", "clam")
         st.layout("Custom.Treeview.Heading", [
@@ -150,12 +150,12 @@ class Controller:
             ]}),
         ])
         st.configure("Custom.Treeview.Heading",
-                     background="black", foreground="cyan", relief="flat")
+                     background="black", foreground=stylecolors[0], relief="flat")
         st.map("Custom.Treeview.Heading",
                relief=[('active', 'groove'), ('pressed', 'sunken')])
 
     @staticmethod
-    def show_table(which,window, tables, connection):
+    def show_table(which,window, tables, connection, stylecolors):
         window.ck = 0
         tableWin = customtkinter.CTkToplevel()
         tableWin.title(which)
@@ -166,21 +166,21 @@ class Controller:
             width=600,
             height=200,
             border_width=1,
-            border_color=("cyan"),
+            border_color=(stylecolors[0]),
             fg_color="black"
         )
         frameWin.pack(anchor=N, expand=True, fill=BOTH)
         tableWin.resizable(False, False)
         tableWin.grab_set()
-        combinedControls = (Controller.fields_creation(which, frameWin, window))
+        combinedControls = (Controller.fields_creation(which, frameWin, window, stylecolors))
         tree = None
-        tree = Controller.TreeCreate(tree, tables.self_definition(which), tableWin, connection)
+        tree = Controller.TreeCreate(tree, tables.self_definition(which), tableWin, connection, stylecolors)
         current_lb = customtkinter.CTkLabel(
             master=frameWin,
             width=20,
             height=5,
             text="??",
-            text_color="Cyan",
+            text_color=stylecolors[0],
             font=customtkinter.CTkFont(family="Consolas", size=18)
         )
 
@@ -191,10 +191,10 @@ class Controller:
             text="←",
             corner_radius=25,
             border_width=1,
-            border_color="cyan",
-            hover_color="green",
+            border_color=stylecolors[0],
+            hover_color=stylecolors[1],
             bg_color="black",
-            text_color="cyan",
+            text_color=stylecolors[0],
             fg_color="black",
             font=customtkinter.CTkFont(family="Courier new", size=15),
             command=lambda: tables.configure_list(False, tables.self_definition(which), combinedControls, current_lb,
@@ -208,10 +208,10 @@ class Controller:
             text="→",
             corner_radius=25,
             border_width=1,
-            border_color="cyan",
-            hover_color="green",
+            border_color=stylecolors[0],
+            hover_color=stylecolors[1],
             bg_color="black",
-            text_color="cyan",
+            text_color=stylecolors[0],
             fg_color="black",
             font=customtkinter.CTkFont(family="Courier new", size=15),
             command=lambda: tables.configure_list(True, tables.self_definition(which), combinedControls, current_lb,
@@ -225,10 +225,10 @@ class Controller:
             text="УДАЛИТЬ",
             corner_radius=25,
             border_width=1,
-            border_color="cyan",
-            hover_color="green",
+            border_color=stylecolors[0],
+            hover_color=stylecolors[1],
             bg_color="black",
-            text_color="cyan",
+            text_color=stylecolors[0],
             fg_color="black",
             font=customtkinter.CTkFont(family="Courier new", size=15),
             command=lambda: tables.delete_element(tables.self_definition(which), window.ck, current_lb,
@@ -242,10 +242,10 @@ class Controller:
             text="ДОБАВИТЬ",
             corner_radius=25,
             border_width=1,
-            border_color="cyan",
-            hover_color="green",
+            border_color=stylecolors[0],
+            hover_color=stylecolors[1],
             bg_color="black",
-            text_color="cyan",
+            text_color=stylecolors[0],
             fg_color="black",
             font=customtkinter.CTkFont(family="Courier new", size=15),
             command=lambda: tables.add_element(tables.self_definition(which), combinedControls, current_lb, tree,
@@ -259,10 +259,10 @@ class Controller:
             text="ИЗМЕНИТЬ",
             corner_radius=25,
             border_width=1,
-            border_color="cyan",
-            hover_color="green",
+            border_color=stylecolors[0],
+            hover_color=stylecolors[1],
             bg_color="black",
-            text_color="cyan",
+            text_color=stylecolors[0],
             fg_color="black",
             font=customtkinter.CTkFont(family="Courier new", size=15),
             command=lambda: tables.update_element(tables.self_definition(which), combinedControls, window.ck, tree,
@@ -273,7 +273,7 @@ class Controller:
             width=20,
             height=2,
             text="Введите номер для поиска",
-            text_color="Cyan",
+            text_color=stylecolors[0],
             font=customtkinter.CTkFont(family="Consolas", size=14)
         )
 
@@ -282,9 +282,9 @@ class Controller:
             width=10,
             corner_radius=7,
             fg_color="black",
-            border_color="cyan",
+            border_color=stylecolors[0],
             border_width=1,
-            text_color="cyan",
+            text_color=stylecolors[0],
             font=customtkinter.CTkFont(family="Consolas", size=15)
         )
 
@@ -295,10 +295,10 @@ class Controller:
             text="НАЙТИ",
             corner_radius=25,
             border_width=1,
-            border_color="cyan",
-            hover_color="green",
+            border_color=stylecolors[0],
+            hover_color=stylecolors[1],
             bg_color="black",
-            text_color="cyan",
+            text_color=stylecolors[0],
             fg_color="black",
             font=customtkinter.CTkFont(family="Courier new", size=15),
             command=lambda: tables.search_element(combinedControls, tables.self_definition(which), searchTf, current_lb,
@@ -310,7 +310,7 @@ class Controller:
             width=1,
             height=10,
             text="",
-            text_color="Cyan",
+            text_color=stylecolors[0],
             font=customtkinter.CTkFont(family="Consolas", size=18)
         )
         column2_empty_lb = customtkinter.CTkLabel(
@@ -318,7 +318,7 @@ class Controller:
             width=150,
             height=5,
             text="",
-            text_color="Cyan",
+            text_color=stylecolors[0],
             font=customtkinter.CTkFont(family="Consolas", size=18)
         )
         fields_multiplier = 0
@@ -339,7 +339,7 @@ class Controller:
         searchLb.grid(row=5, column=grid_coef + fields_multiplier, pady=5, padx=5)
         searchTf.grid(row=6, column=grid_coef + fields_multiplier, pady=5, padx=5, ipadx=15)
     @staticmethod
-    def fields_creation(which, frameEx, window):
+    def fields_creation(which, frameEx, window, stylecolors):
         lblist = []
         tflist = []
         lbnames = []
@@ -417,7 +417,7 @@ class Controller:
                 text=lbnames[i],
                 width=30,
                 height=10,
-                text_color="Cyan",
+                text_color=stylecolors[0],
                 font=customtkinter.CTkFont(family="Courier new", size=15, weight="bold")
             ))
             lblist[i].grid(row=2, column=i + fields_multiplier, pady=12, padx=5)
@@ -428,14 +428,14 @@ class Controller:
                     values=combodict[i],
                     width=lenlist[i],
                     corner_radius=7,
-                    border_color="cyan",
+                    border_color=stylecolors[0],
                     border_width=1,
                     fg_color="black",
-                    button_hover_color="green",
+                    button_hover_color=stylecolors[1],
                     dropdown_fg_color="black",
-                    dropdown_hover_color="green",
-                    dropdown_text_color="cyan",
-                    text_color="cyan",
+                    dropdown_hover_color=stylecolors[1],
+                    dropdown_text_color=stylecolors[0],
+                    text_color=stylecolors[0],
                     font=customtkinter.CTkFont(family="Consolas", size=15),
                     dropdown_font=customtkinter.CTkFont(family="Consolas", size=15)
                 ))
@@ -446,9 +446,9 @@ class Controller:
                     width=lenlist[i],
                     corner_radius=7,
                     fg_color="black",
-                    border_color="cyan",
+                    border_color=stylecolors[0],
                     border_width=1,
-                    text_color="cyan",
+                    text_color=stylecolors[0],
                     font=customtkinter.CTkFont(family="Consolas", size=15)
                 ))
                 tflist[-1].grid(row=3, column=i + fields_multiplier, pady=5, padx=5, ipadx=lenlist[i] * 3)
@@ -465,7 +465,7 @@ class Controller:
             combinedControls[1][i].set("")
         window.ck = 0
     @staticmethod
-    def TreeCreate(tree, table, tableWin, connection):
+    def TreeCreate(tree, table, tableWin, connection, stylecolors):
         if tree != None:
             tree.destroy()
             tree = None
@@ -491,8 +491,8 @@ class Controller:
                 colnames = ["Psr_ID", "Dor_ID", "Access_age", "Access_sex", "Access_judge", "Access_penalty", "Access_health", "Access_number", "Access_time", "Access_rate"]
                 colnamesTranslated = ["Идентификатор пассажира", "Идентификатор двери", "Огр.Возраст", "Огр.Пол", "Огр.Судимости","Огр.Штраф", "Огр.Здоровья", "Огр.Номер", "Огр.Время", "Огр.Тариф"]
             case "Accesses_ES":
-                colnames = ["Psr_ID", "Dor_ID", "Does_contain_room", "Access_education", "Access_qualification"]
-                colnamesTranslated = ["Идентификатор пассажира", "Идентификатор двери", "Ведёт ли в комнату", "Огр.Образование", "Огр.Квалификация"]
+                colnames = ["Psr_ID", "Dor_ID", "Does_contain_room", "Access_number", "Access_education", "Access_qualification"]
+                colnamesTranslated = ["Идентификатор пассажира", "Идентификатор двери", "Ведёт ли в комнату", "Огр.Номер", "Огр.Образование", "Огр.Квалификация"]
         command = f"""
                         SELECT * FROM {table}
                         """
@@ -503,16 +503,16 @@ class Controller:
         treestyle.configure(
             "Treeview",
             background="black",
-            foreground="cyan",
+            foreground=stylecolors[0],
             fieldbackground="black",
             borderwidth=2,
-            bordercolor="cyan"
+            bordercolor=stylecolors[0]
         )
-        treestyle.map('Treeview', background=[('selected', "green")], foreground=[('selected', "cyan")])
+        treestyle.map('Treeview', background=[('selected', stylecolors[1])], foreground=[('selected', stylecolors[0])])
         tableWin.bind("<<TreeviewSelect>>", lambda event: tableWin.focus_set())
 
         headerstyle = ttk.Style()
-        Controller.styles_init(headerstyle)
+        Controller.styles_init(headerstyle, stylecolors)
         tree = ttk.Treeview(tableWin, columns=colnames, show="headings", style="Custom.Treeview")
         tree.pack(fill=BOTH, expand=1)
         for i in range(0, len(colnames)):

@@ -13,7 +13,8 @@ customtkinter.set_default_color_theme("dark-blue")
 ck = 0
 syscolor = "cyan"
 EScolor = "red"
-colorToProceed = ""
+colorToProceed = syscolor
+fgcolor = "green"
 window = customtkinter.CTk()
 window.title('Круиз DB')
 window.geometry('600x250')
@@ -31,7 +32,7 @@ controller = Controller.Controller()
 utils = Utils.Utils()
 tables = Tables.Tables()
 window.resizable(False, False)
-connection = utils.create_connection("D:\Drova&Utilyty\MSVS\Diploma1.db")
+connection = utils.create_connection("Diploma1.db")
 isES = False
 
 ask_lb = customtkinter.CTkLabel(
@@ -56,7 +57,7 @@ psr_btn = customtkinter.CTkButton(
     text_color=syscolor,
     fg_color= "black",
     font= customtkinter.CTkFont(family="Courier new", size=16),
-    command=lambda: controller.show_table("Пассажиры", window, tables, connection)
+    command=lambda: controller.show_table("Пассажиры", window, tables, connection, [main.colorToProceed, main.fgcolor])
 )
 
 psr_ua_btn = customtkinter.CTkButton(
@@ -72,7 +73,7 @@ psr_ua_btn = customtkinter.CTkButton(
     text_color=syscolor,
     fg_color= "black",
     font= customtkinter.CTkFont(family="Courier new", size=16),
-    command=lambda: controller.show_table("Дети", window, tables, connection)
+    command=lambda: controller.show_table("Дети", window, tables, connection, [main.colorToProceed, main.fgcolor])
 )
 
 drs_btn = customtkinter.CTkButton(
@@ -88,7 +89,7 @@ drs_btn = customtkinter.CTkButton(
     text_color=syscolor,
     fg_color= "black",
     font= customtkinter.CTkFont(family="Courier new", size=16),
-    command=lambda: controller.show_table("Двери", window,tables, connection)
+    command=lambda: controller.show_table("Двери", window,tables, connection, [main.colorToProceed, main.fgcolor])
 )
 
 rms_btn = customtkinter.CTkButton(
@@ -104,7 +105,7 @@ rms_btn = customtkinter.CTkButton(
     text_color=syscolor,
     fg_color= "black",
     font= customtkinter.CTkFont(family="Courier new", size=16),
-    command=lambda: controller.show_table("Комнаты", window, tables, connection)
+    command=lambda: controller.show_table("Комнаты", window, tables, connection, [main.colorToProceed, main.fgcolor])
 )
 
 pns_btn = customtkinter.CTkButton(
@@ -120,7 +121,7 @@ pns_btn = customtkinter.CTkButton(
     text_color=syscolor,
     fg_color= "black",
     font= customtkinter.CTkFont(family="Courier new", size=16),
-    command=lambda: controller.show_table("Штрафы",window, tables, connection)
+    command=lambda: controller.show_table("Штрафы",window, tables, connection, [main.colorToProceed, main.fgcolor])
 )
 timer_lb = customtkinter.CTkLabel(
     master=frame,
@@ -143,7 +144,7 @@ acs_btn = customtkinter.CTkButton(
     text_color=syscolor,
     fg_color= "black",
     font= customtkinter.CTkFont(family="Courier new", size=16),
-    command=lambda: controller.show_acc(connection, main.isES, tables, window)
+    command=lambda: controller.show_acc(connection, main.isES, tables, window, [main.colorToProceed, main.fgcolor])
 )
 
 ES_switch = customtkinter.CTkSwitch(
@@ -180,22 +181,21 @@ def on_closing():
 
 def change_state(isES,switch):
     main.isES = not isES
-    fg=""
     switch.configure(text=switch.get())
     if main.isES:
         utils.writeLog("Система переведена в режим Чрезвычайной Ситуации")
-        colorToProceed = EScolor
-        fg = "Yellow"
+        main.colorToProceed = EScolor
+        main.fgcolor = "Yellow"
     else:
         utils.writeLog("Система переведена в штатный режим")
-        colorToProceed = syscolor
-        fg = "green"
+        main.colorToProceed = syscolor
+        main.fgcolor = "green"
     for button in list_btn:
-        button.configure(border_color=colorToProceed, text_color= colorToProceed)
-    ES_switch.configure(border_color=colorToProceed)
-    timer_lb.configure(text_color=colorToProceed)
-    ask_lb.configure(text_color=colorToProceed)
-    frame.configure(border_color=colorToProceed)
-    switch.configure(text_color= colorToProceed, border_color= colorToProceed, fg_color= fg)
+        button.configure(border_color=main.colorToProceed, text_color= main.colorToProceed)
+    ES_switch.configure(border_color=main.colorToProceed)
+    timer_lb.configure(text_color=main.colorToProceed)
+    ask_lb.configure(text_color=main.colorToProceed)
+    frame.configure(border_color=main.colorToProceed)
+    switch.configure(text_color= main.colorToProceed, border_color= main.colorToProceed, fg_color= main.fgcolor)
 window.protocol("WM_DELETE_WINDOW", on_closing)
 asyncio.run(utils.asyncStart(window, timer_lb, connection))

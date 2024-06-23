@@ -37,7 +37,7 @@ isES = False
 
 ask_lb = customtkinter.CTkLabel(
     master=frame,
-    text="Выберите таблицу:",
+    text="Выберите раздел:",
     width= 30,
     height = 10,
     text_color= syscolor,

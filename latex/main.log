@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  22 JUN 2024 05:59
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  23 JUN 2024 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -828,14 +828,10 @@ Underfull \hbox (badness 1715) in paragraph at lines 77--79
 [27] [28]
 File: images/CommonScheme2.eps Graphic file (type eps)
 <images/CommonScheme2.eps>
-
-Overfull \hbox (23.47495pt too wide) in paragraph at lines 100--101
- [][] 
- []
-
-[29]
+ [29]
 Underfull \hbox (badness 10000) in paragraph at lines 116--116
-[]\TU/TimesNewRoman(0)/b/n/14.4 2.7.4 Вариант использования «Перейти к
+[]\TU/TimesNewRoman(0)/b/n/14.4 2.7.4 Вариант использования «Перейти к следующе
+му /
  []
 
 
@@ -852,7 +848,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--128
 [30] [31]
 File: images/CommonScheme3.eps Graphic file (type eps)
 <images/CommonScheme3.eps>
- [32] [33]) (./ТехПроект.tex [34] [35]
+ [32]
+Underfull \hbox (badness 1048) in paragraph at lines 199--200
+[]\TU/TimesNewRoman(0)/m/n/14.4 Регулярное обновление компонентов системы для п
+редупрежде-
+ []
+
+[33]) (./ТехПроект.tex [34] [35]
 Underfull \hbox (badness 3108) in paragraph at lines 22--23
 []\TU/TimesNewRoman(0)/m/n/14.4 Технологии и инструменты: В разработке использо
 вались tkinter,
@@ -880,32 +882,26 @@ Underfull \hbox (badness 1946) in paragraph at lines 74--75
 File: images/Example2.png Graphic file (type bmp)
 <images/Example2.png>
 
-Overfull \hbox (23.47495pt too wide) in paragraph at lines 92--93
+Overfull \hbox (23.47495pt too wide) in paragraph at lines 94--95
  [][] 
  []
 
-[39]
+[39] [40]
 File: images/Example1.png Graphic file (type bmp)
 <images/Example1.png>
 
-Overfull \hbox (23.47495pt too wide) in paragraph at lines 111--112
+Overfull \hbox (23.47495pt too wide) in paragraph at lines 119--120
  [][] 
  []
 
-[40]
 File: images/Example3.png Graphic file (type bmp)
 <images/Example3.png>
 
-Overfull \hbox (23.47495pt too wide) in paragraph at lines 127--128
+Overfull \hbox (23.47495pt too wide) in paragraph at lines 140--141
  [][] 
  []
 
-[41]
-
-LaTeX Warning: Reference `comp:commonscheme5' on page 42 undefined on input lin
-e 134.
-
-[42]
+[41] [42]
 File: images/CompDiag.eps Graphic file (type eps)
 <images/CompDiag.eps>
  [43
@@ -913,21 +909,27 @@ File: images/CompDiag.eps Graphic file (type eps)
 ] [44
 
 ]
-Underfull \hbox (badness 3428) in paragraph at lines 185--186
+Underfull \hbox (badness 7238) in paragraph at lines 191--192
+[]\TU/TimesNewRoman(0)/m/n/14.4 Для создания интерфейса пользователя используют
+ся модули
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
 []\TU/TimesNewRoman(0)/m/n/14.4 Utils.py - служебный класс, внутри которого реа
-лизованы функ-
+лизованы
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
-\TU/TimesNewRoman(0)/m/n/14.4 ции запросов к базе данных, асинхронное обновлени
-е системного
+Underfull \hbox (badness 3375) in paragraph at lines 200--201
+\TU/TimesNewRoman(0)/m/n/14.4 функции запросов к базе данных, асинхронное обнов
+ление системно-
  []
 
 
-Underfull \hbox (badness 6542) in paragraph at lines 185--186
-\TU/TimesNewRoman(0)/m/n/14.4 времени(Например, подключение к БД - create$[]$co
-nnection(), чтение -
+Underfull \hbox (badness 1365) in paragraph at lines 200--201
+\TU/TimesNewRoman(0)/m/n/14.4 го времени(Например, подключение к БД - create$[]
+$connection(), чтение -
  []
 
 [45]) (./РабочийПроект.tex [46]
@@ -2754,8 +2756,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 275--275
 File: images/test1.png Graphic file (type bmp)
 <images/test1.png>
 
-Underfull \hbox (badness 3088) in paragraph at lines 290--291
-[]\TU/TimesNewRoman(0)/m/n/14.4 test$[]$Controller.py: Наборы модульных тестов 
+Underfull \hbox (badness 2512) in paragraph at lines 291--292
+[]\TU/TimesNewRoman(0)/m/n/14.4 test$[]$Controller.py. Наборы модульных тестов 
 для класса панели
  []
 
@@ -2765,35 +2767,36 @@ ty
 File: lstlang1.sty 2024/03/11 1.10a listings language file
 )
 LaTeX Font Info:    Font shape `TU/Verdana(0)/m/n' will be
-(Font)              scaled to size 10.07994pt on input line 300.
+(Font)              scaled to size 10.07994pt on input line 302.
  [61] [62]
 File: images/test2.png Graphic file (type bmp)
 <images/test2.png>
  [63]
 File: images/test3.png Graphic file (type bmp)
 <images/test3.png>
- [64] [65]
+ [64]
 File: images/Example4.png Graphic file (type bmp)
 <images/Example4.png>
+ [65]
 File: images/Example5.png Graphic file (type bmp)
 <images/Example5.png>
- [66]
 File: images/Example6.png Graphic file (type bmp)
 <images/Example6.png>
- [67]
+ [66]
 File: images/Example7.png Graphic file (type bmp)
 <images/Example7.png>
 File: images/Example8.png Graphic file (type bmp)
 <images/Example8.png>
- [68]
+ [67]
 File: images/Example9.png Graphic file (type bmp)
 <images/Example9.png>
+ [68]
 File: images/Example10.png Graphic file (type bmp)
 <images/Example10.png>
  [69]
 File: images/Example11.png Graphic file (type bmp)
 <images/Example11.png>
- [70] [71]) (./Заключение.tex
+ [70]) (./Заключение.tex
 Underfull \hbox (badness 1281) in paragraph at lines 10--11
 []\TU/TimesNewRoman(0)/m/n/14.4 Разработан и реализован пользовательский интерф
 ейс приложе-
@@ -2805,28 +2808,10 @@ Underfull \hbox (badness 2293) in paragraph at lines 16--2
  контроля и
  []
 
-[72]
+[71]
 Underfull \hbox (badness 3536) in paragraph at lines 5--6
 []\TU/TimesNewRoman(0)/m/n/14.4 Словарь данных и система управления базами данн
 ых / Data
- []
-
-
-Underfull \hbox (badness 4120) in paragraph at lines 8--9
-[]\TU/TimesNewRoman(0)/m/n/14.4 Гринченко, Н.Н. Проектирование баз данных. СУБД
- Microsoft
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
-[]\TU/TimesNewRoman(0)/m/n/14.4 scDataCom [Электронный ресурс] From Keys to Cre
-dentials:
- []
-
-
-Underfull \hbox (badness 6825) in paragraph at lines 10--11
-\TU/TimesNewRoman(0)/m/n/14.4 The History of Access Control, 2024. – Текст : эл
-ектронный. URL:
  []
 
 
@@ -2836,39 +2821,21 @@ ntials-the-history-of-access-
  []
 
 
-Underfull \hbox (badness 7308) in paragraph at lines 12--13
-[]\TU/TimesNewRoman(0)/m/n/14.4 Medium.com. / «SQLite – Как организовывать табл
-ицы» Ав-
+Underfull \hbox (badness 3861) in paragraph at lines 12--13
+[]\TU/TimesNewRoman(0)/m/n/14.4 Medium.com / «SQLite – Как организовывать табли
+цы» / Ав-
+ []
+
+[72]
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+[]\TU/TimesNewRoman(0)/m/n/14.4 How do Access Control Systems work?/ Автор: Aat
+el
  []
 
 
-Underfull \hbox (badness 4556) in paragraph at lines 14--15
-[]\TU/TimesNewRoman(0)/m/n/14.4 kisi [Электронный ресурс] Mobile access control
- guide: 2024.
- []
-
-[73]
-Underfull \hbox (badness 1661) in paragraph at lines 17--18
-[]\TU/TimesNewRoman(0)/m/n/14.4 Richmond Security / Locked. Secured. Protected/
- Learning About
- []
-
-
-Underfull \hbox (badness 4569) in paragraph at lines 17--18
-\TU/TimesNewRoman(0)/m/n/14.4 Access Control Systems: Control Cards, 2024. – Те
-кст : электронный.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
-[]\TU/TimesNewRoman(0)/m/n/14.4 hidglobal [Электронный ресурс] Chronicling the 
-Evolution of
- []
-
-
-Underfull \hbox (badness 3078) in paragraph at lines 21--22
-\TU/TimesNewRoman(0)/m/n/14.4 Access Control Credentials: Jim Dearing, 2021. – 
-Текст : электронный.
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+\TU/TimesNewRoman(0)/m/n/14.4 2024. – Текст : электронный. Дата обращения: 07.0
+5.2024. URL:
  []
 
 
@@ -2877,74 +2844,82 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--22
 ng-evolution-access-control-
  []
 
-[74]) (./Плакаты.tex [75] [76]
+
+Underfull \hbox (badness 2285) in paragraph at lines 22--23
+[]\TU/TimesNewRoman(0)/m/n/14.4 Системы контроля и управления доступом. / Автор
+ы: Ворона
+ []
+
+[73]
+Underfull \hbox (badness 2903) in paragraph at lines 23--24
+\TU/TimesNewRoman(0)/m/n/14.4 python.org. – Текст : электронный. Дата обращения
+: 19.05.2024. URL:
+ []
+
+) (./Плакаты.tex [74] [75]
 File: images/плакат1.png Graphic file (type bmp)
 <images/плакат1.png>
 File: images/плакат2.png Graphic file (type bmp)
 <images/плакат2.png>
- [77
+ [76
 
 ]
 File: images/плакат3.png Graphic file (type bmp)
 <images/плакат3.png>
- [78]
+ [77]
 File: images/плакат4.png Graphic file (type bmp)
 <images/плакат4.png>
- [79]
+ [78]
 File: images/плакат5.png Graphic file (type bmp)
 <images/плакат5.png>
- [80]
+ [79]
 File: images/плакат6.png Graphic file (type bmp)
 <images/плакат6.png>
- [81]
+ [80]
 File: images/плакат7.png Graphic file (type bmp)
 <images/плакат7.png>
- [82]
+ [81]
 File: images/плакат8.png Graphic file (type bmp)
 <images/плакат8.png>
- [83]
+ [82]
 File: images/плакат9.png Graphic file (type bmp)
 <images/плакат9.png>
- [84] [85])
+ [83] [84])
 (./Код.tex
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 4.
- (./code/main.py [86
+ (./code/main.py [85
 
-] [87] [88]) [89] (./code/Controller.py [90]
-[91] [92]
+] [86] [87]) [88] (./code/Controller.py [89]
+[90] [91]
 Missing character: There is no ← (U+2190) in font Verdana/OT:script=latn;langua
 ge=dflt;!
-[93]
+[92]
 Missing character: There is no → (U+2192) in font Verdana/OT:script=latn;langua
 ge=dflt;!
-[94] [95] [96] [97] [98] [99] [100] [101]) [102] [103] (./code/Tables.py
-[104] [105] [106] [107] [108]
+[93] [94] [95] [96] [97] [98] [99] [100]) [101] [102] (./code/Tables.py
+[103] [104] [105] [106] [107]
 Overfull \hbox (4.13097pt too wide) in paragraph at lines 248--249
 [][][][] 
  []
 
-[109] [110] [111] [112] [113] [114] [115] [116] [117] [118]) [119]
-(./code/Utils.py [120] [121]) [122] (./code/Validator.py [123] [124] [125]
-[126]) [127]) [128] (./main.aux)
+[108] [109] [110] [111] [112] [113] [114] [115] [116] [117]) [118]
+(./code/Utils.py [119] [120]) [121] (./code/Validator.py [122] [123] [124]
+[125]) [126]) [127] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-04-11>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E2632E932000CBC4D7C608B01F6CDB61;21391.
+(rerunfilecheck)             Checksum: 89DFB9FEE96671927706FEDF791991D9;21639.
  ) 
 Here is how much of TeX's memory you used:
  17185 strings out of 474705
- 335817 string characters out of 5750043
+ 335813 string characters out of 5750043
  2327406 words of memory out of 5000000
  39102 multiletter control sequences out of 15000+600000
  559598 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,11n,110p,672b,2138s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (128 pages).
+Output written on main.pdf (127 pages).

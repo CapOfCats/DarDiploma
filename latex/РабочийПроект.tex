@@ -2,13 +2,13 @@
 \subsection{Описание классов системы}
 Система реализована с помощью следующих программных классов:
 
-\begin{itemize}
-	\item \textquotedbl main \textquotedbl является фундаментальным классом для главного меню. Помимо основных свойств, таких как connection, экземпляров utils, controller и tables, содержит в себе стартовые виджеты;
-	\item \textquotedbl Controller \textquotedbl -- расширяет \textquotedbl main \textquotedbl, представляя панель управления таблицами, необходимую для взаимодействия пользователя с данными внутри таблицы;
-	\item \textquotedbl Utils \textquotedbl применяется для отправки запросов в БД. Содержит только самые необходимые методы, взаимодействующие с БД непосредственно;
-	\item \textquotedbl Tables \textquotedbl служит для формирования необходимых сложных запросов к БД. Сформировав строку, класс использует \textquotedbl Utils \textquotedbl для отправки;
-	\item \textquotedbl Validator \textquotedbl представляет собой служебный класс, конфигурирующий интерфейс таким образом, чтобы пользователь не мог ввести данные неподходящего формата.
-\end{itemize}
+\begin{enumerate}
+	\item \textquotedbl main\textquotedbl -- является фундаментальным классом для главного меню. Помимо основных свойств, таких как connection, экземпляров utils, controller и tables, содержит в себе стартовые виджеты.
+	\item \textquotedbl Controller\textquotedbl  --  расширяет \textquotedbl main\textquotedbl, представляя панель управления таблицами, необходимую для взаимодействия пользователя с данными внутри таблицы.
+	\item \textquotedbl Utils\textquotedbl -- применяется для отправки запросов в БД. Содержит только самые необходимые методы, взаимодействующие с БД непосредственно.
+	\item \textquotedbl Tables\textquotedbl -- служит для формирования необходимых сложных запросов к БД. Сформировав строку, класс использует \textquotedbl Utils\textquotedbl для отправки.
+	\item \textquotedbl Validator\textquotedbl -- представляет собой служебный класс, конфигурирующий интерфейс таким образом, чтобы пользователь не мог ввести данные неподходящего формата.
+\end{enumerate}
 
 Описание полей и методов программных классов приведено в таблицах \ref{class:table1}-\ref{class:table5}.
 
@@ -281,17 +281,19 @@ connection, query).
 Тестирование моделей и контроллеров позволяет обеспечить надежность и корректность работы программного обеспечения. 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\linewidth]{images/test1}
+	\includegraphics[width=0.85\linewidth]{images/test1}
 	\caption{Структура тестового проекта}
 	\label{fig:test1}
 \end{figure}
+
 Тестовый проект включает в себя следующие ключевые элементы:
-\begin{itemize}
-	\item test\underline{ }Controller.py: Наборы модульных тестов для класса панели управления Controller;
-	\item test\underline{ }Tables.py: Наборы модульных тестов для класса формирования запросов к БД Tables;
-	\item test\underline{ }Validator.py: Наборы модульных тестов для вспомогательного класса валидации Validator;
-	\item test\underline{ }Utils.py: Наборы модульных тестов для cлужебного класса запросов в БД.
-\end{itemize}
+\begin{enumerate}
+	\item test\underline{ }Controller.py. Наборы модульных тестов для класса панели управления Controller.
+	\item test\underline{ }Tables.py. Наборы модульных тестов для класса формирования запросов к БД Tables.
+	\item test\underline{ }Validator.py. Наборы модульных тестов для вспомогательного класса валидации Validator.
+	\item test\underline{ }Utils.py. Наборы модульных тестов для cлужебного класса запросов в БД.
+\end{enumerate}
+
 Модульные тесты для класса Tables.py, который является основным классом для формирования запросов в БД, позволяют проверить корректность
 логики и поведения этого компонента и исключить возникновение проблем в этом классе. Тесты охватывают такие аспекты, как самоопределение имени раздела данных, а также форматирование строки времени перед запросом.
 Модульные тесты класса Tables.py представлены на рисунке \ref{tablestest:image}.
@@ -385,14 +387,14 @@ unittest.main()
 На рисунках ~\ref{fig:test2} - ~\ref{fig:test3} представлены результаты выполнения модульных тестов, подтверждающие успешную проверку всех компонентов системы, что свидетельствует об отсутствии критических ошибок и готовности продукта к дальнейшим этапам разработки и внедрения.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\linewidth]{images/test2}
+	\includegraphics[width=0.85\linewidth]{images/test2}
 	\caption{Результаты выполнения тестов Utils}
 	\label{fig:test2}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\linewidth]{images/test3}
+	\includegraphics[width=0.85\linewidth]{images/test3}
 	\caption{Результаты выполнения тестов Tables}
 	\label{fig:test3}
 \end{figure}

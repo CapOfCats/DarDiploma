@@ -12,7 +12,7 @@ class Controller:
     @staticmethod
     def show_acc(connection, isES, tables, window, stylecolors):
         tableWin = customtkinter.CTkToplevel()
-        tableWin.title("Праверка доступа")
+        tableWin.title("Проверка доступа")
         tableWin.geometry('1200x600')
 
         frameWin = customtkinter.CTkFrame(

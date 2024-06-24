@@ -5,12 +5,12 @@ import customtkinter
 
 import Utils
 
-utils = Utils.Utils()
-validator = Validator.Validator()
-
 class Controller:
-    @staticmethod
-    def show_acc(connection, isES, tables, window, stylecolors):
+    def __init__(self, uti, val):
+        self.utils = uti
+        self.validator = val
+
+    def show_acc(self, connection, isES, tables, window, stylecolors):
         tableWin = customtkinter.CTkToplevel()
         tableWin.title("Проверка доступа")
         tableWin.geometry('1200x600')
@@ -73,7 +73,7 @@ class Controller:
             offvalue= "Ребёнок",
             text = "Ребёнок",
             font=customtkinter.CTkFont(family="Consolas", size=15),
-            command= lambda : Controller.toggle_switch(psr_switch, psr_lb, tables, connection, tree, isES)
+            command= lambda : self.toggle_switch(psr_switch, psr_lb, tables, connection, tree, isES)
         )
         psr_switch.place(relx=0.43, rely=0.2)
 
@@ -115,7 +115,7 @@ class Controller:
             text_color=stylecolors[0],
             fg_color="black",
             font=customtkinter.CTkFont(family="Consolas", size=15),
-            command=lambda: tables.check_access(validator.validate_single(psr_tf,window,"Number"),  validator.validate_single(dor_tf, window, "Number"), psr_switch, connection, isES)
+            command=lambda: tables.check_access(self.validator.validate_single(psr_tf,window,"Number"),  self.validator.validate_single(dor_tf, window, "Number"), psr_switch, connection, isES)
         )
         acc_btn.place(relx=0.415, rely=0.45)
 
@@ -124,17 +124,16 @@ class Controller:
         which = "Доступы"
         if isES:
             which = "ДоступыЧС"
-        tree = Controller.TreeCreate(tree, tables.self_definition(which), tableWin, connection, stylecolors)
+        tree = self.TreeCreate(tree, tables.self_definition(which), tableWin, connection, stylecolors)
 
-    @staticmethod
-    def toggle_switch(switch, psrlb, tables,connection, tree, isES):
+    def toggle_switch(self, switch, psrlb, tables,connection, tree, isES):
         switch.configure(text=switch.get())
         psrlb.configure(text=switch.get() + ":")
         which = "Доступы"
         if isES:
             which = "ДоступыЧС"
         tables.start_accesses(connection,switch,isES)
-        tree = Controller.TreeRefresh(tree, tables.self_definition(which), connection)
+        tree = self.TreeRefresh(tree, tables.self_definition(which), connection)
 
     @staticmethod
     def styles_init(st, stylecolors):
@@ -154,8 +153,7 @@ class Controller:
         st.map("Custom.Treeview.Heading",
                relief=[('active', 'groove'), ('pressed', 'sunken')])
 
-    @staticmethod
-    def show_table(which,window, tables, connection, stylecolors):
+    def show_table(self, which,window, tables, connection, stylecolors):
         window.ck = 0
         tableWin = customtkinter.CTkToplevel()
         tableWin.title(which)
@@ -172,9 +170,9 @@ class Controller:
         frameWin.pack(anchor=N, expand=True, fill=BOTH)
         tableWin.resizable(False, False)
         tableWin.grab_set()
-        combinedControls = (Controller.fields_creation(which, frameWin, window, stylecolors))
+        combinedControls = (self.fields_creation(which, frameWin, window, stylecolors))
         tree = None
-        tree = Controller.TreeCreate(tree, tables.self_definition(which), tableWin, connection, stylecolors)
+        tree = self.TreeCreate(tree, tables.self_definition(which), tableWin, connection, stylecolors)
         current_lb = customtkinter.CTkLabel(
             master=frameWin,
             width=20,
@@ -338,8 +336,7 @@ class Controller:
         search_btn.grid(row=4, column=grid_coef + 2 + fields_multiplier, pady=10)
         searchLb.grid(row=5, column=grid_coef + fields_multiplier, pady=5, padx=5)
         searchTf.grid(row=6, column=grid_coef + fields_multiplier, pady=5, padx=5, ipadx=15)
-    @staticmethod
-    def fields_creation(which, frameEx, window, stylecolors):
+    def fields_creation(self, which, frameEx, window, stylecolors):
         lblist = []
         tflist = []
         lbnames = []
@@ -357,10 +354,10 @@ class Controller:
                 combodict = {
                     3: ["Эконом", "Средний", "Бизнес", "Персонал"],
                     4: ["М", "Ж"],
-                    6: ["Убийство", "Домогательства", "Кража", "Хулиганство", "Мошенничество"],
-                    7: ["Сердце", "Печень", "Легкие", "Моторные", "Желудок"],
-                    8: ["Инженер", "Медик", "Штурман", "Пловец", "Радист"],
-                    9: ["1", "2", "3", "4", "5"]
+                    6: ["","Убийство", "Домогательства", "Кража", "Хулиганство", "Мошенничество"],
+                    7: ["","Сердце", "Печень", "Легкие", "Моторные", "Желудок"],
+                    8: ["","Инженер", "Медик", "Штурман", "Пловец", "Радист"],
+                    9: ["","1", "2", "3", "4", "5"]
                 }
             case "Двери":
                 lbnames = ["Наименование", "Принадлежность", "Номер", "Статус", "Скорость открытия", "Вместимость"]
@@ -380,11 +377,11 @@ class Controller:
                 combodict = {
                     1: ["1", "2", "3", "4", "5"],
                     2: ['Служебная', "Развлекательная", "Жилая", "Провизионная", "Первоочередная"],
-                    4: ["М", "Ж"],
-                    5: ["Сердце", "Печень", "Легкие", "Моторные", "Желудок"],
-                    6: ["Убийство", "Домогательства", "Кража", "Хулиганство", "Мошенничество"],
-                    7: ["Загрязнение", "Хулиганство", "ОбманСистемы", "Грубость"],
-                    8: ["16", "18"]
+                    4: ["","М", "Ж"],
+                    5: ["","Сердце", "Печень", "Легкие", "Моторные", "Желудок"],
+                    6: ["","Убийство", "Домогательства", "Кража", "Хулиганство", "Мошенничество"],
+                    7: ["","Загрязнение", "Хулиганство", "ОбманСистемы", "Грубость"],
+                    8: ["","16", "18"]
                 }
             case "Штрафы":
                 lbnames = ["Активность", "Возможность снять", "Сумма выкупа", "Тип", "Принадлежность"]
@@ -402,8 +399,8 @@ class Controller:
                 combodict = {
                     3: ["Эконом", "Средний", "Бизнес", "Персонал"],
                     4: ["М", "Ж"],
-                    6: ["Убийство", "Домогательства", "Кража", "Хулиганство", "Мошенничество"],
-                    7: ["Сердце", "Печень", "Легкие", "Моторные", "Желудок"],
+                    6: ["","Убийство", "Домогательства", "Кража", "Хулиганство", "Мошенничество"],
+                    7: ["","Сердце", "Печень", "Легкие", "Моторные", "Желудок"],
                 }
                 lenlist = [16, 16, 9, 17, 4, 12, 14, 14, 14]
         fields_multiplier = 1
@@ -453,19 +450,17 @@ class Controller:
                 ))
                 tflist[-1].grid(row=3, column=i + fields_multiplier, pady=5, padx=5, ipadx=lenlist[i] * 3)
 
-        validatedTFs = validator.validate_whole(tflist, which, window)
+        validatedTFs = self.validator.validate_whole(tflist, which, window)
         return (validatedTFs, combolist)
 
-    @staticmethod
-    def clear(keyLabel, combinedControls, window):
+    def clear(self, keyLabel, combinedControls, window):
         keyLabel.configure(text="??")
         for i in range(0, len(combinedControls[0])):
             combinedControls[0][i].delete(0, END)
         for i in range(0, len(combinedControls[1])):
             combinedControls[1][i].set("")
         window.ck = 0
-    @staticmethod
-    def TreeCreate(tree, table, tableWin, connection, stylecolors):
+    def TreeCreate(self, tree, table, tableWin, connection, stylecolors):
         if tree != None:
             tree.destroy()
             tree = None
@@ -496,7 +491,7 @@ class Controller:
         command = f"""
                         SELECT * FROM {table}
                         """
-        cortage = utils.execute_read_query(connection, command)
+        cortage = self.utils.execute_read_query(connection, command)
 
         treestyle = ttk.Style()
         treestyle.theme_use('clam')
@@ -524,18 +519,16 @@ class Controller:
         tree.configure(yscroll=scrollbar.set)
         scrollbar.pack(side=RIGHT, fill=Y)
         return tree
-    @staticmethod
-    def TreeRefresh(tree, table, connection):
+    def TreeRefresh(self, tree, table, connection):
         cursor = connection.cursor()
         cursor.execute(f''' SELECT * FROM {table} ''')
         [tree.delete(i) for i in
          tree.get_children()]
         [tree.insert('', 'end', values=row) for row in cursor.fetchall()]
 
-    @staticmethod
-    def MoveTo(id, table, combinedControls, currentLb, window, connection):
+    def MoveTo(self, id, table, combinedControls, currentLb, window, connection):
         window.ck = id
-        cortage = utils.read_single_row(id, connection, table)
+        cortage = self.utils.read_single_row(id, connection, table)
         for i in range(0, len(combinedControls[0])):
             combinedControls[0][i].delete(0, END)
         tIndexes = []

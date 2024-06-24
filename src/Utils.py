@@ -4,11 +4,11 @@ from sqlite3 import Error
 import time
 import os
 
-connstring = None
+#connstring = None
 
 class Utils:
-    @staticmethod
-    def create_connection(path):
+
+    def create_connection(self, path):
         if (type(path) is not str):
             return "Wrong path format given"
         #     return "Wrong database for this project"
@@ -21,8 +21,7 @@ class Utils:
             raise FileNotFoundError
         return connection
 
-    @staticmethod
-    def read_single_row(id, connection, table):
+    def read_single_row(self, id, connection, table):
         tables = ["Passengers", "Passengers_Underage", "Doors", "Rooms", "Penalties", "Accesses", "Accesses_ES"]
         if (type(id) is not int) or (id < 1):
             return "ID should be int natural value"
@@ -41,8 +40,7 @@ class Utils:
         except sqlite3.Error as e:
             print(f"The error '{e}' occurred")
 
-    @staticmethod
-    def execute_query(connection, query):
+    def execute_query(self, connection, query):
         if (type(query) is not str):
             return "Invalid query given"
         cursor = connection.cursor()
@@ -55,8 +53,7 @@ class Utils:
             print(f"The error '{e}' occurred")
             raise SyntaxError
 
-    @staticmethod
-    def execute_silent(connection, query):
+    def execute_silent(self, connection, query):
         cursor = connection.cursor()
         try:
             cursor.execute(query)
@@ -66,8 +63,7 @@ class Utils:
             print(f"The error '{e}' occurred")
             return False
 
-    @staticmethod
-    def execute_read_query(connection, query):
+    def execute_read_query(self, connection, query):
         cursor = connection.cursor()
         result = None
         try:
@@ -77,32 +73,28 @@ class Utils:
         except Error as e:
             print(f"The error '{e}' occurred")
 
-    @staticmethod
-    async def timetick(timerLb):
+    async def timetick(self, timerLb):
         t = time.localtime()
         current_time = time.strftime("%H:%M:%S", t)
         timerLb.configure(text= "Системное время:   " + current_time)
         await asyncio.sleep(0.03)
 
-    @staticmethod
-    async def asyncMLoop(wndw):
+    async def asyncMLoop(self, wndw):
         wndw.update()
         await asyncio.sleep(0.01)
-    @staticmethod
-    async def asyncStart(window, timer_lb, connection):
+    async def asyncStart(self, window, timer_lb, connection):
         while True:
-            windowtask = asyncio.create_task(Utils.asyncMLoop(window))
-            timetask = asyncio.create_task(Utils.timetick(timer_lb))
+            windowtask = asyncio.create_task(self.asyncMLoop(window))
+            timetask = asyncio.create_task(self.timetick(timer_lb))
             await windowtask
             await timetask
             command = f"""
                                         UPDATE Doors SET
                                         System_time = (datetime('now','localtime')) ;
                                     """
-            Utils.execute_silent(connection, command)
+            self.execute_silent(connection, command)
 
-    @staticmethod
-    def writeLog(text):
+    def writeLog(self, text):
         text = '[' + time.strftime("%H:%M:%S", time.localtime()) + ']' + text + '\n'
         if not os.path.exists("ASLog.txt"):
             stream = open("ASLog.txt", "x")

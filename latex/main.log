@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  23 JUN 2024 16:52
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.5.8)  23 JUN 2024 20:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2777,9 +2777,9 @@ File: images/test3.png Graphic file (type bmp)
  [64]
 File: images/Example4.png Graphic file (type bmp)
 <images/Example4.png>
- [65]
 File: images/Example5.png Graphic file (type bmp)
 <images/Example5.png>
+ [65]
 File: images/Example6.png Graphic file (type bmp)
 <images/Example6.png>
  [66]
@@ -2790,13 +2790,12 @@ File: images/Example8.png Graphic file (type bmp)
  [67]
 File: images/Example9.png Graphic file (type bmp)
 <images/Example9.png>
- [68]
 File: images/Example10.png Graphic file (type bmp)
 <images/Example10.png>
- [69]
+ [68]
 File: images/Example11.png Graphic file (type bmp)
 <images/Example11.png>
- [70]) (./Заключение.tex
+ [69] [70]) (./Заключение.tex
 Underfull \hbox (badness 1281) in paragraph at lines 10--11
 []\TU/TimesNewRoman(0)/m/n/14.4 Разработан и реализован пользовательский интерф
 ейс приложе-
@@ -2897,29 +2896,23 @@ ge=dflt;!
 [92]
 Missing character: There is no → (U+2192) in font Verdana/OT:script=latn;langua
 ge=dflt;!
-[93] [94] [95] [96] [97] [98] [99] [100]) [101] [102] (./code/Tables.py
-[103] [104] [105] [106] [107]
-Overfull \hbox (4.13097pt too wide) in paragraph at lines 248--249
-[][][][] 
- []
-
-[108] [109] [110] [111] [112] [113] [114] [115] [116] [117]) [118]
-(./code/Utils.py [119] [120]) [121] (./code/Validator.py [122] [123] [124]
-[125]) [126]) [127] (./main.aux)
+[93]) [94] [95] (./code/Tables.py [96] [97] [98] [99] [100]) [101]
+(./code/Utils.py [102]) [103] (./code/Validator.py [104]) [105]) [106]
+(./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-04-11>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 89DFB9FEE96671927706FEDF791991D9;21639.
+(rerunfilecheck)             Checksum: 672083D2C8F13EBD2959A75B2156E068;21638.
  ) 
 Here is how much of TeX's memory you used:
- 17185 strings out of 474705
- 335813 string characters out of 5750043
+ 16984 strings out of 474705
+ 333126 string characters out of 5750043
  2327406 words of memory out of 5000000
- 39102 multiletter control sequences out of 15000+600000
+ 38901 multiletter control sequences out of 15000+600000
  559598 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 99i,11n,110p,672b,2138s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,11n,110p,672b,2175s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (127 pages).
+Output written on main.pdf (106 pages).

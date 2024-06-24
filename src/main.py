@@ -6,6 +6,7 @@ from tkinter import *
 from tkinter import messagebox
 import asyncio
 
+import Validator
 import main
 
 customtkinter.set_appearance_mode("dark")
@@ -28,9 +29,10 @@ frame = customtkinter.CTkFrame(
 
 )
 frame.pack(fill = Y, expand = 1)
-controller = Controller.Controller()
 utils = Utils.Utils()
-tables = Tables.Tables()
+validator = Validator.Validator(utils)
+controller = Controller.Controller(utils,validator)
+tables = Tables.Tables(utils,validator,controller)
 window.resizable(False, False)
 connection = utils.create_connection("Diploma1.db")
 isES = False

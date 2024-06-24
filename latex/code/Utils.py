@@ -42,42 +42,6 @@ class Utils:
             print(f"The error '{e}' occurred")
 
     @staticmethod
-    def execute_query(connection, query):
-        if (type(query) is not str):
-            return "Invalid query given"
-        cursor = connection.cursor()
-        try:
-            cursor.execute(query)
-            connection.commit()
-            print("Query executed successfully")
-            return True
-        except Error as e:
-            print(f"The error '{e}' occurred")
-            raise SyntaxError
-
-    @staticmethod
-    def execute_silent(connection, query):
-        cursor = connection.cursor()
-        try:
-            cursor.execute(query)
-            connection.commit()
-            return True
-        except Error as e:
-            print(f"The error '{e}' occurred")
-            return False
-
-    @staticmethod
-    def execute_read_query(connection, query):
-        cursor = connection.cursor()
-        result = None
-        try:
-            cursor.execute(query)
-            result = cursor.fetchall()
-            return result
-        except Error as e:
-            print(f"The error '{e}' occurred")
-
-    @staticmethod
     async def timetick(timerLb):
         t = time.localtime()
         current_time = time.strftime("%H:%M:%S", t)
@@ -88,18 +52,6 @@ class Utils:
     async def asyncMLoop(wndw):
         wndw.update()
         await asyncio.sleep(0.01)
-    @staticmethod
-    async def asyncStart(window, timer_lb, connection):
-        while True:
-            windowtask = asyncio.create_task(Utils.asyncMLoop(window))
-            timetask = asyncio.create_task(Utils.timetick(timer_lb))
-            await windowtask
-            await timetask
-            command = f"""
-                                        UPDATE Doors SET
-                                        System_time = (datetime('now','localtime')) ;
-                                    """
-            Utils.execute_silent(connection, command)
 
     @staticmethod
     def writeLog(text):

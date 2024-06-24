@@ -4,10 +4,13 @@ import Controller
 import Utils
 import Validator
 import time
-utils = Utils.Utils()
-validator = Validator.Validator()
-controller = Controller.Controller()
 class Tables:
+    def __init__(self, uti, val, con):
+        self.utils = uti
+        self.validator = val
+        self.controller = con
+
+
     @staticmethod
     def self_definition(which):
         if type(which) is not str:
@@ -64,6 +67,7 @@ class Tables:
         elif (int(timeString[4] + timeString[5]) > 59):
             return "Invalid seconds"
         return timeString[0] + timeString[1] + ":" + timeString[2] + timeString[3] + ":" + timeString[4] + timeString[5]
+
     @staticmethod
     def penalty_check(pennies, typ):
         types = ["Загрязнение", "Хулиганство", "ОбманСистемы", "Грубость"]
@@ -79,8 +83,7 @@ class Tables:
                     allow = False
         return allow
 
-    @staticmethod
-    def check_access(psr_Tf, dor_Tf, switch, connection, isES):
+    def check_access(self, psr_Tf, dor_Tf, switch, connection, isES):
         table =""
         numtostart = 0
         if (switch.get() == "Пассажир"):
@@ -99,9 +102,9 @@ class Tables:
         elif dor_Tf.get() == "":
             messagebox.showwarning(title="Предупреждение", message="Для проверки доступа к двери укажите идентификатор двери")
         else:
-            if(len(utils.execute_read_query(connection,pasFindCommand)) == 0):
+            if(len(self.utils.execute_read_query(connection,pasFindCommand)) == 0):
                 messagebox.showerror(title="Ошибка", message="Пассажира с таким идентификатором не существует")
-            elif(len(utils.execute_read_query(connection,dorFindCommand)) == 0):
+            elif(len(self.utils.execute_read_query(connection,dorFindCommand)) == 0):
                 messagebox.showerror(title="Ошибка", message="Двери с таким идентификатором не существует")
             else:
                 if not isES:
@@ -113,34 +116,31 @@ class Tables:
                 acccomand = f"""
                             SELECT * FROM {table} WHERE (Psr_ID = {psr_Tf.get()}) AND (Dor_ID = {dor_Tf.get()}) 
                             """
-                access = utils.execute_read_query(connection,acccomand)
+                access = self.utils.execute_read_query(connection,acccomand)
                 if (len(access[0]) != 0):
                     giveaccess = True
                     for i in range (numtostart,len(access[0])-1):
                         if (access[0][i] == "Нет"):
                             giveaccess = False
-                    utils.writeLog = utils.writeLog
-                    utils.writeLog(f"Запрошен доступ пассажира #{psr_Tf.get()} к двери #{dor_Tf.get()}")
+                    #self.utils.writeLog = self.utils.writeLog
+                    self.utils.writeLog(f"Запрошен доступ пассажира #{psr_Tf.get()} к двери #{dor_Tf.get()}")
                     if giveaccess:
                         messagebox.showinfo(title="Контакт", message= "Доступ разрешён")
-                        utils.writeLog("Доступ предоставлен")
+                        self.utils.writeLog("Доступ предоставлен")
                     else:
                         messagebox.showerror(title="Контакт", message="Доступ запрещён")
-                        utils.writeLog("В доступе отказано")
+                        self.utils.writeLog("В доступе отказано")
 
 
-
-
-    @staticmethod
-    def start_accesses(connection, psr_switch, isES):
+    def start_accesses(self, connection, psr_switch, isES):
         command = f"""
                       DELETE FROM Accesses
                       """
-        utils.execute_silent(connection, command)
+        self.utils.execute_silent(connection, command)
         command = f"""
                      DELETE FROM Accesses_ES
                      """
-        utils.execute_silent(connection, command)
+        self.utils.execute_silent(connection, command)
         pastable = ""
         if (psr_switch.get() == "Пассажир"):
             pastable = "Passengers"
@@ -149,17 +149,17 @@ class Tables:
         command = f"""
                         SELECT * FROM {pastable}
                         """
-        passengers = utils.execute_read_query(connection, command)
+        passengers = self.utils.execute_read_query(connection, command)
         command = f"""
                         SELECT * FROM Doors
                         """
-        doors = utils.execute_read_query(connection, command)
+        doors = self.utils.execute_read_query(connection, command)
         if not isES:
             colnames = "Psr_ID" + ',' + "Dor_ID" + ',' +  "Access_age" + ',' + "Access_sex" + ',' + "Access_judge" + ',' + "Access_penalty" + ',' "Access_health" + ',' + "Access_number" + ',' + "Access_time" + ',' + "Access_rate"
             giveaccess = True
             for door in doors:
                 if (door[2]!=""):
-                    room = utils.read_single_row(door[2],connection,"Rooms")
+                    room = self.utils.read_single_row(door[2],connection,"Rooms")
                     for passenger in passengers:
                         resultcolls = f"(SELECT ID FROM {pastable} WHERE ID={passenger[0]})" + ',' + f"(SELECT ID FROM Doors WHERE ID={door[0]})" + ','
                         if (room[9] == None):
@@ -192,7 +192,7 @@ class Tables:
                             command = f"""
                                         SELECT * FROM Penalties WHERE Belongness = {passenger[0]}
                                         """
-                            if Tables.penalty_check(utils.execute_read_query(connection,command),room[8]):
+                            if self.penalty_check(self.utils.execute_read_query(connection,command),room[8]):
                                 resultcolls+='"' + "Да" + '"' + ','
                             else:
                                 resultcolls += '"' +"Нет" + '"'+ ','
@@ -239,7 +239,7 @@ class Tables:
                                             INSERT INTO Accesses ({colnames}) VALUES ({resultcolls})
                                             """
 
-                        utils.execute_silent(connection,command)
+                        self.utils.execute_silent(connection,command)
                 else:
                     for passenger in passengers:
                         resultcolls = f"(SELECT ID FROM {pastable} WHERE ID={passenger[0]})" + ',' + f"(SELECT ID FROM Doors WHERE ID={door[0]})" + ','
@@ -248,13 +248,13 @@ class Tables:
                                                                 INSERT INTO Accesses ({colnames}) VALUES ({resultcolls})
                                                                 """
 
-                        utils.execute_silent(connection, command)
+                        self.utils.execute_silent(connection, command)
         else:
             colnames = "Psr_ID" + ',' + "Dor_ID" + ',' + "Does_contain_room" + ',' + "Access_number" + ',' + "Access_education" + ',' + "Access_qualification"
             giveaccess = True
             for door in doors:
                 if (door[2]!=""):
-                    room = utils.read_single_row(door[2],connection,"Rooms")
+                    room = self.utils.read_single_row(door[2],connection,"Rooms")
                     for passenger in passengers:
                         resultcolls = f"(SELECT ID FROM {pastable} WHERE ID={passenger[0]})" + ',' + f"(SELECT ID FROM Doors WHERE ID={door[0]})" + ',' + '"'+"Да"+'"' + ','
                         if room[3] == "Жилая":
@@ -340,7 +340,7 @@ class Tables:
                                       INSERT INTO Accesses_ES ({colnames}) VALUES ({resultcolls})
                                       """
 
-                        utils.execute_silent(connection, command)
+                        self.utils.execute_silent(connection, command)
                 else:
                     for passenger in passengers:
                         resultcolls = f"(SELECT ID FROM {pastable} WHERE ID={passenger[0]})" + ',' + f"(SELECT ID FROM Doors WHERE ID={door[0]})" + ','
@@ -349,11 +349,10 @@ class Tables:
                                         INSERT INTO Accesses ({colnames}) VALUES ({resultcolls})
                                         """
 
-                        utils.execute_silent(connection, command)
+                        self.utils.execute_silent(connection, command)
 
 
-    @staticmethod
-    def add_element(table, combinedControls, currentLb, tree, tableWin, connection, window):
+    def add_element(self, table, combinedControls, currentLb, tree, tableWin, connection, window):
         colnames = []
         foreign = None
         FColumn = None
@@ -404,26 +403,25 @@ class Tables:
         tfValues = ''
         t = 0
         c = 0
-        if validator.overvalidation(table, combinedControls):
+        if self.validator.overvalidation(table, combinedControls):
             finallen += len(colnames)
             for i in range(0, finallen):
                 if i in baseInsertT:
-                    if (combinedControls[0][t].get() != "") and (t != foreign):
+                    if (t != foreign): #combinedControls[0][t].get() != "") and
                         resultcolls += colnames[i] + ','
-                        if (re.match(r"^[А-я]+$", combinedControls[0][t].get())):
+                        if (re.match(r"^[А-я]+$", combinedControls[0][t].get())) or (combinedControls[0][t].get() == ""):
                             tfValues += "'" + combinedControls[0][t].get() + "'" + ','
                         elif ((table == "Rooms") & (i == 3) & (combinedControls[0][1].get() != "")):
-                            tfValues += "'" + Tables.timeAppend(combinedControls[0][t].get()) + "'" + ','
+                            tfValues += "'" + self.timeAppend(combinedControls[0][t].get()) + "'" + ','
                         else:
                             tfValues += combinedControls[0][t].get() + ','
                     t += 1
                 elif i in baseInsertC:
-                    if combinedControls[1][c].get() != "":
-                        resultcolls += colnames[i] + ','
-                        if (re.match(r"^[А-я]+$", combinedControls[1][c].get())):
-                            tfValues += "'" + combinedControls[1][c].get() + "'" + ','
-                        else:
-                            tfValues += combinedControls[1][c].get() + ','
+                    resultcolls += colnames[i] + ','
+                    if (re.match(r"^[А-я]+$", combinedControls[1][c].get())) or (combinedControls[1][c].get() == ""):
+                        tfValues += "'" + combinedControls[1][c].get() + "'" + ','
+                    else:
+                        tfValues += combinedControls[1][c].get() + ','
                     c += 1
                 else:
                     pass
@@ -437,23 +435,24 @@ class Tables:
             command = f"""
                                 SELECT COUNT(*) FROM ({table})
                                 """
-            newId = utils.execute_read_query(connection, command)[0][0] + 1
+            newId = self.utils.execute_read_query(connection, command)[0][0] + 1
             resultcolls += "ID"
             tfValues += f"{newId}"
             command = f"""
                     INSERT INTO {table} ({resultcolls}) VALUES ({tfValues})
                     """
-            if (utils.execute_silent(connection, command)):
+            print(command)
+            if (self.utils.execute_silent(connection, command)):
                 command = f"""
                     SELECT COUNT(*) FROM ({table})
                     """
-                controller.MoveTo(utils.execute_read_query(connection, command)[0][0], table, combinedControls, currentLb, window, connection)
-                tree = controller.TreeRefresh(tree, table, connection)
+                self.controller.MoveTo(self.utils.execute_read_query(connection, command)[0][0], table, combinedControls, currentLb, window, connection)
+                tree = self.controller.TreeRefresh(tree, table, connection)
                 messagebox.showinfo("Успех", "Элемент успешно добавлен")
-                utils.writeLog(f"В таблицу {Tables.self_definition_reverse(table)} был добавлен новый элемент:")
-                utils.writeLog('[' + tfValues + ']')
-    @staticmethod
-    def delete_element(table, key, currentLb, combinedControls, tree, connection, window):
+                self.utils.writeLog(f"В таблицу {Tables.self_definition_reverse(table)} был добавлен новый элемент:")
+                self.utils.writeLog('[' + tfValues + ']')
+
+    def delete_element(self, table, key, currentLb, combinedControls, tree, connection, window):
         command = ""
         if key == 0:
             messagebox.showinfo("ОЙ!", "Выберите элемент, который нужно удалить")
@@ -461,17 +460,17 @@ class Tables:
             command = command = f"""
                 DELETE FROM {table} Where ID ={key}
                 """
-            if (utils.execute_silent(connection, command)):
-                controller.clear(currentLb, combinedControls, window)
+            if (self.utils.execute_silent(connection, command)):
+                self.controller.clear(currentLb, combinedControls, window)
                 command = f"""
                             UPDATE {table} SET ID =ID-1 where ID>{key}
                             """
-                utils.execute_silent(connection, command)
+                self.utils.execute_silent(connection, command)
                 messagebox.showinfo('Готово', "Элемент успешно удалён")
-                tree = controller.TreeRefresh(tree, table, connection)
-                utils.writeLog(f"Из таблицы {Tables.self_definition_reverse(table)} был удалён элемент №{key}")
-    @staticmethod
-    def update_element(table, combinedControls, key, tree, connection):
+                tree = self.controller.TreeRefresh(tree, table, connection)
+                self.utils.writeLog(f"Из таблицы {Tables.self_definition_reverse(table)} был удалён элемент №{key}")
+
+    def update_element(self, table, combinedControls, key, tree, connection):
         colnames = []
         foreign = None
         FColumn = None
@@ -522,26 +521,27 @@ class Tables:
         tfValues = []
         t = 0
         c = 0
-        if validator.overvalidation(table, combinedControls):
+        if self.validator.overvalidation(table, combinedControls):
             finalLen += len(colnames)
             for i in range(0, finalLen):
                 if i in baseInsertT:
-                    if (combinedControls[0][t].get() != "") and (t != foreign):
+                    if  (t != foreign):#(combinedControls[0][t].get() != "") and
                         resultcolls.append(colnames[i])  # ,
-                        if (re.match(r"^[А-я]+$", combinedControls[0][t].get())):
+                        if (re.match(r"^[А-я]+$", combinedControls[0][t].get())) or  (combinedControls[0][t].get() == ""):
                             tfValues.append("'" + combinedControls[0][t].get() + "'" + ',')
                         elif ((table == "Rooms") & (i == 3) & (combinedControls[0][1].get() != "")):
-                            tfValues.append("'" + Tables.timeAppend(combinedControls[0][t].get()) + "'" + ',')
+                            tfValues.append("'" + self.timeAppend(combinedControls[0][t].get()) + "'" + ',')
                         else:
                             tfValues.append(combinedControls[0][t].get() + ',')
                     t += 1
                 elif i in baseInsertC:
-                    if combinedControls[1][c].get() != "":
-                        resultcolls.append(colnames[i])
-                        if (re.match(r"^[А-я]+$", combinedControls[1][c].get())):
-                            tfValues.append("'" + combinedControls[1][c].get() + "'" + ',')
-                        else:
-                            tfValues.append(combinedControls[1][c].get() + ',')
+                    print(combinedControls[1][c].get())
+                    #if combinedControls[1][c].get() != "":
+                    resultcolls.append(colnames[i])
+                    if (re.match(r"^[А-я]+$", combinedControls[1][c].get())) or  (combinedControls[1][c].get() == ""):
+                        tfValues.append("'" + combinedControls[1][c].get() + "'" + ',')
+                    else:
+                        tfValues.append(combinedControls[1][c].get() + ',')
                     c += 1
                 else:
                     pass
@@ -554,7 +554,6 @@ class Tables:
                     tfValues.append(
                         f"(SELECT {FColumn} FROM {boundTable} WHERE {FColumn} = {combinedControls[0][foreign].get()})")
                 resultcolls.append(colnames[len(colnames) - 1])
-
             lastElementRc = resultcolls[len(resultcolls) - 1]
             lastElementTf = tfValues[len(tfValues) - 1]
             if (lastElementRc[len(lastElementRc) - 1] == ','):
@@ -569,28 +568,28 @@ class Tables:
                         UPDATE {table} SET
                         {preCommand} WHERE ID={key} ;
                     """
-            if (utils.execute_silent(connection, command)):
+            if (self.utils.execute_silent(connection, command)):
                 messagebox.showinfo("Успех", "Элемент успешно отредактирован!")
-                tree = controller.TreeRefresh(tree, table, connection)
-                utils.writeLog(f"В таблице {Tables.self_definition_reverse(table)} были изменены данные элемента №{key}. Теперь они выглядят так:")
-                utils.writeLog('[' + ''.join(tfValues) + ']')
-    @staticmethod
-    def search_element(combinedControls, table, tf, currentLb, connection, window):
-        cortage = utils.read_single_row(int(tf.get()), connection, table)
-        utils.writeLog(f"Запрос на поиск элемента #{int(tf.get())} в таблице {Tables.self_definition_reverse(table)}")
+                tree = self.controller.TreeRefresh(tree, table, connection)
+                self.utils.writeLog(f"В таблице {self.self_definition_reverse(table)} были изменены данные элемента №{key}. Теперь они выглядят так:")
+                self.utils.writeLog('[' + ''.join(tfValues) + ']')
+
+    def search_element(self, combinedControls, table, tf, currentLb, connection, window):
+        cortage = self.utils.read_single_row(int(tf.get()), connection, table)
+        self.utils.writeLog(f"Запрос на поиск элемента #{int(tf.get())} в таблице {Tables.self_definition_reverse(table)}")
         if cortage == None:
             messagebox.showwarning("Ошибка", "Элемента с таким id не существует")
-            utils.writeLog(f"Элемент #{int(tf.get())} не был найден")
+            self.utils.writeLog(f"Элемент #{int(tf.get())} не был найден")
         else:
-            controller.MoveTo(int(tf.get()), table, combinedControls, currentLb, window, connection)
+            self.controller.MoveTo(int(tf.get()), table, combinedControls, currentLb, window, connection)
             messagebox.showinfo("Успех", "Элемент найден")
-            utils.writeLog(f"Элемент #{int(tf.get())} найден")
-    @staticmethod
-    def list_table(direction, table, connection, window):
+            self.utils.writeLog(f"Элемент #{int(tf.get())} найден")
+
+    def list_table(self,direction, table, connection, window):
         command = f"""
             SELECT COUNT(*) FROM ({table})
             """
-        tableLength = utils.execute_read_query(connection, command)
+        tableLength = self.utils.execute_read_query(connection, command)
         if (direction):
             if (window.ck < int(tableLength[0][0])):
                 window.ck = window.ck + 1
@@ -601,11 +600,10 @@ class Tables:
                 window.ck = window.ck - 1
             else:
                 window.ck = int(tableLength[0][0])
-        return utils.read_single_row(window.ck, connection, table)
+        return self.utils.read_single_row(window.ck, connection, table)
 
-    @staticmethod
-    def configure_list(direction, table, combinedControls, currentLb, connection, window):
-        cortage = Tables.list_table(direction, table, connection, window)
+    def configure_list(self, direction, table, combinedControls, currentLb, connection, window):
+        cortage = self.list_table(direction, table, connection, window)
         for i in range(0, len(combinedControls[0])):
             combinedControls[0][i].delete(0, END)
         tIndexes = []

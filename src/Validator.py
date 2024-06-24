@@ -5,46 +5,41 @@ import Utils
 
 
 class Validator:
-    utils = Utils.Utils()
-    connection = utils.create_connection("Diploma1.db")
+    def __init__(self, uti):
+        self.utils = uti
+        self.connection = self.utils.create_connection("Diploma1.db")
 
-    @staticmethod
-    def validation_digits(stringVal):
+    def validation_digits(self,stringVal):
         return re.match(r"^\d{0,3}$", stringVal) is not None
 
-    @staticmethod
-    def validation_text(stringVal):
+    def validation_text(self, stringVal):
         return re.match(r"^[А-я]{0,}$", stringVal) is not None
 
-    @staticmethod
-    def validation_char(stringVal):
+    def validation_char(self, stringVal):
         return re.match(r'^[МЖ]?$', stringVal) is not None
 
-    @staticmethod
-    def validation_time(stringVal):
+    def validation_time(self, stringVal):
         return re.fullmatch(r'^\d{0,6}$', stringVal) is not None
 
-    @staticmethod
-    def FKValid(number, tableName):
+    def FKValid(self, number, tableName):
         element = None
         if tableName == "Doors":
             command = f"""
             SELECT * FROM ({tableName}) WHERE Number = {number}
             """
-            element = Validator.utils.execute_read_query(Validator.connection, command)
+            element = self.utils.execute_read_query(self.connection, command)
         else:
-            element = Validator.utils.read_single_row(number, Validator.connection, tableName)
+            element = self.utils.read_single_row(number, self.connection, tableName)
         if element is not None:
             if (len(element)!=0):
                 return True
         else:
             return False
 
-    @staticmethod
-    def validate_single(element, window, type):
-        checkDig = (window.register(Validator.validation_digits), '%P')
-        checkText = (window.register(Validator.validation_text), "%P")
-        checkTime = (window.register(Validator.validation_time), "%P")
+    def validate_single(self, element, window, type):
+        checkDig = (window.register(self.validation_digits), '%P')
+        checkText = (window.register(self.validation_text), "%P")
+        checkTime = (window.register(self.validation_time), "%P")
         if type == "Number":
             element.configure (validate="key", validatecommand = checkDig)
         elif type == "Time":
@@ -54,11 +49,10 @@ class Validator:
         return element
 
 
-    @staticmethod
-    def validate_whole(tfS, which, window):
-        checkDig = (window.register(Validator.validation_digits), '%P')
-        checkText = (window.register(Validator.validation_text), "%P")
-        checkTime = (window.register(Validator.validation_time), "%P")
+    def validate_whole(self, tfS, which, window):
+        checkDig = (window.register(self.validation_digits), '%P')
+        checkText = (window.register(self.validation_text), "%P")
+        checkTime = (window.register(self.validation_time), "%P")
         vcomms = []
         match which:
             case "Пассажиры":
@@ -76,8 +70,7 @@ class Validator:
             tfS[i].configure(validate="key", validatecommand=vcomms[i])
         return tfS
 
-    @staticmethod
-    def overvalidation(table, combinedControls):
+    def overvalidation(self, table, combinedControls):
         flag = True
         FKs = [6, 2, 5, 9]
         match table:
@@ -95,7 +88,7 @@ class Validator:
                 if(flag):
                     #print(bool(Validator.FKValid(combinedControls[0][3].get(),"Doors")))
                     #print(combinedControls[0][3].get())
-                    if (Validator.FKValid(combinedControls[0][3].get(),"Doors")==False):
+                    if (self.FKValid(combinedControls[0][3].get(),"Doors")==False):
                         messagebox.showerror("Ошибка", "Введите корректную ссылку на дверь в комнату")
                         flag=False
                     elif (int(combinedControls[0][2].get()) < 18):
@@ -114,7 +107,7 @@ class Validator:
                         messagebox.showinfo("ОШИБКА", f"Поле {warnlistC[i]} не должно быть пустым")
                         flag = False
                 if(flag):
-                    if (Validator.FKValid(combinedControls[0][1].get(),"Rooms")==False):
+                    if (self.FKValid(combinedControls[0][1].get(),"Rooms")==False):
                         messagebox.showerror("Ошибка", "Введите корректную ссылку на комнату")
                         flag=False
             case "Rooms":
@@ -153,7 +146,7 @@ class Validator:
                         messagebox.showinfo("ОШИБКА", f"Поле {warnlistC[i]} не должно быть пустым")
                         flag = False
                 if(flag):
-                    if (Validator.FKValid(combinedControls[0][1].get(), "Passengers") == False):
+                    if (self.FKValid(combinedControls[0][1].get(), "Passengers") == False):
                         messagebox.showerror("Ошибка", "Введите корректную ссылку на нарушителя")
                         flag = False
             case "Passengers_Underage":
@@ -165,10 +158,10 @@ class Validator:
                 elif((int(combinedControls[0][2].get())>17) | (combinedControls[0][2].get() =="")):
                     messagebox.showerror("Ошибка", "Введите корректный возраст(от 0 до 17)")
                     flag = False
-                elif (Validator.FKValid(combinedControls[0][3].get(), "Doors") == False):
+                elif (self.FKValid(combinedControls[0][3].get(), "Doors") == False):
                     messagebox.showerror("Ошибка", "Введите корректную ссылку на дверь в комнату")
                     flag = False
-                elif (Validator.FKValid(combinedControls[0][4].get(), "Passengers") == False):
+                elif (self.FKValid(combinedControls[0][4].get(), "Passengers") == False):
                     messagebox.showerror("Ошибка", "Введите корректную ссылку на Сопровождающего")
                     flag = False
                 for i in range(0, len(warnlistT)):

@@ -4,11 +4,11 @@ from sqlite3 import Error
 import time
 import os
 
-connstring = None
+#connstring = None
 
 class Utils:
-    @staticmethod
-    def create_connection(path):
+
+    def create_connection(self, path):
         if (type(path) is not str):
             return "Wrong path format given"
         #     return "Wrong database for this project"
@@ -21,8 +21,7 @@ class Utils:
             raise FileNotFoundError
         return connection
 
-    @staticmethod
-    def read_single_row(id, connection, table):
+    def read_single_row(self, id, connection, table):
         tables = ["Passengers", "Passengers_Underage", "Doors", "Rooms", "Penalties", "Accesses", "Accesses_ES"]
         if (type(id) is not int) or (id < 1):
             return "ID should be int natural value"
@@ -40,21 +39,17 @@ class Utils:
             return result
         except sqlite3.Error as e:
             print(f"The error '{e}' occurred")
-
-    @staticmethod
-    async def timetick(timerLb):
+    async def timetick(self, timerLb):
         t = time.localtime()
         current_time = time.strftime("%H:%M:%S", t)
         timerLb.configure(text= "Системное время:   " + current_time)
         await asyncio.sleep(0.03)
 
-    @staticmethod
-    async def asyncMLoop(wndw):
+    async def asyncMLoop(self, wndw):
         wndw.update()
         await asyncio.sleep(0.01)
 
-    @staticmethod
-    def writeLog(text):
+    def writeLog(self, text):
         text = '[' + time.strftime("%H:%M:%S", time.localtime()) + ']' + text + '\n'
         if not os.path.exists("ASLog.txt"):
             stream = open("ASLog.txt", "x")

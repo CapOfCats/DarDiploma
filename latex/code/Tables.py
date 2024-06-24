@@ -4,12 +4,12 @@ import Controller
 import Utils
 import Validator
 import time
-utils = Utils.Utils()
-validator = Validator.Validator()
-controller = Controller.Controller()
 class Tables:
-    @staticmethod
-    def add_element(table, combinedControls, currentLb, tree, tableWin, connection, window):
+    def __init__(self, uti, val, con):
+        self.utils = uti
+        self.validator = val
+        self.controller = con
+    def add_element(self, table, combinedControls, currentLb, tree, tableWin, connection, window):
         colnames = []
         foreign = None
         FColumn = None
@@ -60,26 +60,25 @@ class Tables:
         tfValues = ''
         t = 0
         c = 0
-        if validator.overvalidation(table, combinedControls):
+        if self.validator.overvalidation(table, combinedControls):
             finallen += len(colnames)
             for i in range(0, finallen):
                 if i in baseInsertT:
-                    if (combinedControls[0][t].get() != "") and (t != foreign):
+                    if (t != foreign): #combinedControls[0][t].get() != "") and
                         resultcolls += colnames[i] + ','
-                        if (re.match(r"^[А-я]+$", combinedControls[0][t].get())):
+                        if (re.match(r"^[А-я]+$", combinedControls[0][t].get())) or (combinedControls[0][t].get() == ""):
                             tfValues += "'" + combinedControls[0][t].get() + "'" + ','
                         elif ((table == "Rooms") & (i == 3) & (combinedControls[0][1].get() != "")):
-                            tfValues += "'" + Tables.timeAppend(combinedControls[0][t].get()) + "'" + ','
+                            tfValues += "'" + self.timeAppend(combinedControls[0][t].get()) + "'" + ','
                         else:
                             tfValues += combinedControls[0][t].get() + ','
                     t += 1
                 elif i in baseInsertC:
-                    if combinedControls[1][c].get() != "":
-                        resultcolls += colnames[i] + ','
-                        if (re.match(r"^[А-я]+$", combinedControls[1][c].get())):
-                            tfValues += "'" + combinedControls[1][c].get() + "'" + ','
-                        else:
-                            tfValues += combinedControls[1][c].get() + ','
+                    resultcolls += colnames[i] + ','
+                    if (re.match(r"^[А-я]+$", combinedControls[1][c].get())) or (combinedControls[1][c].get() == ""):
+                        tfValues += "'" + combinedControls[1][c].get() + "'" + ','
+                    else:
+                        tfValues += combinedControls[1][c].get() + ','
                     c += 1
                 else:
                     pass
@@ -93,23 +92,24 @@ class Tables:
             command = f"""
                                 SELECT COUNT(*) FROM ({table})
                                 """
-            newId = utils.execute_read_query(connection, command)[0][0] + 1
+            newId = self.utils.execute_read_query(connection, command)[0][0] + 1
             resultcolls += "ID"
             tfValues += f"{newId}"
             command = f"""
                     INSERT INTO {table} ({resultcolls}) VALUES ({tfValues})
                     """
-            if (utils.execute_silent(connection, command)):
+            print(command)
+            if (self.utils.execute_silent(connection, command)):
                 command = f"""
                     SELECT COUNT(*) FROM ({table})
                     """
-                controller.MoveTo(utils.execute_read_query(connection, command)[0][0], table, combinedControls, currentLb, window, connection)
-                tree = controller.TreeRefresh(tree, table, connection)
+                self.controller.MoveTo(self.utils.execute_read_query(connection, command)[0][0], table, combinedControls, currentLb, window, connection)
+                tree = self.controller.TreeRefresh(tree, table, connection)
                 messagebox.showinfo("Успех", "Элемент успешно добавлен")
-                utils.writeLog(f"В таблицу {Tables.self_definition_reverse(table)} был добавлен новый элемент:")
-                utils.writeLog('[' + tfValues + ']')
-    @staticmethod
-    def delete_element(table, key, currentLb, combinedControls, tree, connection, window):
+                self.utils.writeLog(f"В таблицу {Tables.self_definition_reverse(table)} был добавлен новый элемент:")
+                self.utils.writeLog('[' + tfValues + ']')
+
+    def delete_element(self, table, key, currentLb, combinedControls, tree, connection, window):
         command = ""
         if key == 0:
             messagebox.showinfo("ОЙ!", "Выберите элемент, который нужно удалить")
@@ -117,17 +117,17 @@ class Tables:
             command = command = f"""
                 DELETE FROM {table} Where ID ={key}
                 """
-            if (utils.execute_silent(connection, command)):
-                controller.clear(currentLb, combinedControls, window)
+            if (self.utils.execute_silent(connection, command)):
+                self.controller.clear(currentLb, combinedControls, window)
                 command = f"""
                             UPDATE {table} SET ID =ID-1 where ID>{key}
                             """
-                utils.execute_silent(connection, command)
+                self.utils.execute_silent(connection, command)
                 messagebox.showinfo('Готово', "Элемент успешно удалён")
-                tree = controller.TreeRefresh(tree, table, connection)
-                utils.writeLog(f"Из таблицы {Tables.self_definition_reverse(table)} был удалён элемент №{key}")
-    @staticmethod
-    def update_element(table, combinedControls, key, tree, connection):
+                tree = self.controller.TreeRefresh(tree, table, connection)
+                self.utils.writeLog(f"Из таблицы {Tables.self_definition_reverse(table)} был удалён элемент №{key}")
+
+    def update_element(self, table, combinedControls, key, tree, connection):
         colnames = []
         foreign = None
         FColumn = None
@@ -178,26 +178,27 @@ class Tables:
         tfValues = []
         t = 0
         c = 0
-        if validator.overvalidation(table, combinedControls):
+        if self.validator.overvalidation(table, combinedControls):
             finalLen += len(colnames)
             for i in range(0, finalLen):
                 if i in baseInsertT:
-                    if (combinedControls[0][t].get() != "") and (t != foreign):
+                    if  (t != foreign):#(combinedControls[0][t].get() != "") and
                         resultcolls.append(colnames[i])  # ,
-                        if (re.match(r"^[А-я]+$", combinedControls[0][t].get())):
+                        if (re.match(r"^[А-я]+$", combinedControls[0][t].get())) or  (combinedControls[0][t].get() == ""):
                             tfValues.append("'" + combinedControls[0][t].get() + "'" + ',')
                         elif ((table == "Rooms") & (i == 3) & (combinedControls[0][1].get() != "")):
-                            tfValues.append("'" + Tables.timeAppend(combinedControls[0][t].get()) + "'" + ',')
+                            tfValues.append("'" + self.timeAppend(combinedControls[0][t].get()) + "'" + ',')
                         else:
                             tfValues.append(combinedControls[0][t].get() + ',')
                     t += 1
                 elif i in baseInsertC:
-                    if combinedControls[1][c].get() != "":
-                        resultcolls.append(colnames[i])
-                        if (re.match(r"^[А-я]+$", combinedControls[1][c].get())):
-                            tfValues.append("'" + combinedControls[1][c].get() + "'" + ',')
-                        else:
-                            tfValues.append(combinedControls[1][c].get() + ',')
+                    print(combinedControls[1][c].get())
+                    #if combinedControls[1][c].get() != "":
+                    resultcolls.append(colnames[i])
+                    if (re.match(r"^[А-я]+$", combinedControls[1][c].get())) or  (combinedControls[1][c].get() == ""):
+                        tfValues.append("'" + combinedControls[1][c].get() + "'" + ',')
+                    else:
+                        tfValues.append(combinedControls[1][c].get() + ',')
                     c += 1
                 else:
                     pass
@@ -210,7 +211,6 @@ class Tables:
                     tfValues.append(
                         f"(SELECT {FColumn} FROM {boundTable} WHERE {FColumn} = {combinedControls[0][foreign].get()})")
                 resultcolls.append(colnames[len(colnames) - 1])
-
             lastElementRc = resultcolls[len(resultcolls) - 1]
             lastElementTf = tfValues[len(tfValues) - 1]
             if (lastElementRc[len(lastElementRc) - 1] == ','):
@@ -225,10 +225,8 @@ class Tables:
                         UPDATE {table} SET
                         {preCommand} WHERE ID={key} ;
                     """
-            if (utils.execute_silent(connection, command)):
+            if (self.utils.execute_silent(connection, command)):
                 messagebox.showinfo("Успех", "Элемент успешно отредактирован!")
-                tree = controller.TreeRefresh(tree, table, connection)
-                utils.writeLog(f"В таблице {Tables.self_definition_reverse(table)} были изменены данные элемента №{key}. Теперь они выглядят так:")
-                utils.writeLog('[' + ''.join(tfValues) + ']')
-
-
+                tree = self.controller.TreeRefresh(tree, table, connection)
+                self.utils.writeLog(f"В таблице {self.self_definition_reverse(table)} были изменены данные элемента №{key}. Теперь они выглядят так:")
+                self.utils.writeLog('[' + ''.join(tfValues) + ']')

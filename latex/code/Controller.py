@@ -5,14 +5,14 @@ import customtkinter
 
 import Utils
 
-utils = Utils.Utils()
-validator = Validator.Validator()
-
 class Controller:
-    @staticmethod
-    def show_acc(connection, isES, tables, window, stylecolors):
+    def __init__(self, uti, val):
+        self.utils = uti
+        self.validator = val
+
+    def show_acc(self, connection, isES, tables, window, stylecolors):
         tableWin = customtkinter.CTkToplevel()
-        tableWin.title("Праверка доступа")
+        tableWin.title("Проверка доступа")
         tableWin.geometry('1200x600')
 
         frameWin = customtkinter.CTkFrame(
@@ -73,7 +73,7 @@ class Controller:
             offvalue= "Ребёнок",
             text = "Ребёнок",
             font=customtkinter.CTkFont(family="Consolas", size=15),
-            command= lambda : Controller.toggle_switch(psr_switch, psr_lb, tables, connection, tree, isES)
+            command= lambda : self.toggle_switch(psr_switch, psr_lb, tables, connection, tree, isES)
         )
         psr_switch.place(relx=0.43, rely=0.2)
 
@@ -115,7 +115,7 @@ class Controller:
             text_color=stylecolors[0],
             fg_color="black",
             font=customtkinter.CTkFont(family="Consolas", size=15),
-            command=lambda: tables.check_access(validator.validate_single(psr_tf,window,"Number"),  validator.validate_single(dor_tf, window, "Number"), psr_switch, connection, isES)
+            command=lambda: tables.check_access(self.validator.validate_single(psr_tf,window,"Number"),  self.validator.validate_single(dor_tf, window, "Number"), psr_switch, connection, isES)
         )
         acc_btn.place(relx=0.415, rely=0.45)
 
@@ -124,17 +124,16 @@ class Controller:
         which = "Доступы"
         if isES:
             which = "ДоступыЧС"
-        tree = Controller.TreeCreate(tree, tables.self_definition(which), tableWin, connection, stylecolors)
+        tree = self.TreeCreate(tree, tables.self_definition(which), tableWin, connection, stylecolors)
 
-    @staticmethod
-    def toggle_switch(switch, psrlb, tables,connection, tree, isES):
+    def toggle_switch(self, switch, psrlb, tables,connection, tree, isES):
         switch.configure(text=switch.get())
         psrlb.configure(text=switch.get() + ":")
         which = "Доступы"
         if isES:
             which = "ДоступыЧС"
         tables.start_accesses(connection,switch,isES)
-        tree = Controller.TreeRefresh(tree, tables.self_definition(which), connection)
+        tree = self.TreeRefresh(tree, tables.self_definition(which), connection)
 
     @staticmethod
     def styles_init(st, stylecolors):
@@ -154,8 +153,7 @@ class Controller:
         st.map("Custom.Treeview.Heading",
                relief=[('active', 'groove'), ('pressed', 'sunken')])
 
-    @staticmethod
-    def show_table(which,window, tables, connection, stylecolors):
+    def show_table(self, which,window, tables, connection, stylecolors):
         window.ck = 0
         tableWin = customtkinter.CTkToplevel()
         tableWin.title(which)
@@ -172,9 +170,9 @@ class Controller:
         frameWin.pack(anchor=N, expand=True, fill=BOTH)
         tableWin.resizable(False, False)
         tableWin.grab_set()
-        combinedControls = (Controller.fields_creation(which, frameWin, window, stylecolors))
+        combinedControls = (self.fields_creation(which, frameWin, window, stylecolors))
         tree = None
-        tree = Controller.TreeCreate(tree, tables.self_definition(which), tableWin, connection, stylecolors)
+        tree = self.TreeCreate(tree, tables.self_definition(which), tableWin, connection, stylecolors)
         current_lb = customtkinter.CTkLabel(
             master=frameWin,
             width=20,
@@ -301,7 +299,5 @@ class Controller:
             text_color=stylecolors[0],
             fg_color="black",
             font=customtkinter.CTkFont(family="Courier new", size=15),
-            command=lambda: tables.search_element(combinedControls, tables.self_definition(which), searchTf, current_lb,
-                                                  connection, window)
+            command=lambda: tables.search_element(combinedControls, tables.self_definition(which), searchTf, current_lb, connection, window)
         )
-        grid_coef = round((len(combinedControls[0]) + len(combinedControls[1])) / 2)

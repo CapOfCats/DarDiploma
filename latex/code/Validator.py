@@ -5,46 +5,41 @@ import Utils
 
 
 class Validator:
-    utils = Utils.Utils()
-    connection = utils.create_connection("Diploma1.db")
+    def __init__(self, uti):
+        self.utils = uti
+        self.connection = self.utils.create_connection("Diploma1.db")
 
-    @staticmethod
-    def validation_digits(stringVal):
+    def validation_digits(self,stringVal):
         return re.match(r"^\d{0,3}$", stringVal) is not None
 
-    @staticmethod
-    def validation_text(stringVal):
+    def validation_text(self, stringVal):
         return re.match(r"^[А-я]{0,}$", stringVal) is not None
 
-    @staticmethod
-    def validation_char(stringVal):
+    def validation_char(self, stringVal):
         return re.match(r'^[МЖ]?$', stringVal) is not None
 
-    @staticmethod
-    def validation_time(stringVal):
+    def validation_time(self, stringVal):
         return re.fullmatch(r'^\d{0,6}$', stringVal) is not None
 
-    @staticmethod
-    def FKValid(number, tableName):
+    def FKValid(self, number, tableName):
         element = None
         if tableName == "Doors":
             command = f"""
             SELECT * FROM ({tableName}) WHERE Number = {number}
             """
-            element = Validator.utils.execute_read_query(Validator.connection, command)
+            element = self.utils.execute_read_query(self.connection, command)
         else:
-            element = Validator.utils.read_single_row(number, Validator.connection, tableName)
+            element = self.utils.read_single_row(number, self.connection, tableName)
         if element is not None:
             if (len(element)!=0):
                 return True
         else:
             return False
 
-    @staticmethod
-    def validate_single(element, window, type):
-        checkDig = (window.register(Validator.validation_digits), '%P')
-        checkText = (window.register(Validator.validation_text), "%P")
-        checkTime = (window.register(Validator.validation_time), "%P")
+    def validate_single(self, element, window, type):
+        checkDig = (window.register(self.validation_digits), '%P')
+        checkText = (window.register(self.validation_text), "%P")
+        checkTime = (window.register(self.validation_time), "%P")
         if type == "Number":
             element.configure (validate="key", validatecommand = checkDig)
         elif type == "Time":
@@ -54,11 +49,10 @@ class Validator:
         return element
 
 
-    @staticmethod
-    def validate_whole(tfS, which, window):
-        checkDig = (window.register(Validator.validation_digits), '%P')
-        checkText = (window.register(Validator.validation_text), "%P")
-        checkTime = (window.register(Validator.validation_time), "%P")
+    def validate_whole(self, tfS, which, window):
+        checkDig = (window.register(self.validation_digits), '%P')
+        checkText = (window.register(self.validation_text), "%P")
+        checkTime = (window.register(self.validation_time), "%P")
         vcomms = []
         match which:
             case "Пассажиры":
